@@ -1,0 +1,617 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4028668B-7180-4307-A6B0-03947988D85C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ChestVault</RootNamespace>
+    <AssemblyName>ChestVault</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>D:\ChestVault 1.0\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>14</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>CCA701EC645B8C7B7D9B51F17B1A5A54ACFA6CF5</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ChestVault_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Artboard-1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Core.3.7.100.14\lib\net45\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SecurityToken, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.SecurityToken.3.7.100.14\lib\net45\AWSSDK.SecurityToken.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.6.1.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.6.1\lib\net471\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.20.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.20.0\lib\net472\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.20.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.20.0\lib\net472\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.20.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.20.0\lib\net472\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Libmongocrypt, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Libmongocrypt.1.8.0\lib\net472\MongoDB.Libmongocrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.30.1\lib\net461\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="Snappier, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a1b25124e6e13a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Snappier.1.0.0\lib\netstandard2.0\Snappier.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZstdSharp, Version=0.6.2.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.6.2\lib\net461\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivateSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActivateSystem.Designer.cs">
+      <DependentUpon>ActivateSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChestVault.cs" />
+    <Compile Include="Controls_Accountant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls_Accountant.Designer.cs">
+      <DependentUpon>Controls_Accountant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls_Activites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls_Activites.Designer.cs">
+      <DependentUpon>Controls_Activites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls_AllItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls_AllItems.Designer.cs">
+      <DependentUpon>Controls_AllItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls_Buy_Recite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls_Buy_Recite.Designer.cs">
+      <DependentUpon>Controls_Buy_Recite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls_Dialogue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls_Dialogue.Designer.cs">
+      <DependentUpon>Controls_Dialogue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls_Items.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls_Items.Designer.cs">
+      <DependentUpon>Controls_Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls_ReciteSold.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls_ReciteSold.Designer.cs">
+      <DependentUpon>Controls_ReciteSold.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls_Recites_Bougth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls_Recites_Bougth.Designer.cs">
+      <DependentUpon>Controls_Recites_Bougth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls_StatsAnalyytics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls_StatsAnalyytics.Designer.cs">
+      <DependentUpon>Controls_StatsAnalyytics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD.cs" />
+    <Compile Include="DataGrid.cs" />
+    <Compile Include="DataGridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataGridForm.Designer.cs">
+      <DependentUpon>DataGridForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FastSell_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FastSell_Settings.Designer.cs">
+      <DependentUpon>FastSell_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls_MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls_MainMenu.Designer.cs">
+      <DependentUpon>Controls_MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls_LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls_LoginForm.Designer.cs">
+      <DependentUpon>Controls_LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Private_QRCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Private_QRCode.Designer.cs">
+      <DependentUpon>Private_QRCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controls_SellingPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls_SellingPoint.Designer.cs">
+      <DependentUpon>Controls_SellingPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Schemas\ActivitiesSchema.cs" />
+    <Compile Include="Schemas\BoughtItemsSchema.cs" />
+    <Compile Include="Schemas\DeptInfo.cs" />
+    <Compile Include="Schemas\DeptSchema.cs" />
+    <Compile Include="Schemas\FastSellSchema.cs" />
+    <Compile Include="Schemas\GraphAcount.cs" />
+    <Compile Include="Schemas\ItemInfo.cs" />
+    <Compile Include="Schemas\ItemsSchema.cs" />
+    <Compile Include="Schemas\NotificationsSchema.cs" />
+    <Compile Include="Schemas\PurchaseSchema.cs" />
+    <Compile Include="Schemas\RecitesSchema.cs" />
+    <Compile Include="Schemas\SettingsSchema.cs" />
+    <Compile Include="Schemas\SoldInfoSchema.cs" />
+    <Compile Include="Schemas\SoldItemsSchema.cs" />
+    <Compile Include="Schemas\UsersSchema.cs" />
+    <Compile Include="Schemas\WorkSchedule.cs" />
+    <Compile Include="SellingPoint_Display.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellingPoint_Display.Designer.cs">
+      <DependentUpon>SellingPoint_Display.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellingPoint_Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellingPoint_Search.Designer.cs">
+      <DependentUpon>SellingPoint_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SidePanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SidePanel.Designer.cs">
+      <DependentUpon>SidePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserSettings.Designer.cs">
+      <DependentUpon>UserSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserSettings_Access.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserSettings_Access.Designer.cs">
+      <DependentUpon>UserSettings_Access.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserSettings_Colors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserSettings_Colors.Designer.cs">
+      <DependentUpon>UserSettings_Colors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValuesSender_BougthItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ValuesSender_BougthItem.Designer.cs">
+      <DependentUpon>ValuesSender_BougthItem.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ActivateSystem.resx">
+      <DependentUpon>ActivateSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls_Accountant.resx">
+      <DependentUpon>Controls_Accountant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls_Activites.resx">
+      <DependentUpon>Controls_Activites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls_AllItems.resx">
+      <DependentUpon>Controls_AllItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls_Buy_Recite.resx">
+      <DependentUpon>Controls_Buy_Recite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls_Dialogue.resx">
+      <DependentUpon>Controls_Dialogue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls_Items.resx">
+      <DependentUpon>Controls_Items.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls_ReciteSold.resx">
+      <DependentUpon>Controls_ReciteSold.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls_Recites_Bougth.resx">
+      <DependentUpon>Controls_Recites_Bougth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls_StatsAnalyytics.resx">
+      <DependentUpon>Controls_StatsAnalyytics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataGridForm.resx">
+      <DependentUpon>DataGridForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FastSell_Settings.resx">
+      <DependentUpon>FastSell_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls_MainMenu.resx">
+      <DependentUpon>Controls_MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls_LoginForm.resx">
+      <DependentUpon>Controls_LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Private_QRCode.resx">
+      <DependentUpon>Private_QRCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls_SellingPoint.resx">
+      <DependentUpon>Controls_SellingPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellingPoint_Display.resx">
+      <DependentUpon>SellingPoint_Display.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellingPoint_Search.resx">
+      <DependentUpon>SellingPoint_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SidePanel.resx">
+      <DependentUpon>SidePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSettings.resx">
+      <DependentUpon>UserSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSettings_Access.resx">
+      <DependentUpon>UserSettings_Access.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSettings_Colors.resx">
+      <DependentUpon>UserSettings_Colors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValuesSender_BougthItem.resx">
+      <DependentUpon>ValuesSender_BougthItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ChestVault_TemporaryKey.pfx" />
+    <None Include="libmongocrypt.dylib" />
+    <None Include="libmongocrypt.so" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoginBackGround.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoginBackGround1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Artboard 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BGLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Artboard 11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Artboard 12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Artboard 13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Artboard 14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Artboard 15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Artboard 16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dialogue_CloseAppBg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Artboard 17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Artboard 18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Artboard 19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Artboard 110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Artboard 111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Artboard 112.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BigBarCode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BigBarCode1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallbarcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tagblack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tagwhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\storageblack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\storagewhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amountblack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amountwhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\priceblack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pricewhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dateblack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\datewhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\AWSSDK.SecurityToken.3.7.100.14\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Artboard-1.ico" />
+    <Content Include="mongocrypt.dll" />
+    <None Include="Resources\Settings1.png" />
+    <None Include="Resources\Drinks.png" />
+    <None Include="Resources\Groccery.png" />
+    <None Include="Resources\Color1.png" />
+    <None Include="Resources\Color.png" />
+    <None Include="Resources\deleteicon.png" />
+    <None Include="Resources\BackIcon.png" />
+    <None Include="Resources\ProfitIcon.png" />
+    <None Include="Resources\NumberofOrders1.png" />
+    <None Include="Resources\TotalPrice.png" />
+    <None Include="Resources\NumberofOrders.png" />
+    <None Include="Resources\AccountantIcon.png" />
+    <None Include="Resources\PictureIcon.png" />
+    <None Include="Resources\PrintIcon.png" />
+    <None Include="Resources\AllItemsIcon.png" />
+    <None Include="Resources\BougthRecitesIcon.png" />
+    <None Include="Resources\SoldRecitesIcon.png" />
+    <None Include="Resources\ItemInfoIcon.png" />
+    <None Include="Resources\Settings Icon.png" />
+    <None Include="Resources\Inventory Icon.png" />
+    <None Include="Resources\SellingIcon.png" />
+    <None Include="Resources\UserIcon_4.png" />
+    <None Include="Resources\UserIcon_3.png" />
+    <None Include="Resources\UserIcon_2.png" />
+    <None Include="Resources\UserIcon_1.png" />
+    <None Include="Resources\ItemIcon.png" />
+    <None Include="Resources\BackGroundAttempt1.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\ChangeUser.png" />
+    <None Include="Resources\CloseApp.png" />
+    <None Include="Resources\Settings.png" />
+    <None Include="Resources\sTATS.png" />
+    <None Include="Resources\test.png" />
+    <None Include="Resources\newreceit.png" />
+    <None Include="Resources\deleteitem.png" />
+    <None Include="Resources\SaveIcon.png" />
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\SettingsSmall.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\Edit.png" />
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
