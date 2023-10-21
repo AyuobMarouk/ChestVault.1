@@ -125,6 +125,7 @@ namespace ChestVault
             }
             for (int i = 0; i < Column.Count;i++)
             {
+               
                 if (Column[i].dataType == DataGridColumn.DataType.Double) Column[i] = DoubleTrim(Column[i]);
 
                 Column[i].Label[0].Text = Column[i].HeaderTitle;

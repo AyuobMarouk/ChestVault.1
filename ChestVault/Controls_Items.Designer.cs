@@ -176,7 +176,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBox1.Size = new System.Drawing.Size(186, 20);
-            this.textBox1.TabIndex = 14;
+            this.textBox1.TabIndex = 2;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
@@ -201,7 +201,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBox2.Size = new System.Drawing.Size(186, 20);
-            this.textBox2.TabIndex = 17;
+            this.textBox2.TabIndex = 1;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
             this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
@@ -253,7 +253,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBox4.Size = new System.Drawing.Size(186, 20);
-            this.textBox4.TabIndex = 23;
+            this.textBox4.TabIndex = 3;
             this.textBox4.Text = "0";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox4.Enter += new System.EventHandler(this.textBox4_Enter);
@@ -281,7 +281,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBox5.Size = new System.Drawing.Size(192, 20);
-            this.textBox5.TabIndex = 27;
+            this.textBox5.TabIndex = 4;
             this.textBox5.Text = "0";
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox5.Enter += new System.EventHandler(this.textBox5_Enter);
@@ -297,7 +297,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBox6.Size = new System.Drawing.Size(192, 20);
-            this.textBox6.TabIndex = 28;
+            this.textBox6.TabIndex = 5;
             this.textBox6.Text = "0";
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox6.Enter += new System.EventHandler(this.textBox5_Enter);
@@ -360,7 +360,7 @@
             this.button7.MinimumSize = new System.Drawing.Size(1, 0);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(123, 36);
-            this.button7.TabIndex = 42;
+            this.button7.TabIndex = 6;
             this.button7.Text = "أضافة صنف";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -378,7 +378,7 @@
             this.button5.MinimumSize = new System.Drawing.Size(1, 0);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(123, 36);
-            this.button5.TabIndex = 43;
+            this.button5.TabIndex = 7;
             this.button5.Text = "تعديل الصنف";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -396,7 +396,7 @@
             this.button8.MinimumSize = new System.Drawing.Size(1, 0);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(123, 36);
-            this.button8.TabIndex = 44;
+            this.button8.TabIndex = 8;
             this.button8.Text = "حذف الصنف";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);

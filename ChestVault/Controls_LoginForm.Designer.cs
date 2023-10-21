@@ -78,7 +78,7 @@
             this.button2.Location = new System.Drawing.Point(355, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(31, 29);
-            this.button2.TabIndex = 10;
+            this.button2.TabIndex = 4;
             this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -95,7 +95,7 @@
             this.button1.MinimumSize = new System.Drawing.Size(1, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(186, 45);
-            this.button1.TabIndex = 9;
+            this.button1.TabIndex = 3;
             this.button1.Text = "تسجيل الدخول";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -150,7 +150,7 @@
             this.textBox2.PasswordChar = '*';
             this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBox2.Size = new System.Drawing.Size(235, 20);
-            this.textBox2.TabIndex = 3;
+            this.textBox2.TabIndex = 2;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
@@ -172,7 +172,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox1.Size = new System.Drawing.Size(235, 21);
-            this.comboBox1.TabIndex = 48;
+            this.comboBox1.TabIndex = 1;
             // 
             // panel1
             // 
