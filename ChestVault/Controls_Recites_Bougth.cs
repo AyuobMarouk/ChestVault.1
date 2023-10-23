@@ -116,7 +116,7 @@ namespace ChestVault
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ChestVault.Me.MainForm.FillNewWindow(ChestVault.Me.MainForm.SidePanel);
+            ChestVault.Me.MainForm.FillWithMainMenu();
         }
 
         private void comboBox1_TextChanged(object sender, EventArgs e)

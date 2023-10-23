@@ -28,10 +28,7 @@ namespace ChestVault
 
         public int DisplayedMiniWindow;
 
-        public string QrCodeItem;
-        public Controls_Items ItemsMenu;
         public bool Checking = false;
-        public List<string> qrCodes;
 
         public bool EditReciteSchema = false;
         public PurchaseSchema EditingSchema;

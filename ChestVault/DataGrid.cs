@@ -22,6 +22,13 @@ namespace ChestVault
         public Color FormColor;
 
         public List<DataGridColumn> Column = new List<DataGridColumn>();
+
+        // Panels Controls
+
+        /*public Panel HeaderPanel;
+        public Panel BodyPanel;
+        public Panel SettingsPanel;*/
+
         // Header Info
         public Font HeaderFont;
         public Color HeaderFontColor;
@@ -75,6 +82,10 @@ namespace ChestVault
             ThisForm.Show();
             ThisForm.Dock = DockStyle.Fill;
 
+            /*HeaderPanel = ThisForm.Controls.Find("HeaderPanel",false).First() as Panel;
+            BodyPanel = ThisForm.Controls.Find("BodyPanel", false).First() as Panel;
+            SettingsPanel = ThisForm.Controls.Find("SettingsPanel", false).First() as Panel;
+*/
             Sender = send;
 
             StandardConfiguarations();
@@ -149,7 +160,6 @@ namespace ChestVault
         {
             Label Header = new Label();
             Header.Text = Column[Row].HeaderTitle;
-
             int XPos = ThisForm.Width;
             for (int i = 0; i <= Row; i++)
             {
@@ -173,10 +183,6 @@ namespace ChestVault
         }
         public void CreateLabel(int Row,int index)
         {
-            if(index == 0)
-            {
-            }
-
             Label Itemname = new Label();
             Itemname.Text = Column[Row].Text[index];
 

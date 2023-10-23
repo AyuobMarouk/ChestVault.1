@@ -342,7 +342,7 @@ namespace ChestVault
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ChestVault.Me.MainForm.FillNewWindow(ChestVault.Me.MainForm.SidePanel);
+            ChestVault.Me.MainForm.FillWithMainMenu();
         }
     }
 }

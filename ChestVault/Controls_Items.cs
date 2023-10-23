@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,8 +30,9 @@ namespace ChestVault
         List<ItemsSchema> SearchedItem = new List<ItemsSchema>();
 
         private List<string> QRCodes = new List<string>();
+
         private bool Saved;
-        private ItemsSchema idInWork;
+        public ItemsSchema idInWork;
         #region buttons focus and leave effect
         private void textBox1_Leave(object sender, EventArgs e)
         {
@@ -166,11 +168,19 @@ namespace ChestVault
 
             idInWork = SearchedItem[0];
 
-            textBox1.Text = SearchedItem[0].QRcode[0];
+            if(SearchedItem[0].QRcode.Count > 0)textBox1.Text = SearchedItem[0].QRcode[0];
             textBox2.Text = SearchedItem[0].Name;
 
             double total = 0;
 
+            if (SearchedItem[0].Info != null && SearchedItem[0].Info.Count > 0)
+            {
+                foreach (ItemInfo a in SearchedItem[0].Info)
+                {
+                    total += a.Amount;
+                }
+
+            }
             LoadDataGrid(SearchedItem[0].Info);
 
             textBox3.Text = total.ToString();
@@ -185,7 +195,6 @@ namespace ChestVault
                 {
                     QRCodes.Add(SearchedItem[0].QRcode[i]);
                 }
-            ChestVault.Me.QrCodeItem = textBox1.Text;
             DrawGraphs(textBox2.Text);
             textBox2.Select();
         }
@@ -197,7 +206,6 @@ namespace ChestVault
                 
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (!Saved)
@@ -231,9 +239,8 @@ namespace ChestVault
             textBox6.Text = "0";
             label9.Text = "0";
             label11.Text = "0";
-            QRCodes.Clear();
             LoadDataGrid(new List<ItemInfo>());
-            ChestVault.Me.QrCodeItem = string.Empty;
+            QRCodes = new List<string>();
             button7.Enabled = true;
             button5.Enabled = false;
             button8.Enabled = false;
@@ -242,14 +249,21 @@ namespace ChestVault
         }
         private async void button7_Click(object sender, EventArgs e)
         {
-            DialogResult resoult;
             if (textBox2.Text == "")
             {
-                resoult = ChestVault.Me.MessageBox("خانة الاسم فارغة", "أضافة صنف", Controls_Dialogue.ButtonsType.Ok);                return;
-            }
-            if (textBox2.Text[0] == ' ' || textBox1.Text[0] == ' ')
+                ChestVault.Me.MessageBox("خانة الاسم فارغة", "أضافة صنف", Controls_Dialogue.ButtonsType.Ok);                return;
+            } 
+            if (textBox2.Text[0] == ' ')
             {
-                resoult = ChestVault.Me.MessageBox("لا يمكن ان يكون الحرف الاول فراغ", "أضافة صنف", Controls_Dialogue.ButtonsType.Ok);
+                if(textBox1.Text != "")
+                {
+                    if(textBox1.Text[0] == ' ')
+                    {
+                        ChestVault.Me.MessageBox("لا يمكن ان يكون الحرف الاول فراغ", "أضافة صنف", Controls_Dialogue.ButtonsType.Ok);
+                        return;
+                    }
+                }
+                ChestVault.Me.MessageBox("لا يمكن ان يكون الحرف الاول فراغ", "أضافة صنف", Controls_Dialogue.ButtonsType.Ok);
                 return;
             }
             // Search First
@@ -257,7 +271,7 @@ namespace ChestVault
 
             if (checkName.Count > 0)
             {
-                resoult = ChestVault.Me.MessageBox("هذا الصنف موجود", "أضافة صنف", Controls_Dialogue.ButtonsType.Ok);
+                ChestVault.Me.MessageBox("هذا الصنف موجود", "أضافة صنف", Controls_Dialogue.ButtonsType.Ok);
                 return;
             }
 
@@ -266,7 +280,7 @@ namespace ChestVault
 
             if (CheckBarCode.Count > 0)
             {
-                resoult = ChestVault.Me.MessageBox("هذا البار كود موجود في احد الاصناف", "أضافة صنف", Controls_Dialogue.ButtonsType.Ok);
+                ChestVault.Me.MessageBox("هذا البار كود موجود في احد الاصناف", "أضافة صنف", Controls_Dialogue.ButtonsType.Ok);
                 return;
             }
 
@@ -280,7 +294,7 @@ namespace ChestVault
 
                 if (CheckBarCodes.Count > 0)
                 {
-                    DialogResult resoul = ChestVault.Me.MessageBox("إحدي البار الكود الفرعي موجود في صنف أخر", "أضافة صنف", Controls_Dialogue.ButtonsType.Ok);
+                    ChestVault.Me.MessageBox("إحدي البار الكود الفرعي موجود في صنف أخر", "أضافة صنف", Controls_Dialogue.ButtonsType.Ok);
                     return;
                 }
             }
@@ -319,19 +333,18 @@ namespace ChestVault
                 }
 
             }
-            resoult = ChestVault.Me.MessageBox("تمت أضافة صنف جديد", "أضافة صنف", Controls_Dialogue.ButtonsType.Ok);
+            ChestVault.Me.MessageBox("تمت أضافة صنف جديد", "أضافة صنف", Controls_Dialogue.ButtonsType.Ok);
             ResetFields();
 
         }
-        public void AddQrCodes()
+        public void AddQrCodes(List<string> codes)
         {
             QRCodes.Clear();
-            foreach (string qrcode in ChestVault.Me.qrCodes)
+            foreach (string qrcode in codes)
             {
-                QRCodes.Add(qrcode);  
+                if(qrcode != textBox1.Text) QRCodes.Add(qrcode);  
             }
         }
-
         private async void button5_Click(object sender, EventArgs e)
         {
             // Search First
@@ -478,11 +491,10 @@ namespace ChestVault
         {
 
         }
-
         private void button10_Click(object sender, EventArgs e)
         {
-            ChestVault.Me.ItemsMenu = this;
             Private_QRCode form = new Private_QRCode();
+            form.Check(QRCodes,this);
             form.Show();
             this.Enabled = false;
         }

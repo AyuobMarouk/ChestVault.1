@@ -41,7 +41,7 @@ namespace ChestVault
             }
         }
 
-        private async void comboBox1_TextChanged(object sender, EventArgs e)
+        private void comboBox1_TextChanged(object sender, EventArgs e)
         {
             if(currentForm == CurrentForm.Colors)
             {
@@ -53,7 +53,7 @@ namespace ChestVault
             }
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
            /* foreach (var a in comboBox1.Items)
             {
@@ -130,7 +130,7 @@ namespace ChestVault
             //AccessForm.LoadColors(comboBox1.Text);
             currentForm = CurrentForm.Access;
         }
-        private async void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             LoadColorForm();
             /* if(comboBox1.Text == "")

@@ -20,34 +20,29 @@ namespace ChestVault
             ChestVault.Me.ChangeDesign(this);
         }
         CRUD db = new CRUD();
-        List<ItemsSchema> SearchedItem;
+
+        private Controls_Items items;
         private void Private_QRCode_Load(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
-            Check();
             textBox1.Select();
         }
-        public async void Check()
+        public void Check(List<string> SubCodes, Controls_Items form)
         {
-            if (ChestVault.Me.QrCodeItem == "") return;
-            SearchedItem = await db.GetItemByQR(ChestVault.Me.QrCodeItem);
+            listBox1.Items.Clear();
+            items = form;
+            if (SubCodes.Count == 0) return;
 
-            if (SearchedItem.Count == 0) return;
-            if (SearchedItem[0].QRcode.Count <= 1) return;
-
-            for (int i = 1; i < SearchedItem[0].QRcode.Count; i++)
+            for (int i = 0; i < SubCodes.Count; i++)
             {
-                listBox1.Items.Add(SearchedItem[0].QRcode[i]);
-                
+                    listBox1.Items.Add(SubCodes[i]);
             }
+
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             AddQRcode();
         }
-
-
         public async void AddQRcode()
         {
             if (textBox1.Text == "")
@@ -61,8 +56,13 @@ namespace ChestVault
             }
             foreach (var a in listBox1.Items)
             {
-                if (textBox1.Text == a.ToString()) return;
+                if (textBox1.Text == a.ToString())
+                {
+                    ChestVault.Me.MessageBox("هذا البار موجود في القائمة", "تنبيه", Controls_Dialogue.ButtonsType.Ok);
+                    return;
+                }
             }
+
             List<ItemsSchema> checkqrcode = await db.GetItemByQR(textBox1.Text);
             if (checkqrcode.Count > 0)
             {
@@ -76,23 +76,22 @@ namespace ChestVault
         private void button3_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
-            ChestVault.Me.ItemsMenu.Enabled = true;
+            items.Enabled = true;
             this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            List<string> sendover = new List<string>();
             if(listBox1.Items.Count > 0)
             {
-                ChestVault.Me.qrCodes = new List<string>();
-                foreach(string qrcode in listBox1.Items)
+                foreach(string a in listBox1.Items)
                 {
-                    ChestVault.Me.qrCodes.Add(qrcode);
+                    sendover.Add(a);
                 }
-                ChestVault.Me.ItemsMenu.AddQrCodes();
+                items.AddQrCodes(sendover);
             }
-            listBox1.Items.Clear();
-            ChestVault.Me.ItemsMenu.Enabled = true;
+            items.Enabled = true;
             this.Hide();
         }
 
@@ -109,6 +108,9 @@ namespace ChestVault
             {
                 AddQRcode();
             }
+        }
+        private void Private_QRCode_FormClosing(object sender, FormClosingEventArgs e)
+        {
         }
     }
 }

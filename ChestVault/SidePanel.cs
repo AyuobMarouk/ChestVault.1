@@ -29,9 +29,14 @@ namespace ChestVault
             label2.Text = ChestVault.Me.CurrentUser.Accessibility;
 
         }
+        public void TimerState(bool state)
+        {
+            if(state) timer1.Start();
+            else timer1.Stop();
+        }
         private void SidePanel_Load(object sender, EventArgs e)
         {
-            timer1.Start();
+            TimerState(true);
             for(int i = 0; i < this.Controls.Count; i++)
             {
                 if (this.Controls[i].GetType() == typeof(Button)) 
@@ -254,19 +259,16 @@ namespace ChestVault
             Controls_ReciteSold form = new Controls_ReciteSold();
             ChestVault.Me.MainForm.FillNewWindow(form);
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             Controls_Recites_Bougth form = new Controls_Recites_Bougth();
             ChestVault.Me.MainForm.FillNewWindow(form);
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
             Controls_AllItems form = new Controls_AllItems();
             form.Show();
         }
-
         private void button16_Click(object sender, EventArgs e)
         {
             Controls_Activites form = new Controls_Activites();

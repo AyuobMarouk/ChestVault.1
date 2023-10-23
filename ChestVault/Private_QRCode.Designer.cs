@@ -201,6 +201,7 @@ namespace ChestVault
             this.Name = "Private_QRCode";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Private_QRCode";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Private_QRCode_FormClosing);
             this.Load += new System.EventHandler(this.Private_QRCode_Load);
             this.Special.ResumeLayout(false);
             this.Special.PerformLayout();

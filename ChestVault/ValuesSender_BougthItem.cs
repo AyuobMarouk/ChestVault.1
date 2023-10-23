@@ -37,6 +37,18 @@ namespace ChestVault
             List<ItemsSchema> item = await db.GetItem(Item.Name);
             textBox1.Text = item[0].SellPrice.ToString();
 
+            double total = 0;
+
+            if (item[0].Info != null && item[0].Info.Count > 0)
+            {
+                foreach (ItemInfo a in item[0].Info)
+                {
+                    total += a.Amount;
+                }
+            }
+
+            label6.Text = "المخزون المتوفر :" + total.ToString();
+
             label4.Text = "الصندوق يحتوي علي :" + item[0].BoxSize.ToString();
             reciteForms = form;
             textBox2.Text = Item.Name;
@@ -128,7 +140,7 @@ namespace ChestVault
 
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
-
+           
         }
     }
 }

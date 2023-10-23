@@ -77,6 +77,7 @@ namespace ChestVault
             panel3.Controls.Add(FilledWindow);
             FilledWindow.Show();
             FilledWindow.Dock = DockStyle.Fill;
+            SidePanel.TimerState(false);
         }
         public void FillWithMainMenu()
         {
@@ -87,6 +88,7 @@ namespace ChestVault
             panel3.Controls.Add(FilledWindow);
             FilledWindow.Show();
             FilledWindow.Dock = DockStyle.Fill;
+            SidePanel.TimerState(true);
         }
 
         public void ClearComboBox()

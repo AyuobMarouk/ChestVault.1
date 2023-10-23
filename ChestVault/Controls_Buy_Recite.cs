@@ -274,13 +274,17 @@ namespace ChestVault
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            if (Saved)
+            DialogResult resolt = ChestVault.Me.MessageBox("لن يتم حفظ التغيرات التي فمت بها هل أنتا متأكد", "هل أنتا متأكد", Controls_Dialogue.ButtonsType.SureCancel);
+            if (resolt == DialogResult.OK)
             {
-                ChestVault.Me.MainForm.SidePanel.CloseMiniMenu();
+                if (Saved)
+                {
+                    ChestVault.Me.MainForm.SidePanel.CloseMiniMenu();
+                }
+                ChestVault.Me.EditReciteSchema = false;
+                ChestVault.Me.MainForm.Enabled = true;
+                this.Hide();
             }
-            ChestVault.Me.EditReciteSchema = false;
-            ChestVault.Me.MainForm.Enabled = true;
-            this.Hide();
         }
 
         public void ControlLabels()
@@ -574,6 +578,16 @@ namespace ChestVault
         {
             Controls_Items form = new Controls_Items();
             form.Show();
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (checkBox1.Checked) return;
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

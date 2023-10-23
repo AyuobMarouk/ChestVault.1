@@ -53,6 +53,7 @@ namespace ChestVault
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button10 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -355,12 +356,24 @@ namespace ChestVault
             this.button3.Text = "<";
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(7, 35);
+            this.label6.MinimumSize = new System.Drawing.Size(1, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(247, 30);
+            this.label6.TabIndex = 68;
+            this.label6.Text = "سعر البيع";
+            // 
             // ValuesSender_BougthItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(209)))), ((int)(((byte)(151)))));
             this.ClientSize = new System.Drawing.Size(589, 286);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.label4);
@@ -426,5 +439,6 @@ namespace ChestVault
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label6;
     }
 }
