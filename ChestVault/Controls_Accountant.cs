@@ -167,12 +167,10 @@ namespace ChestVault
                 x++;
             }
             */
-
-
-            chart1.Series[0].Points.AddXY("رأس المال :" + resoult.NetSell.ToString(), resoult.NetSell);
+            chart1.Series[0].Points.AddXY("رأس المال :" + resoult.buySell.ToString(), resoult.buySell);
             chart1.Series[0].Points[0].LabelForeColor = ChestVault.Me.customizeableUsers.TextColorTheme;
 
-            chart1.Series[0].Points.AddXY("المكسب :" + resoult.buySell.ToString(), resoult.buySell);
+            chart1.Series[0].Points.AddXY("المكسب :" + resoult.NetSell.ToString(), resoult.NetSell);
             chart1.Series[0].Points[1].LabelForeColor = ChestVault.Me.customizeableUsers.TextColorTheme;
 
             string[] days = { "احد", "أثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت" };
@@ -190,7 +188,7 @@ namespace ChestVault
         public void LoadUsersGrid()
         {
             UsersGrid.SelectAble = false;
-
+            UsersGrid.DisplayLimit = 3;
 
             UsersGrid.HeaderFontColor = Color.White;
             UsersGrid.HeaderBackGroundColor = ChestVault.Me.customizeableUsers.ButtHoverColor;
@@ -234,6 +232,7 @@ namespace ChestVault
         public void LoadItemsGrid()
         {
             ItemsGrid.SelectAble = false;
+            ItemsGrid.DisplayLimit = 10;
 
             ItemsGrid.HeaderFontColor = Color.White;
             ItemsGrid.HeaderBackGroundColor = ChestVault.Me.customizeableUsers.ButtHoverColor;

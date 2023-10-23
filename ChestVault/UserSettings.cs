@@ -183,7 +183,6 @@ namespace ChestVault
             this.Hide();
             ChestVault.Me.MainForm.FillNewWindow(ChestVault.Me.MainForm.SidePanel);
         }
-
         // Save User Info
         private async void button8_Click(object sender, EventArgs e)
         {

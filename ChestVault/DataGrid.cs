@@ -12,6 +12,7 @@ namespace ChestVault
     public class DataGrid
     {
         public bool SelectAble = true;
+        public int DisplayLimit;
         public int Selected = -1;
         public int DoubleClick = -1;
 
@@ -53,6 +54,7 @@ namespace ChestVault
         {
             SelectAble = true;
             Precion = 2;
+            DisplayLimit = 0;
 
             FormColor = Color.FromArgb(31, 31, 31);
 
@@ -103,6 +105,10 @@ namespace ChestVault
                 CreateHeader(i);
                 for (int x = 0; x < Column[i].Text.Count; x++)
                 {
+                    if (DisplayLimit != 0)
+                    {
+                        if (i >= DisplayLimit) return;
+                    }
                     YHeigth = Column[i].LabelSize.Height * Column[i].Text.Count;
                     CreateLabel(i, x);
                 }
@@ -136,13 +142,16 @@ namespace ChestVault
             }
             for (int i = 0; i < Column.Count;i++)
             {
-               
                 if (Column[i].dataType == DataGridColumn.DataType.Double) Column[i] = DoubleTrim(Column[i]);
 
                 Column[i].Label[0].Text = Column[i].HeaderTitle;
                 int x = 1;
                 for(; x < Column[i].Label.Count;x++)
                 {
+                    if (DisplayLimit != 0)
+                    {
+                        if (x >= DisplayLimit) break ;
+                    }
                     if (Column[i].Text.Count >= x)
                     {
                         Column[i].Label[x].Text = Column[i].Text[x - 1];
@@ -152,6 +161,10 @@ namespace ChestVault
                 }
                 for (x -= 1; x < Column[i].Text.Count; x++)
                 {
+                    if (DisplayLimit != 0)
+                    {
+                        if (x >= DisplayLimit) break;
+                    }
                     CreateLabel(i, x);
                 }              
             }
