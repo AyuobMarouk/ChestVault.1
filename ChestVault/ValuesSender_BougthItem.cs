@@ -30,7 +30,7 @@ namespace ChestVault
 
         private void ValuesSender_BougthItem_Load(object sender, EventArgs e)
         {
-            comboBox1.Text = "شراء صندوق";
+            comboBox1.Text = "شراء قطع";
         }
         public async void LoadData(BoughtItemsSchema Item,Controls_Buy_Recite form)
         {
@@ -40,8 +40,8 @@ namespace ChestVault
             label4.Text = "الصندوق يحتوي علي :" + item[0].BoxSize.ToString();
             reciteForms = form;
             textBox2.Text = Item.Name;
-            textBox4.Text = (Item.Amount / item[0].BoxSize).ToString();
-            textBox7.Text = (Item.BuyPrice * item[0].BoxSize).ToString();
+            textBox4.Text = Item.Amount.ToString();
+            textBox7.Text = Item.BuyPrice.ToString();
             textBox1.Text = Item.SellPrice.ToString();
 
             Item.SellPrice = item[0].SellPrice;
@@ -64,15 +64,16 @@ namespace ChestVault
                     DialogResult resoult = ChestVault.Me.MessageBox("لا يمكنك الشراء عن طريق الصندوق إذا كانت كمية الصندوق 0", "شراء", Controls_Dialogue.ButtonsType.Ok);
                     return;
                 }
-                NewItem.Amount = (double.Parse(textBox4.Text) * item[0].BoxSize);
-                NewItem.BuyPrice = (double.Parse(textBox7.Text) / item[0].BoxSize);
+                NewItem.Amount = (textBox4.Text != "")?(double.Parse(textBox4.Text) * item[0].BoxSize) : 0;
+                NewItem.BuyPrice = (textBox7.Text != "")?(double.Parse(textBox7.Text) / item[0].BoxSize) : 0;
             }
             else
             {
                 NewItem.Amount = double.Parse(textBox4.Text);
                 NewItem.BuyPrice = double.Parse(textBox7.Text);
             }
-            NewItem.ExpDate = (checkBox1.Checked)? dateTimePicker1.Value : dateTimePicker1.MaxDate;
+            NewItem.ExpDate = (checkBox1.Checked)? dateTimePicker1.Value : DateTime.MaxValue;
+            NewItem.SellPrice = (textBox1.Text != "") ? (double.Parse(textBox1.Text)) : 0;
 
             ChestVault.Me.BuyNewRecite.AddNewItemToRecite(NewItem);
             ChestVault.Me.BuyNewRecite.Enabled = true;

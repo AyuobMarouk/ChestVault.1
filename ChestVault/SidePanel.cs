@@ -19,7 +19,6 @@ namespace ChestVault
         public List<Form> MinimizedForms = new List<Form>();
         public List<Button> MiniButtons = new List<Button>();
 
-
         public List<Button> MainButtons = new List<Button>();
         public List<Button> SideButtons = new List<Button>();
 
@@ -195,7 +194,7 @@ namespace ChestVault
 
             for (int i = 0; i < MiniButtons.Count; i++)
             {
-                if(i < MinimizedForms.Count)
+                if(i < MinimizedForms.Count && MinimizedForms[i] != null)
                 {
                     if(MinimizedForms.Count -1 == i) MiniButtons[i].Text = formname;
                     MiniButtons[i].Visible = true;
@@ -214,11 +213,20 @@ namespace ChestVault
             MiniButtons[ChestVault.Me.DisplayedMiniWindow].Visible = false;
 
             ChestVault.Me.MainForm.ClearComboBox();
-
             for(int i = 0; i < MiniButtons.Count ; i++)
             {
-                if (i < MinimizedForms.Count) ChestVault.Me.MainForm.addComboBox(MiniButtons[i].Text);
+               if (MiniButtons[i].Visible == true) ChestVault.Me.MainForm.addComboBox(MiniButtons[i].Text);
             }
+
+           
+            for(int x = 0; x < MinimizedForms.Count; x++)
+            {
+                if(MinimizedForms[x] != null)
+                {
+                    return;
+                }
+            }
+            MinimizedForms.Clear();
         }
         public void MiniButtonsClick(object sender, EventArgs e)
         {

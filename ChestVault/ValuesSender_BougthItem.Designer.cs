@@ -79,7 +79,7 @@ namespace ChestVault
             this.textBox4.Name = "textBox4";
             this.textBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBox4.Size = new System.Drawing.Size(167, 20);
-            this.textBox4.TabIndex = 29;
+            this.textBox4.TabIndex = 1;
             this.textBox4.Text = "0";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
@@ -112,10 +112,10 @@ namespace ChestVault
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(157, 150);
             this.dateTimePicker1.MaxDate = new System.DateTime(8888, 8, 8, 0, 0, 0, 0);
-            this.dateTimePicker1.MinimumSize = new System.Drawing.Size(1, 0);
+            this.dateTimePicker1.MinimumSize = new System.Drawing.Size(4, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(168, 20);
-            this.dateTimePicker1.TabIndex = 46;
+            this.dateTimePicker1.TabIndex = 4;
             // 
             // label10
             // 
@@ -146,7 +146,7 @@ namespace ChestVault
             this.textBox7.Name = "textBox7";
             this.textBox7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBox7.Size = new System.Drawing.Size(186, 20);
-            this.textBox7.TabIndex = 41;
+            this.textBox7.TabIndex = 2;
             this.textBox7.Text = "0";
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
@@ -176,7 +176,7 @@ namespace ChestVault
             this.button2.MinimumSize = new System.Drawing.Size(1, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(186, 41);
-            this.button2.TabIndex = 49;
+            this.button2.TabIndex = 5;
             this.button2.Text = "أضافة";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -243,7 +243,7 @@ namespace ChestVault
             this.textBox1.Name = "textBox1";
             this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBox1.Size = new System.Drawing.Size(186, 20);
-            this.textBox1.TabIndex = 62;
+            this.textBox1.TabIndex = 3;
             this.textBox1.Text = "0";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);

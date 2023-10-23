@@ -23,11 +23,13 @@ namespace ChestVault
         List<ItemsSchema> SearchedItem;
         private void Private_QRCode_Load(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             Check();
+            textBox1.Select();
         }
-
         public async void Check()
         {
+            if (ChestVault.Me.QrCodeItem == "") return;
             SearchedItem = await db.GetItemByQR(ChestVault.Me.QrCodeItem);
 
             if (SearchedItem.Count == 0) return;
@@ -36,6 +38,7 @@ namespace ChestVault
             for (int i = 1; i < SearchedItem[0].QRcode.Count; i++)
             {
                 listBox1.Items.Add(SearchedItem[0].QRcode[i]);
+                
             }
         }
 

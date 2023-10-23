@@ -227,6 +227,8 @@ namespace ChestVault
             }
             return (string[])list.Split(',');
         }
+
+
         public async Task<List<PurchaseSchema>> GetAllPurches()
         {
             var Purches = ConnectToMongo<PurchaseSchema>(PurchesCollection);
@@ -331,60 +333,77 @@ namespace ChestVault
         public async Task<bool> UpdatePurches(PurchaseSchema purches)
         {
             var Purches = ConnectToMongo<PurchaseSchema>(PurchesCollection);
-            //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@/
             var oldPurch = await GetPurches(purches.Number);
             var items = new List<ItemsSchema>();
-            double total = 0;
+            if (purches.Items.Count < oldPurch.First<PurchaseSchema>().Items.Count) return false;
             foreach (var item in purches.Items)
             {
-                total += item.Amount * item.BuyPrice;
-
-                bool exist = false;
-                foreach (var old in oldPurch.First().Items)
+                var newItem = await GetItem(item.Name);
+                items.Add(newItem.First<ItemsSchema>());
+                bool notFound = true;
+                foreach (var item1 in oldPurch.First<PurchaseSchema>().Items)
                 {
-                    if (item.Id == old.Id)
+                    if (item.Id == item1.Id && item1.Amount != 0)
                     {
-                        exist = true;
-                        break;
+                        foreach (var info in items.Last<ItemsSchema>().Info)
+                        {
+                            if (item1.ExpDate == info.ExpDate && item1.BuyPrice == info.BuyPrice)
+                            {
+                                info.BuyPrice = item.BuyPrice;
+                                info.ExpDate = item.ExpDate;
+                                info.Amount += item.Amount - item1.Amount;
+                                items.Last().SellPrice = item.SellPrice;
+                                if (info.Amount < 0) return false;
+                                if (info.Amount == 0) items.Last<ItemsSchema>().Info.Remove(info);
+                                break;
+                            }
+                        }
+                        notFound = false;
                     }
                 }
-                if (!exist)
-                { continue; }
-                var t = await GetItem(item.Name);
-                var tmp = t.First();
-                for (int i = 0; i < tmp.Info.Count(); i++)
+                if (notFound)
                 {
-                    bool yes = false;
-                    if (tmp.Info[i].ExpDate == item.ExpDate && tmp.Info[i].BuyPrice == item.BuyPrice)
-                    {
-                        if (tmp.Info[i].Amount >= item.Amount)
-                        {
-                            tmp.Info[i].Amount -= item.Amount;
-                            if (tmp.Info[i].Amount == 0)
-                            {
-                                tmp.Info.RemoveAt(i);
-                            }
-                            items.Add(tmp);
-                            yes = true;
-                            break;
-                        }
-                    }
-                    if (!yes)
-                    { return (false); }
+                    var newInfo = new ItemInfo();
+                    newInfo.Amount = item.Amount;
+                    newInfo.BuyPrice = item.BuyPrice;
+                    newInfo.ExpDate = item.ExpDate;
+                    items.Last<ItemsSchema>().SellPrice = item.SellPrice;
+                    items.Last<ItemsSchema>().Info.Add(newInfo);
                 }
             }
             foreach (var item in items)
             {
                 await UpdateItem(item);
             }
-            purches.Total = total;
-            purches.Dept = total - purches.Paid;
-            //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@/
             var fitler = Builders<PurchaseSchema>.Filter.Eq("Id", purches.Id);
             await Purches.ReplaceOneAsync(fitler, purches, new ReplaceOptions { IsUpsert = true });
             return (true);
         }
 
+        public async Task UpdateAll()
+        {
+            var purches = await GetAllPurches();
+            var items = await GetAllItems();
+            foreach (var purech in purches.ToList<PurchaseSchema>())
+            {
+                foreach (var pur in purech.Items)
+                {
+                    foreach (var item in items.ToList<ItemsSchema>())
+                    {
+                        if (pur.Name == item.Name)
+                        {
+                            if (item.SellPrice == 0)
+                            {
+                                item.SellPrice = pur.SellPrice;
+                                await UpdateItem(item);
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
         public async Task<BoughtItemsSchema> GetSoldItem(string name)
         {
             var Purches = ConnectToMongo<PurchaseSchema>(PurchesCollection);
@@ -401,8 +420,7 @@ namespace ChestVault
                 }
             }
             return null;
-        }
-
+        }  
         public async Task<List<double>> GetItemHistory(string name, bool buy)
         {
             List<double> history = new List<double>();
@@ -444,8 +462,6 @@ namespace ChestVault
             }
             return (history);
         }
-
-
         #endregion
 
         #region Sold Recite
@@ -614,6 +630,13 @@ namespace ChestVault
         #endregion
 
         #region DebtMenu
+
+        public async Task AddCustomer(DeptSchema customer)
+        {
+            var Item = ConnectToMongo<DeptSchema>(DebtCollection);
+            await Item.InsertOneAsync(customer);
+            return;
+        }
         public async Task<List<DeptSchema>> GetAllCustomers()
         {
             var name = ConnectToMongo<DeptSchema>(DebtCollection);

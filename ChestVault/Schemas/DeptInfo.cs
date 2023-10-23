@@ -9,5 +9,6 @@ namespace ChestVault.Schemas
         public double Paid { get; set; }
         public double Dept { get; set; }
         public string Type { get; set; }
+        public int ReciteNumber { get; set; }
     }
 }

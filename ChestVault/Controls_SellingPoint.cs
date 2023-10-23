@@ -399,24 +399,56 @@ namespace ChestVault
 
             await db.AddRecit(newRecite);
             ChestVault.Me.AddActivity("تمت بيع فاتورة جديدة رقم " + newRecite.Number, "Sold Receit");
-            if (comboBox3.Text != "زبون عام" && newRecite.Total != newRecite.Paid)
+            if (comboBox3.Text != "زبون عام")
             {
-                List<DeptSchema> customer = await db.GetCustomer(comboBox3.Text);
+                if (newRecite.Total != newRecite.Paid)
+                {
+                    List<DeptSchema> customer = await db.GetCustomer(comboBox3.Text);
 
-                DeptInfo newinfo = new DeptInfo();
-                newinfo.Date = DateTime.Now;
-                newinfo.Amount = newRecite.Total;
-                newinfo.Paid = newRecite.Paid;
-                newinfo.User = ChestVault.Me.CurrentUser.Name;
-                newinfo.Dept = newinfo.Amount - newinfo.Paid;
-                newinfo.Type = "بضاعة";
-                customer[0].Info.Add(newinfo);
+                    
+                    if (customer.Count == 0)
+                    {
+                        customer = new List<DeptSchema>();
+                        DeptSchema newCustomer = new DeptSchema();
+                        newCustomer.Paid = 0;
+                        newCustomer.Dept = 0;
+                        newCustomer.Total = 0;
+                        newCustomer.Name = comboBox3.Text;
+                        newCustomer.Title = "زبون";
+                        newCustomer.Info = new List<DeptInfo>();
 
-                customer[0].Paid += newinfo.Paid;
-                customer[0].Total += newinfo.Amount;
+                        customer.Add(newCustomer);
+                        await db.AddCustomer(newCustomer);
+                    }
+                        DeptInfo newinfo = new DeptInfo();
+                        newinfo.Date = DateTime.Now;
+                        newinfo.Amount = newRecite.Total;
+                        newinfo.Paid = newRecite.Paid;
+                        newinfo.User = ChestVault.Me.CurrentUser.Name;
+                        newinfo.Dept = newinfo.Amount - newinfo.Paid;
+                        newinfo.Type = "بضاعة";
+                        newinfo.ReciteNumber = newRecite.Number;
 
-                customer[0].Dept = customer[0].Total - customer[0].Paid;
-                await db.UpdateCustomer(customer[0]);
+                        if (customer[0].Info == null) customer[0].Info = new List<DeptInfo>();
+                        customer[0].Info.Add(newinfo);
+                        customer[0].Paid += newinfo.Paid;
+                        customer[0].Total += newinfo.Amount;
+
+                        customer[0].Dept = customer[0].Total - customer[0].Paid;
+                        await db.UpdateCustomer(customer[0]);
+                }
+                else
+                {
+                    DeptSchema newCustomer = new DeptSchema();
+                    newCustomer.Paid = 0;
+                    newCustomer.Dept = 0;
+                    newCustomer.Total = 0;
+                    newCustomer.Name = comboBox3.Text;
+                    newCustomer.Title = "زبون";
+                    newCustomer.Info = new List<DeptInfo>();
+
+                    await db.AddCustomer(newCustomer);
+                }
             }
             foreach (SoldItemsSchema item in inSellReceit[CurrentReceit].inSellReceit)
             {
@@ -437,12 +469,11 @@ namespace ChestVault
                 await db.UpdateItem(items[0]);
             }
 
-            
             RemoveReceit();
             Calculate();
             ChangeReciteNumbers(newRecite.Number);
             SwitchRecites(CurrentReceit);
-
+            LoadCustomersComboBox();
 
         }
 

@@ -1,0 +1,406 @@
+c:\users\hp\documents\visual studio 2012\Projects\ChestVault\ChestVault\bin\Debug\ChestVault.exe.config
+c:\users\hp\documents\visual studio 2012\Projects\ChestVault\ChestVault\bin\Debug\ChestVault.exe
+c:\users\hp\documents\visual studio 2012\Projects\ChestVault\ChestVault\bin\Debug\ChestVault.pdb
+c:\users\hp\documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.Properties.Resources.resources
+c:\users\hp\documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.GenerateResource.Cache
+c:\users\hp\documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.exe
+c:\users\hp\documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.pdb
+C:\Users\HP\documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Items.resources
+C:\Users\HP\documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_LoginForm.resources
+C:\Users\HP\documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_MainMenu.resources
+C:\Users\HP\documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_SellingPoint.resources
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.CopyComplete
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\mongocrypt.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\AWSSDK.Core.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\AWSSDK.SecurityToken.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\DnsClient.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\MongoDB.Bson.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\MongoDB.Libmongocrypt.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\SharpCompress.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\Snappier.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\System.Buffers.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\System.Memory.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\System.Security.AccessControl.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\System.Text.Encoding.CodePages.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\ZstdSharp.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\AWSSDK.Core.pdb
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\AWSSDK.Core.xml
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\AWSSDK.SecurityToken.pdb
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\AWSSDK.SecurityToken.xml
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\DnsClient.xml
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\MongoDB.Bson.xml
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.xml
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\Snappier.xml
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\System.Buffers.xml
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\System.Memory.xml
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\System.Security.AccessControl.xml
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Recites_Bougth.resources
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.Private_QRCode.resources
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Buy_Recite.resources
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.ValuesSender_BougthItem.resources
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.FastSell_Settings.resources
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_ReciteSold.resources
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_StatsAnalyytics.resources
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Activites.resources
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\bin\Debug\ChestVault.exe.manifest
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\bin\Debug\ChestVault.application
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.exe.manifest
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.application
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.ActivateSystem.resources
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.UserSettings.resources
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_AllItems.resources
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.DataGridForm.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\mongocrypt.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\ChestVault.exe.config
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\ChestVault.exe.manifest
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\ChestVault.application
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\ChestVault.exe
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\ChestVault.pdb
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\AWSSDK.Core.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\AWSSDK.SecurityToken.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\DnsClient.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\MongoDB.Bson.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\MongoDB.Libmongocrypt.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\SharpCompress.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\Snappier.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\System.Buffers.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\System.Memory.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\System.Security.AccessControl.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\System.Text.Encoding.CodePages.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\ZstdSharp.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\AWSSDK.Core.pdb
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\AWSSDK.Core.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\AWSSDK.SecurityToken.pdb
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\AWSSDK.SecurityToken.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\DnsClient.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\MongoDB.Bson.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\Snappier.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\System.Buffers.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\System.Memory.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\System.Security.AccessControl.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.AssemblyReference.cache
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.SuggestedBindingRedirects.cache
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.ActivateSystem.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Buttons_Inventory.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Buttons_Settings.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Activites.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_AllItems.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Buy_Recite.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Items.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_ReciteSold.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Recites_Bougth.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_StatsAnalyytics.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.DataGridForm.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Dialogue_CloseApplication.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Dialogue_Message.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Display_Activities.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Display_BougthRecites.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Display_ItemsInfo.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Display_ReciteInfo.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Display_SellingPoint.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Display_SoldRecites.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Display_SoldRecitesStats.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.FastSell_Buttons.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.FastSell_Settings.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Hover_DisplayName.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_LoginForm.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_MainMenu.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Private_QRCode.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Properties.Resources.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_SellingPoint.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.SellingPoint_FastSellButtons.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.UserSettings.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.ValuesSender_BougthItem.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.GenerateResource.cache
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.CoreCompileInputs.cache
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.exe.manifest
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.application
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.CopyComplete
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.exe
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\ChestVault\obj\Debug\ChestVault.pdb
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.AssemblyReference.cache
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.SuggestedBindingRedirects.cache
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.ActivateSystem.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.Buttons_Inventory.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.Buttons_Settings.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Activites.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_AllItems.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Buy_Recite.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Items.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_ReciteSold.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Recites_Bougth.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_StatsAnalyytics.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.DataGridForm.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.Dialogue_CloseApplication.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.Dialogue_Message.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.FastSell_Buttons.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.FastSell_Settings.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.Hover_DisplayName.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_LoginForm.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_MainMenu.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.Private_QRCode.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.Properties.Resources.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_SellingPoint.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.SellingPoint_FastSellButtons.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.UserSettings.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.ValuesSender_BougthItem.resources
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.GenerateResource.cache
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.CoreCompileInputs.cache
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.exe
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.pdb
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\mongocrypt.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\ChestVault.exe.config
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\ChestVault.exe.manifest
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\ChestVault.application
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\ChestVault.exe
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\ChestVault.pdb
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\AWSSDK.Core.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\AWSSDK.SecurityToken.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\DnsClient.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\MongoDB.Bson.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\MongoDB.Libmongocrypt.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\SharpCompress.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\Snappier.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\System.Buffers.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\System.Memory.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\System.Security.AccessControl.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\System.Text.Encoding.CodePages.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\ZstdSharp.dll
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\AWSSDK.Core.pdb
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\AWSSDK.Core.xml
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\AWSSDK.SecurityToken.pdb
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\AWSSDK.SecurityToken.xml
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\DnsClient.xml
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.xml
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\MongoDB.Bson.xml
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.xml
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\Snappier.xml
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\System.Buffers.xml
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\System.Memory.xml
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\System.Security.AccessControl.xml
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.exe.manifest
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.application
+C:\Users\ajwad\Source\Repos\AyuobMarouk\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.CopyComplete
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\mongocrypt.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\ChestVault.exe.config
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\ChestVault.exe.manifest
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\ChestVault.application
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\ChestVault.exe
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\ChestVault.pdb
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\AWSSDK.Core.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\AWSSDK.SecurityToken.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\DnsClient.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\MongoDB.Bson.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\MongoDB.Libmongocrypt.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\SharpCompress.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\Snappier.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\System.Buffers.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\System.Memory.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\System.Security.AccessControl.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\System.Text.Encoding.CodePages.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\ZstdSharp.dll
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\AWSSDK.Core.pdb
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\AWSSDK.Core.xml
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\AWSSDK.SecurityToken.pdb
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\AWSSDK.SecurityToken.xml
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\DnsClient.xml
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\MongoDB.Bson.xml
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.xml
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\Snappier.xml
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\System.Buffers.xml
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\System.Memory.xml
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\System.Security.AccessControl.xml
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.AssemblyReference.cache
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.ActivateSystem.resources
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Activites.resources
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_AllItems.resources
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Buy_Recite.resources
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Items.resources
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_ReciteSold.resources
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Recites_Bougth.resources
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_StatsAnalyytics.resources
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.DataGridForm.resources
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.FastSell_Settings.resources
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_LoginForm.resources
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_MainMenu.resources
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.Private_QRCode.resources
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.Properties.Resources.resources
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_SellingPoint.resources
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.UserSettings.resources
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.ValuesSender_BougthItem.resources
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.GenerateResource.cache
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.CoreCompileInputs.cache
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.exe.manifest
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.application
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.CopyComplete
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.exe
+C:\Users\game arena\Source\Repos\ChestVault\ChestVault\obj\Debug\ChestVault.pdb
+C:\Users\game arena\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Accountant.resources
+C:\Users\game arena\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.SidePanel.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\mongocrypt.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\ChestVault.exe.config
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\ChestVault.exe.manifest
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\ChestVault.application
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\ChestVault.exe
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\ChestVault.pdb
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\AWSSDK.Core.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\AWSSDK.SecurityToken.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\DnsClient.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\MongoDB.Bson.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\MongoDB.Libmongocrypt.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\SharpCompress.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\Snappier.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\System.Buffers.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\System.Memory.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\System.Security.AccessControl.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\System.Text.Encoding.CodePages.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\ZstdSharp.dll
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\AWSSDK.Core.pdb
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\AWSSDK.Core.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\AWSSDK.SecurityToken.pdb
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\AWSSDK.SecurityToken.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\DnsClient.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\MongoDB.Bson.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\Snappier.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\System.Buffers.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\System.Memory.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\System.Security.AccessControl.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.AssemblyReference.cache
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.ActivateSystem.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Accountant.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Activites.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_AllItems.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Buy_Recite.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Items.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_ReciteSold.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Recites_Bougth.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_StatsAnalyytics.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.DataGridForm.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.FastSell_Settings.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_LoginForm.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_MainMenu.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.Private_QRCode.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.Properties.Resources.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_SellingPoint.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.SidePanel.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.UserSettings.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.ValuesSender_BougthItem.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.GenerateResource.cache
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.CoreCompileInputs.cache
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.exe.manifest
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.application
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.csproj.CopyComplete
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.exe
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.pdb
+C:\Users\game arena\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Dialogue.resources
+C:\Users\game arena\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.UserSettings_Colors.resources
+C:\Users\game arena\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.UserSettings_Access.resources
+C:\Users\game arena\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.SellingPoint_Display.resources
+C:\Users\game arena\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.SellingPoint_Search.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Dialogue.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.SellingPoint_Display.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.SellingPoint_Search.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.UserSettings_Access.resources
+C:\Users\ajwad\source\repos\ChestVault\ChestVault\obj\Debug\ChestVault.UserSettings_Colors.resources
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Accountant.resources
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.Controls_Dialogue.resources
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.SellingPoint_Display.resources
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.SellingPoint_Search.resources
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.SidePanel.resources
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.UserSettings_Access.resources
+C:\Users\HP\Documents\visual studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.UserSettings_Colors.resources

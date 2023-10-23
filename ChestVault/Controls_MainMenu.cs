@@ -109,9 +109,10 @@ namespace ChestVault
         {
             if (comboBox1.Text == "") return;
             if (SidePanel.MiniButtons[comboBox1.SelectedIndex].Text == "فاتروة مشتريات جديدة") ChestVault.Me.EditReciteSchema = true;
-            else if (SidePanel.MiniButtons[comboBox1.SelectedIndex].Text == "كافة الاصناف") (SidePanel.MinimizedForms[comboBox1.SelectedIndex] as Controls_AllItems).DrawGraphs();
             SidePanel.MinimizedForms[comboBox1.SelectedIndex].Show();
             ChestVault.Me.DisplayedMiniWindow = comboBox1.SelectedIndex;
+
+            MessageBox.Show(comboBox1.SelectedIndex.ToString());
         }
     }
 }

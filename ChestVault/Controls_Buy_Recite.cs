@@ -39,24 +39,42 @@ namespace ChestVault
             if(checkBox1.Checked) SearchedItem = await db.GetItem(Value);
             else SearchedItem = await db.GetItemByQR(Value);
 
+
             if (SearchedItem.Count == 0)
             {
-                DialogResult resoult = ChestVault.Me.MessageBox("هذا الصنف غير موجود", "أضافة صنف للفاتورة", Controls_Dialogue.ButtonsType.Ok);
+                Controls_Items itemform = new Controls_Items();
+                itemform.Show();
                 return;
             }
-            ChestVault.Me.BuyNewRecite = this;
 
             BoughtItemsSchema item = new BoughtItemsSchema();
-            item.Name = SearchedItem[0].Name;
-            item.Id = SearchedItem[0].Id;
-            item.Amount = 0;
-            item.SellPrice = 0;
-            item.BuyPrice = 0;
-            item.ExpDate = DateTime.Now;
+            bool Add = true;
+            for (int i = 0; i < Recite_items_ToAdd.Count; i++)
+            {
+                if (SearchedItem[0].Name == Recite_items_ToAdd[i].Name)
+                {
+                    item = Recite_items_ToAdd[i];
+                    Add = false;
+                    break;
+                }
+            }
+
+            ChestVault.Me.BuyNewRecite = this;
+            if (Add)
+            {
+                item.Name = SearchedItem[0].Name;
+                item.Id = SearchedItem[0].Id;
+                item.Amount = 0;
+                item.SellPrice = 0;
+                item.BuyPrice = 0;
+                item.ExpDate = DateTime.Now;
+            }
+            
             ValuesSender_BougthItem form = new ValuesSender_BougthItem();
             form.LoadData(item,this);
             this.Enabled = false;
             form.Show();
+            textBox1.Text = "";
 
         }
         public void LoadDataGrid()
@@ -187,7 +205,7 @@ namespace ChestVault
             // Adding Recite
             PurchaseSchema NewRecite = new PurchaseSchema();
 
-            NewRecite.Number = AllRecites[AllRecites.Count - 1].Number + 1;
+            NewRecite.Number = AllRecites.Count + 1;
             NewRecite.Paid = double.Parse(textBox2.Text);
             NewRecite.Total = double.Parse(label3.Text);
             NewRecite.Date = (DateTime.Now.Year * 10000) + (DateTime.Now.Month * 100) + DateTime.Now.Day;
@@ -341,6 +359,7 @@ namespace ChestVault
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            if (textBox2.Text.Last().ToString() == ".") return;
             if (textBox2.Text == "") { textBox2.Text = "0"; return;}
             if (!ChestVault.Me.EditReciteSchema)
             {
@@ -368,7 +387,13 @@ namespace ChestVault
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+           (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }
@@ -376,7 +401,7 @@ namespace ChestVault
 
         private async void button7_Click(object sender, EventArgs e)
         {
-            if(comboBox1.Text == "")
+            if (comboBox1.Text == "")
             {
                 DialogResult resoult = ChestVault.Me.MessageBox("لا يوجد موزع", "حفظ فاتورة", Controls_Dialogue.ButtonsType.Ok);
                 return;
@@ -404,7 +429,7 @@ namespace ChestVault
                 if (AllRecites.Count == 0)
                     NewRecite.Number = 1;
                 else
-                    NewRecite.Number = AllRecites[AllRecites.Count - 1].Number + 1;
+                    NewRecite.Number = AllRecites.Count + 1;
 
                 NewRecite.Paid = double.Parse(textBox2.Text);
                 NewRecite.Total = double.Parse(label3.Text);
@@ -427,12 +452,20 @@ namespace ChestVault
 
                     if (updateitem[0].Info == null) updateitem[0].Info = new List<ItemInfo>();
 
+                    updateitem[0].SellPrice = a.SellPrice;
                     updateitem[0].Info.Add(adding);
 
                     await db.UpdateItem(updateitem[0]);
             
                 }
-                DialogResult resoult = ChestVault.Me.MessageBox("تم حفظ الفاتورة بنجاح", "حفظ فاتورة", Controls_Dialogue.ButtonsType.Ok);
+                ChestVault.Me.MessageBox("تم حفظ الفاتورة بنجاح", "حفظ فاتورة", Controls_Dialogue.ButtonsType.Ok);
+                if (Saved)
+                {
+                    ChestVault.Me.MainForm.SidePanel.CloseMiniMenu();
+                }
+                ChestVault.Me.EditReciteSchema = false;
+                ChestVault.Me.MainForm.Enabled = true;
+                this.Hide();
             }
             else
             {
@@ -449,40 +482,19 @@ namespace ChestVault
                 EditRecite.Items = Recite_items_ToAdd;
 
                 bool Adding = await db.UpdatePurches(EditRecite);
-                ChestVault.Me.AddActivity("تم التعديل علي الفاتورة رقم " + EditRecite.Number.ToString(), "Update Bougth Recite");
                 if (Adding)
                 {
-                    foreach (BoughtItemsSchema a in EditRecite.Items)
+                    ChestVault.Me.AddActivity("تم التعديل علي الفاتورة رقم " + EditRecite.Number.ToString(), "Update Bougth Recite");
+                    
+                    ChestVault.Me.MessageBox("تم حفظ الفاتورة بنجاح", "تعديل فاتورة", Controls_Dialogue.ButtonsType.Ok);
+                    if (Saved)
                     {
-                        bool NewInfo = true;
-                        for (int i = 0; i < ReciteInWorkEdit.Items.Count; i++)
-                        {
-                            if (a.Name == ReciteInWorkEdit.Items[i].Name)
-                            {
-                                NewInfo = false;
-                                break;
-                            }
-                        }
-
-                        if (!NewInfo) continue;
-
-                        ItemInfo adding = new ItemInfo();
-                        adding.Amount = a.Amount;
-                        adding.BuyPrice = a.BuyPrice;
-                        adding.ExpDate = a.ExpDate;
-
-                        List<ItemsSchema> updateitem = await db.GetItem(a.Name);
-
-                        if (updateitem[0].Info == null) updateitem[0].Info = new List<ItemInfo>();
-
-                        updateitem[0].Info.Add(adding);
-
-                        await db.UpdateItem(updateitem[0]);
-
+                        ChestVault.Me.MainForm.SidePanel.CloseMiniMenu();
                     }
-                    DialogResult resoult = ChestVault.Me.MessageBox("تم حفظ الفاتورة بنجاح", "تعديل فاتورة", Controls_Dialogue.ButtonsType.Ok);
+                    ChestVault.Me.EditReciteSchema = false;
+                    ChestVault.Me.MainForm.Enabled = true;
+                    this.Hide();
                 }
-
                 else
                 {
                     DialogResult resoult = ChestVault.Me.MessageBox("لا يمكن تعديل الفاتورة", "تعديل فاتورة", Controls_Dialogue.ButtonsType.Ok);
@@ -537,6 +549,7 @@ namespace ChestVault
         private void Controls_Buy_Recite_TextChanged(object sender, EventArgs e)
         {
             ChestVault.Me.BuyNewRecite = this;
+           
 
             BoughtItemsSchema item = Recite_items_ToAdd[dataGrid.DoubleClick];
             ValuesSender_BougthItem form = new ValuesSender_BougthItem();

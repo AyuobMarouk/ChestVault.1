@@ -187,6 +187,7 @@ namespace ChestVault
                 }
             ChestVault.Me.QrCodeItem = textBox1.Text;
             DrawGraphs(textBox2.Text);
+            textBox2.Select();
         }
         private void textBox2_KeyDown(object sender, KeyEventArgs e)
         {
@@ -216,8 +217,8 @@ namespace ChestVault
         }
         private void Controls_Items_Load(object sender, EventArgs e)
         {
-            ResetFields();
             panel1.Controls.Add(dataGrid.DisplayForm(this));
+            ResetFields();
             DrawGraphs("");
         }
         private void ResetFields()
@@ -231,7 +232,8 @@ namespace ChestVault
             label9.Text = "0";
             label11.Text = "0";
             QRCodes.Clear();
-
+            LoadDataGrid(new List<ItemInfo>());
+            ChestVault.Me.QrCodeItem = string.Empty;
             button7.Enabled = true;
             button5.Enabled = false;
             button8.Enabled = false;
@@ -436,7 +438,6 @@ namespace ChestVault
                 e.Handled = true;
             }
         }
-
         private void textBox6_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -450,7 +451,6 @@ namespace ChestVault
                 e.Handled = true;
             }
         }
-
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -458,7 +458,6 @@ namespace ChestVault
                 e.Handled = true;
             }
         }
-
         private void Controls_Items_FormClosed(object sender, FormClosedEventArgs e)
         {
             ChestVault.Me.MainForm.Enabled = true;
@@ -468,7 +467,6 @@ namespace ChestVault
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
         private void TitlePanel_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
