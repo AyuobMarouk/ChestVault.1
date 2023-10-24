@@ -48,12 +48,10 @@ namespace ChestVault
 
             for (int i = 0; i < SearchedItems.Count; i++)
             {
-                itemname.Text.Add(SearchedItems[i].Name.ToString());
-                price.Text.Add(SearchedItems[i].SellPrice.ToString());
-
-                BoxPrice.Text.Add(SearchedItems[i].BoxSellPrice.ToString());
+                    itemname.Text.Add(SearchedItems[i].Name.ToString());
+                    price.Text.Add(SearchedItems[i].SellPrice.ToString());
+                    BoxPrice.Text.Add(SearchedItems[i].BoxSellPrice.ToString());
             }
-
             if (dataGrid.Column.Count <= 0)
             {
                 dataGrid.Column = new List<DataGridColumn>();
@@ -93,6 +91,7 @@ namespace ChestVault
         {
             if (dataGrid.Selected >= 0)
             {
+                if (dataGrid.Selected > SearchedItems.Count) return;
                 label1.Text = SearchedItems[dataGrid.Selected].Name.ToString();
                 double sum = 0;
                 foreach (var item in SearchedItems[dataGrid.Selected].Info)
@@ -178,6 +177,5 @@ namespace ChestVault
 
             ChestVault.Me.MainForm.sellingpoint.sellingPoint.LoadDataGrid(ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit);
         }
-
     }
 }

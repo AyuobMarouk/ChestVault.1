@@ -17,23 +17,14 @@ namespace ChestVault
             InitializeComponent();
         }
         public DataGrid ThisDataGrid;
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-        }
-
         private void button23_Click(object sender, EventArgs e)
         {
             if (ThisDataGrid.CurrentPage < ThisDataGrid.LastPage - 1)
             {
                 ThisDataGrid.CurrentPage++;
                 ThisDataGrid.ReloadDataGrid();
+                DisplayData();
             }
-
-            textBox1.Text = (ThisDataGrid.CurrentPage + 1).ToString();
         }
 
         private void button22_Click(object sender, EventArgs e)
@@ -43,8 +34,6 @@ namespace ChestVault
                 ThisDataGrid.CurrentPage--;
                 ThisDataGrid.ReloadDataGrid();
             }
-
-            textBox1.Text = (ThisDataGrid.CurrentPage + 1).ToString();
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
@@ -58,6 +47,17 @@ namespace ChestVault
                     ThisDataGrid.ReloadDataGrid();
                 }
             }
+        }
+
+        public void DisplayData()
+        {
+            label1.Text = (ThisDataGrid.CurrentPage * ThisDataGrid.DisplayLimit).ToString() + "/" + (ThisDataGrid.Column[0].Text.Count).ToString();
+            textBox1.Text = (ThisDataGrid.CurrentPage + 1).ToString();
+
+            textBox1.Left = (SettingsPanel.Size.Width / 2) - (textBox1.Size.Width / 2);
+            button23.Left = (SettingsPanel.Size.Width / 2) + (textBox1.Size.Width / 2);
+            button22.Left = (SettingsPanel.Size.Width / 2) - (textBox1.Size.Width / 2) - button22.Size.Width;
+            label1.Left = SettingsPanel.Size.Width - label1.Size.Width;
         }
     }
 }

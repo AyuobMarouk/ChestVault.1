@@ -58,7 +58,7 @@ namespace ChestVault
 
             Item.SellPrice = item[0].SellPrice;
 
-            dateTimePicker1.Value = Item.ExpDate;
+            dateTimePicker1.Value = Item.ExpDate.ToString() != "12/31/9999 11:59:59 PM"? Item.ExpDate : dateTimePicker1.MaxDate;
             if (dateTimePicker1.Value == dateTimePicker1.MaxDate) checkBox1.Checked = false;
 
             NewItem = Item;
