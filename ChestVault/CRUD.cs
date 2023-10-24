@@ -16,8 +16,8 @@ namespace ChestVault
     public class CRUD
     {
 
-        private const string ConnectionString = "mongodb://169.254.134.180:27017";
-        //private const string ConnectionString = "mongodb://127.0.0.1:27017";
+        //private const string ConnectionString = "mongodb://169.254.134.180:27017";
+        private const string ConnectionString = "mongodb://127.0.0.1:27017";
 
         private const string DatabaseName = "vault";
         private const string UsersCollection = "users";

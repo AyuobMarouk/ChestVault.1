@@ -127,7 +127,7 @@ namespace ChestVault
             foreach (var item in itemsBuFastSell)
             {
                 List<ItemsSchema> items = new List<ItemsSchema>();
-                items = await db.GetItemby((Type == "")? null : Type, item.Name,null);
+                items = await db.GetItemby((Type == "")? null : Type, (item.Name == "")? null : item.Name,null);
                 SearchedItems.Add(items[0]);
             }
             LoadDataGrid();
