@@ -40,7 +40,6 @@ namespace ChestVault
                 comboBox1.Items.Add(a.Name);
             }
         }
-
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
             if(currentForm == CurrentForm.Colors)
@@ -51,40 +50,6 @@ namespace ChestVault
             {
                 LoadAccess();
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-           /* foreach (var a in comboBox1.Items)
-            {
-                if (a.ToString() == textBox1.Text)
-                {
-                    return;
-                }
-            }
-
-            UsersSchema newUser = new UsersSchema();
-            newUser.Name = textBox1.Text;
-            newUser.Password = textBox2.Text;
-
-            switch (comboBox4.Text)
-            {
-                case "بياع":
-                    newUser.Accessibility = "Cashier";
-                    break;
-                case "مدير مشتريات":
-                    newUser.Accessibility = "Manager";
-                    break;
-                case "تحليل بيانات":
-                    newUser.Accessibility = "Analysist";
-                    break;
-                case "مسؤل":
-                    newUser.Accessibility = "admin";
-                    break;
-            }
-            await db.AddUser(newUser);
-            DialogResult resoult = ChestVault.Me.MessageBox("تم أضافة مستخدم جديد", "مستخدم جديد", Controls_Dialogue.ButtonsType.Ok);
-            loadUsers();*/
         }
         private void UserSettings_Load(object sender, EventArgs e)
         {
@@ -127,55 +92,11 @@ namespace ChestVault
             AccessForm.Dock = DockStyle.Fill;
 
             AccessForm.Enabled = (ChestVault.Me.CurrentUser.Accessibility == "admin")?true : false;
-            //AccessForm.LoadColors(comboBox1.Text);
             currentForm = CurrentForm.Access;
         }
         private void button3_Click(object sender, EventArgs e)
         {
             LoadColorForm();
-            /* if(comboBox1.Text == "")
-             {
-                 DialogResult resoult = ChestVault.Me.MessageBox("يرجي اختيار مستخدم لتعديل", "تعديل مستخدم", Controls_Dialogue.ButtonsType.Ok);
-                 return;
-             }
-             List<UsersSchema> users = await db.GetUsers(comboBox1.Text);
-             bool exit = false;
-             foreach(UsersSchema a in users)
-             {
-                 if(a.Name != oldUsername)
-                 {
-                     exit = true;
-                 }
-             }
-             if(exit)
-             {
-
-                 DialogResult resoult = ChestVault.Me.MessageBox("هذا الاسم موجود بالفعل", "هذا الاسم موجود بالفعل", Controls_Dialogue.ButtonsType.Ok);
-                 return;
-             }
-
-             List<UsersSchema> updateuser = await db.GetUsers(oldUsername);
-             updateuser[0].Name = comboBox1.Text;
-             updateuser[0].Password = textBox3.Text;
-
-             if(updateuser[0].Name != "admin")
-             switch (comboBox2.Text)
-             {
-                 case "بياع":
-                     updateuser[0].Accessibility = "Cashier";
-                     break;
-                 case "مدير مشتريات":
-                     updateuser[0].Accessibility = "Manager";
-                     break;
-                 case "تحليل بيانات":
-                     updateuser[0].Accessibility = "Analysist";
-                     break;
-                 case "مسؤل":
-                     updateuser[0].Accessibility = "admin";
-                     break;
-             }
-             await db.UpdateUser(updateuser[0]);
-             loadUsers();*/
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -213,15 +134,19 @@ namespace ChestVault
         {
             LoadAccess();
         }
-
-        private void button7_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-
+            UserSettings_AddUser form = new UserSettings_AddUser();
+            ChestVault.Me.MainForm.Enabled = false;
+            if (comboBox1.Text == "")
+            {
+                form.Show();
+            }
+            else
+            {
+                form.LoadData(comboBox1.Text);
+                form.Show();
+            }
         }
     }
 }

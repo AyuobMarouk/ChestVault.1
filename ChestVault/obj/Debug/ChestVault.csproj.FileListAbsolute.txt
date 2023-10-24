@@ -483,3 +483,4 @@ C:\Users\game arena\source\repos\ChestVault.1\ChestVault\obj\Debug\ChestVault.ap
 C:\Users\game arena\source\repos\ChestVault.1\ChestVault\obj\Debug\ChestVault.csproj.CopyComplete
 C:\Users\game arena\source\repos\ChestVault.1\ChestVault\obj\Debug\ChestVault.exe
 C:\Users\game arena\source\repos\ChestVault.1\ChestVault\obj\Debug\ChestVault.pdb
+C:\Users\game arena\source\repos\ChestVault.1\ChestVault\obj\Debug\ChestVault.UserSettings_AddUser.resources

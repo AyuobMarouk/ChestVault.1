@@ -49,24 +49,11 @@ namespace ChestVault
                 Application.Exit();
             }
         }
-
-        public void AccessibilityChanged()
-        {
-            if(ChestVault.Me.CurrentUser.Accessibility != "admin")
-            {
-                
-            }
-            else
-            {
-               
-            }
-        }
         private void MainMenu_Load(object sender, EventArgs e)
         {
             StartUp();
 
         }
-
         #region Fill Panel With Forms Function
         public void FillNewWindow(Form Display)
         {
@@ -101,12 +88,6 @@ namespace ChestVault
         }
 
         #endregion
-
-        private void comboBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.Text == "") return;

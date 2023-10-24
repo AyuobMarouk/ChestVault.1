@@ -510,15 +510,17 @@ namespace ChestVault
         {
             if (ReciteInWorkEdit.Items == null) ReciteInWorkEdit.Items = new List<BoughtItemsSchema>();
 
+            DialogResult resoult = ChestVault.Me.MessageBox("هل أنتا متأكد من حذف الفاتورة", "حذف فاتورة", Controls_Dialogue.ButtonsType.Ok);
+            if (resoult != DialogResult.OK) return;
             bool reply = await db.DeletePurches(ReciteInWorkEdit);
             if (reply)
             {
-                DialogResult resoult = ChestVault.Me.MessageBox("تم حذف الفاتورة", "حذف فاتورة", Controls_Dialogue.ButtonsType.Ok);
+                ChestVault.Me.MessageBox("تم حذف الفاتورة", "حذف فاتورة", Controls_Dialogue.ButtonsType.Ok);
                 ChestVault.Me.AddActivity("تمت حذف الفاتورة رقم " + ReciteInWorkEdit.Number.ToString(), "Pay Bougth Recite");
             }
             else
             {
-                DialogResult resoult = ChestVault.Me.MessageBox("لا يمكن حذف الفاتورة", "حذف فاتورة", Controls_Dialogue.ButtonsType.Ok);
+                ChestVault.Me.MessageBox("لا يمكن حذف الفاتورة", "حذف فاتورة", Controls_Dialogue.ButtonsType.Ok);
 
             }
         }

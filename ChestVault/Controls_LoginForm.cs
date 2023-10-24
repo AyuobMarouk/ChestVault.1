@@ -113,7 +113,6 @@ namespace ChestVault
                             newwork.OpenDate = DateTime.Now;
                             await db.AddSchedule(newwork);
                         }
-                        ChestVault.Me.MainForm.AccessibilityChanged();
                         ChestVault.Me.MainForm.Enabled = true;
                         this.Hide();
                     }
