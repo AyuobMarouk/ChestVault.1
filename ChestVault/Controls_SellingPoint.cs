@@ -335,7 +335,6 @@ namespace ChestVault
                 }
                 textBox1.Select();
             }
-
             await db.UpdateWorkSchedule(work[0]);
 
             await db.AddRecit(newRecite);
