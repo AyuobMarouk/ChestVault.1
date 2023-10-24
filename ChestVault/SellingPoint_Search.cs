@@ -48,10 +48,12 @@ namespace ChestVault
 
             for (int i = 0; i < SearchedItems.Count; i++)
             {
-                    itemname.Text.Add(SearchedItems[i].Name.ToString());
-                    price.Text.Add(SearchedItems[i].SellPrice.ToString());
-                    BoxPrice.Text.Add(SearchedItems[i].BoxSellPrice.ToString());
+                itemname.Text.Add(SearchedItems[i].Name.ToString());
+                price.Text.Add(SearchedItems[i].SellPrice.ToString());
+
+                BoxPrice.Text.Add(SearchedItems[i].BoxSellPrice.ToString());
             }
+
             if (dataGrid.Column.Count <= 0)
             {
                 dataGrid.Column = new List<DataGridColumn>();
@@ -69,10 +71,6 @@ namespace ChestVault
             dataGrid.ReloadDataGrid();
         }
 
-        public void SelectTextbox()
-        {
-            textBox2.Select();
-        }
         private async void SellingPoint_Search_Load(object sender, EventArgs e)
         {
             panel1.Controls.Add(dataGrid.DisplayForm(this));
@@ -95,10 +93,9 @@ namespace ChestVault
         {
             if (dataGrid.Selected >= 0)
             {
-                if (dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit) > SearchedItems.Count) return;
-                label1.Text = SearchedItems[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].Name.ToString();
+                label1.Text = SearchedItems[dataGrid.Selected].Name.ToString();
                 double sum = 0;
-                foreach (var item in SearchedItems[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].Info)
+                foreach (var item in SearchedItems[dataGrid.Selected].Info)
                 {
                     sum += item.Amount;
                 }
@@ -127,7 +124,7 @@ namespace ChestVault
             foreach (var item in itemsBuFastSell)
             {
                 List<ItemsSchema> items = new List<ItemsSchema>();
-                items = await db.GetItemby((Type == "")? null : Type, (item.Name == "")? null : item.Name,null);
+                items = await db.GetItemby((Type == "")? null : Type, item.Name,null);
                 SearchedItems.Add(items[0]);
             }
             LoadDataGrid();
@@ -172,7 +169,7 @@ namespace ChestVault
             }
 
 
-            ChestVault.Me.MainForm.sellingpoint.SearchItem(SearchedItems[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].Name, 1);
+            ChestVault.Me.MainForm.sellingpoint.SearchItem(SearchedItems[dataGrid.Selected].Name, 1);
 
             ChestVault.Me.MainForm.sellingpoint.CurrentState = FormState.SellingPoint;
             ChestVault.Me.MainForm.sellingpoint.FillMainPanel();
@@ -181,5 +178,6 @@ namespace ChestVault
 
             ChestVault.Me.MainForm.sellingpoint.sellingPoint.LoadDataGrid(ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit);
         }
+
     }
 }

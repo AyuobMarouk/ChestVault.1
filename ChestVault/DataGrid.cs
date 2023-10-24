@@ -60,7 +60,7 @@ namespace ChestVault
             SelectAble = true;
             SettingsDisplay = true;
             Precion = 2;
-            DisplayLimit = 50;
+            DisplayLimit = 10;
             CurrentPage = 0;
 
             FormColor = Color.FromArgb(31, 31, 31);
@@ -157,7 +157,6 @@ namespace ChestVault
                 int index = x % DisplayLimit;
                 for (; index <= Limit && Column[i].Label.Count != 1; index++,x++)
                     {
-                    if (index >= Column[i].Label.Count) break;
                         if (Column[i].Text.Count >= x)
                         {
                             Column[i].Label[index].Text = Column[i].Text[x - 1];
@@ -175,7 +174,6 @@ namespace ChestVault
                         CreateLabel(i, x);
                     }
                 }
-            if(SettingsDisplay)ThisForm.DisplayData();
             #endregion
         }
         public void CreateHeader(int Row)

@@ -189,7 +189,7 @@ namespace ChestVault
         {
             Controls_Items form = new Controls_Items();
             form.Show();
-            form.SearchItem(Items[dataGrid.DoubleClick + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].Name, false);
+            form.SearchItem(Items[dataGrid.DoubleClick].Name, false);
         }
     }
 }
