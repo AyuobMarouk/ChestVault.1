@@ -12,7 +12,12 @@ namespace ChestVault
     public class DataGrid
     {
         public bool SelectAble = true;
+        public bool SettingsDisplay;
+
         public int DisplayLimit;
+        public int CurrentPage = 0;
+        public int LastPage = 0;
+
         public int Selected = -1;
         public int DoubleClick = -1;
 
@@ -26,9 +31,9 @@ namespace ChestVault
 
         // Panels Controls
 
-        /*public Panel HeaderPanel;
+        public Panel HeaderPanel;
         public Panel BodyPanel;
-        public Panel SettingsPanel;*/
+        public Panel SettingsPanel;
 
         // Header Info
         public Font HeaderFont;
@@ -53,8 +58,10 @@ namespace ChestVault
         public void StandardConfiguarations()
         {
             SelectAble = true;
+            SettingsDisplay = true;
             Precion = 2;
-            DisplayLimit = 0;
+            DisplayLimit = 10;
+            CurrentPage = 0;
 
             FormColor = Color.FromArgb(31, 31, 31);
 
@@ -84,41 +91,32 @@ namespace ChestVault
             ThisForm.Show();
             ThisForm.Dock = DockStyle.Fill;
 
-            /*HeaderPanel = ThisForm.Controls.Find("HeaderPanel",false).First() as Panel;
+            HeaderPanel = ThisForm.Controls.Find("HeaderPanel",false).First() as Panel;
             BodyPanel = ThisForm.Controls.Find("BodyPanel", false).First() as Panel;
             SettingsPanel = ThisForm.Controls.Find("SettingsPanel", false).First() as Panel;
-*/
+
+            ThisForm.ThisDataGrid = this;
             Sender = send;
 
             StandardConfiguarations();
             return ThisForm;
         }
-        public void FormDesign()
-        {
-            int XWidth = 0;
-            int YHeigth = 0;
-            for (int i = 0; i < Column.Count; i++)
-            {
-                XWidth += Column[i].LabelSize.Width;
-                YHeigth += Column[i].LabelSize.Height;
-                if (Column[i].dataType == DataGridColumn.DataType.Double) Column[i] = DoubleTrim(Column[i]);
-                CreateHeader(i);
-                for (int x = 0; x < Column[i].Text.Count; x++)
-                {
-                    if (DisplayLimit != 0)
-                    {
-                        if (i >= DisplayLimit) return;
-                    }
-                    YHeigth = Column[i].LabelSize.Height * Column[i].Text.Count;
-                    CreateLabel(i, x);
-                }
-            }
-            XWidth = (ThisForm.Parent.Size.Width > XWidth) ? ThisForm.Parent.Size.Width : XWidth;
-            ThisForm.Parent.BackColor = backGroundColor;
-            ThisForm.Size = new Size(XWidth, YHeigth);
-        }
         public void ReloadDataGrid()
         {
+            SettingsPanel.Visible = SettingsDisplay;
+            if(SettingsDisplay)
+            {
+                LastPage = (int)(Column[0].Text.Count / DisplayLimit) + ((Column[0].Text.Count % DisplayLimit != 0) ? 1 : 0);
+            
+            }
+            #region Creating the Headers
+            if (Column[0].Label.Count == 0 && Column[0].HeaderTitle != "")
+                for (int i = 0; i < Column.Count; i++)
+                {
+                    CreateHeader(i);
+                }
+            #endregion
+            #region Fixing the removed selected Row
             if (Selected + 1 > Column[0].Text.Count)
             {
                 for (int i = 0; i < Column.Count; i++)
@@ -140,34 +138,43 @@ namespace ChestVault
                     Selected = -1;
                 }
             }
-            for (int i = 0; i < Column.Count;i++)
-            {
-                if (Column[i].dataType == DataGridColumn.DataType.Double) Column[i] = DoubleTrim(Column[i]);
+            #endregion
+            #region Adding Controls and Fixing Their Values
+                for (int i = 0; i < Column.Count; i++)
+                {
+                    if (Column[i].dataType == DataGridColumn.DataType.Double) Column[i] = DoubleTrim(Column[i]);
 
-                Column[i].Label[0].Text = Column[i].HeaderTitle;
-                int x = 1;
-                for(; x < Column[i].Label.Count;x++)
+                    Column[i].Label[0].Text = Column[i].HeaderTitle;
+
+                int Limit = DisplayLimit;
+
+                if (CurrentPage == LastPage)
                 {
-                    if (DisplayLimit != 0)
-                    {
-                        if (x >= DisplayLimit) break ;
-                    }
-                    if (Column[i].Text.Count >= x)
-                    {
-                        Column[i].Label[x].Text = Column[i].Text[x - 1];
-                        Column[i].Label[x].Visible = true;
-                    }
-                    else Column[i].Label[x].Visible = false;
+                    Limit = Column[i].Text.Count % DisplayLimit == 0 ? DisplayLimit : Column[i].Text.Count % DisplayLimit;
                 }
-                for (x -= 1; x < Column[i].Text.Count; x++)
-                {
-                    if (DisplayLimit != 0)
+
+                int x = (CurrentPage * DisplayLimit) + 1;
+                int index = x % DisplayLimit;
+                for (; index <= Limit && Column[i].Label.Count != 1; index++,x++)
                     {
-                        if (x >= DisplayLimit) break;
+                        if (Column[i].Text.Count >= x)
+                        {
+                            Column[i].Label[index].Text = Column[i].Text[x - 1];
+                            Column[i].Label[index].Visible = true;
+                        }
+                        else Column[i].Label[index].Visible = false;
+
                     }
-                    CreateLabel(i, x);
-                }              
-            }
+                    for (x -= 1; x < Column[i].Text.Count; x++)
+                    {
+                        if (DisplayLimit != 0)
+                        {
+                            if (x >= DisplayLimit) break;
+                        }
+                        CreateLabel(i, x);
+                    }
+                }
+            #endregion
         }
         public void CreateHeader(int Row)
         {
@@ -189,9 +196,9 @@ namespace ChestVault
             Header.Padding = new Padding(0);
             Header.TextAlign = ContentAlignment.MiddleCenter;
 
-            ThisForm.Controls.Add(Header);
+            HeaderPanel.Size = new Size(Column.Count * Column[Row].LabelSize.Width, Column[Row].LabelSize.Height);
+            HeaderPanel.Controls.Add(Header);
             Column[Row].Label.Add(Header);
-
             Header.Click += new EventHandler(HeaderClick);
         }
         public void CreateLabel(int Row,int index)
@@ -206,7 +213,7 @@ namespace ChestVault
             }
             Itemname.AutoSize = false;
             Itemname.Size = Column[Row].LabelSize;
-            Itemname.Location = new Point(XPoint,Itemname.Size.Height * (index + 1));
+            Itemname.Location = new Point(XPoint,Itemname.Size.Height * index);
             Itemname.Name = index.ToString();
             Itemname.Font = FontType;
             Itemname.ForeColor = FontColor;
@@ -215,7 +222,7 @@ namespace ChestVault
             Itemname.Padding = new Padding(0);
             Itemname.TextAlign = ContentAlignment.MiddleCenter;
 
-            ThisForm.Controls.Add(Itemname);
+            BodyPanel.Controls.Add(Itemname);
             Column[Row].Label.Add(Itemname);
 
             if (SelectAble)

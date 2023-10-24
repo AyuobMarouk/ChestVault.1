@@ -116,8 +116,7 @@ namespace ChestVault
                 dataGrid.Column[6].Text = user.Text;
             }
 
-            if (dataGrid.Column[0].Label.Count > 0) dataGrid.ReloadDataGrid();
-            else dataGrid.FormDesign();
+            dataGrid.ReloadDataGrid();
         }
         public async void DisplayData()
         {

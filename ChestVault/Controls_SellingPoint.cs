@@ -181,12 +181,15 @@ namespace ChestVault
 
             if (SearchedItem.Count == 0)
             {
+                textBox1.Text = "";
+                textBox1.Select();
                 DialogResult resoult = ChestVault.Me.MessageBox("هذا الصنف غير موجود", "غير موجود", Controls_Dialogue.ButtonsType.Ok);
-
                 return;
             }
             if(SearchedItem[0].Info.Count == 0 && comboBox3.Text != "مسترجعات")
             {
+                textBox1.Text = "";
+                textBox1.Select();
                 DialogResult resoult = ChestVault.Me.MessageBox("لا يوجد مخزون للصنف", "المخزون", Controls_Dialogue.ButtonsType.Ok);
                 return;
             }
@@ -212,6 +215,8 @@ namespace ChestVault
                 {
                     if (TotalStorage < newitem.Amount + inSellReceit[CurrentReceit].inSellReceit[i].Amount && comboBox3.Text != "مسترجعات")
                     {
+                        textBox1.Text = "";
+                        textBox1.Select();
                         DialogResult resoult = ChestVault.Me.MessageBox("مخزون الصنف لا يفوق هذا العدد", "لا يوجد مخزون", Controls_Dialogue.ButtonsType.Ok);
                         return;
                     }
@@ -234,7 +239,10 @@ namespace ChestVault
                     inSellReceit[CurrentReceit].inSellReceit[i].info = newitem.info;
                     Add = false;
                     RemoveSpot = i;
+                    textBox1.Text = "";
+                    textBox1.Select();
                     break;
+
                 }
             }
 

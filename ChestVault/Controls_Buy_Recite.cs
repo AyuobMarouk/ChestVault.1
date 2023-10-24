@@ -132,8 +132,7 @@ namespace ChestVault
                 dataGrid.Column[4].Text = expdate.Text;
             }
 
-            if (dataGrid.Column[0].Label.Count > 0) dataGrid.ReloadDataGrid();
-            else dataGrid.FormDesign();
+            dataGrid.ReloadDataGrid();
         }
         public void RemoveItem(string name)
         {

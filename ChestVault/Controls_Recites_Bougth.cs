@@ -110,8 +110,7 @@ namespace ChestVault
                 dataGrid.Column[6].Text = user.Text;
             }
 
-            if (dataGrid.Column[0].Label.Count > 0) dataGrid.ReloadDataGrid();
-            else dataGrid.FormDesign();
+            dataGrid.ReloadDataGrid();
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -244,11 +243,6 @@ namespace ChestVault
                 form.Enabled = true;
                 form.Show();
                 ChestVault.Me.MainForm.Enabled = false;
-        }
-
-        private void Controls_Recites_Bougth_Enter(object sender, EventArgs e)
-        {
-            DisplayData();
         }
 
         private void button3_Click(object sender, EventArgs e)

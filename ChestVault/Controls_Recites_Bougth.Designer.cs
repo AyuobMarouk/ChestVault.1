@@ -334,7 +334,6 @@ namespace ChestVault
             this.Text = "Controls_Recites_Bougth";
             this.Load += new System.EventHandler(this.Controls_Recites_Bougth_Load);
             this.TextChanged += new System.EventHandler(this.Controls_Recites_Bougth_TextChanged);
-            this.Enter += new System.EventHandler(this.Controls_Recites_Bougth_Enter);
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();

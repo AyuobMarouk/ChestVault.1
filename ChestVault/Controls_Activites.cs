@@ -109,8 +109,7 @@ namespace ChestVault
                 dataGrid.Column[2].Text = date.Text;
             }
 
-            if (dataGrid.Column[0].Label.Count > 0) dataGrid.ReloadDataGrid();
-            else dataGrid.FormDesign();
+             dataGrid.ReloadDataGrid();
         }
         private async void button8_Click(object sender, EventArgs e)
         {

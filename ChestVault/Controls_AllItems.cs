@@ -81,8 +81,7 @@ namespace ChestVault
                 dataGrid.Column[3].Text = SellPrice.Text;
             }
 
-            if (dataGrid.Column[0].Label.Count > 0) dataGrid.ReloadDataGrid();
-            else dataGrid.FormDesign();
+            dataGrid.ReloadDataGrid();
         }
         private async void Controls_AllItems_Load(object sender, EventArgs e)
         {

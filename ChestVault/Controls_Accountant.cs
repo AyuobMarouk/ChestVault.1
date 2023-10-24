@@ -223,8 +223,7 @@ namespace ChestVault
                 UsersGrid.Column[1].Text = TotalSold.Text;
             }
 
-            if (UsersGrid.Column[0].Label.Count > 0) UsersGrid.ReloadDataGrid();
-            else UsersGrid.FormDesign();
+            UsersGrid.ReloadDataGrid();
 
             UsersGrid.Sort(1, 2);
             UsersGrid.Sort(1, 2);
@@ -281,8 +280,7 @@ namespace ChestVault
                 ItemsGrid.Column[1].Text = TotalSold.Text;
             }
 
-            if (ItemsGrid.Column[0].Label.Count > 0) ItemsGrid.ReloadDataGrid();
-            else ItemsGrid.FormDesign();
+            ItemsGrid.ReloadDataGrid();
 
             ItemsGrid.Sort(1, 2);
             ItemsGrid.Sort(1, 2);

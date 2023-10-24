@@ -114,6 +114,8 @@ namespace ChestVault
         }
         public void LoadDataGrid(List<ItemInfo> info)
         {
+            dataGrid.SettingsDisplay = false;
+
             DataGridColumn price = new DataGridColumn();
             price.LabelSize = new Size(150, 40);
             price.HeaderTitle = "سعر الشراء";
@@ -150,8 +152,7 @@ namespace ChestVault
                 dataGrid.Column[2].Text = date.Text;
             }
 
-            if (dataGrid.Column[0].Label.Count > 0) dataGrid.ReloadDataGrid();
-            else dataGrid.FormDesign();
+             dataGrid.ReloadDataGrid();
         }
         public async void SearchItem(string Value,bool qrcode)
         {
