@@ -95,6 +95,7 @@ namespace ChestVault
             panel2.Controls.Add(fillForm);
             fillForm.Show();
             fillForm.Dock = DockStyle.Fill;
+            if (CurrentState == FormState.Search) SearchPoint.SelectTextbox();
         }
         public async void FirstReciteLoader()
         {
@@ -332,6 +333,7 @@ namespace ChestVault
                     items[0].Info[items[0].Info.Count - 1].Amount += item.Amount;
                     await db.UpdateItem(items[0]);
                 }
+                textBox1.Select();
             }
 
             await db.UpdateWorkSchedule(work[0]);
@@ -360,11 +362,13 @@ namespace ChestVault
             if(CurrentState != FormState.SellingPoint)
             {
                 ChestVault.Me.MessageBox("يرجي فتح الفاتورة", "الفائمة مغلقة", Controls_Dialogue.ButtonsType.Ok);
+                textBox1.Select();
                 return;
             }
             if(inSellReceit[CurrentReceit].inSellReceit.Count == 0)
             {
                 ChestVault.Me.MessageBox("لا يمكن حفظ فاتورة خالية", "فاتورة خالية", Controls_Dialogue.ButtonsType.Ok);
+                textBox1.Select();
                 return;
             }
             if (comboBox3.Text == "مسترجعات")
@@ -457,6 +461,7 @@ namespace ChestVault
 
                     await db.AddCustomer(newCustomer);
                 }
+                textBox1.Select();
             }
             foreach (SoldItemsSchema item in inSellReceit[CurrentReceit].inSellReceit)
             {
@@ -610,6 +615,7 @@ namespace ChestVault
             FillMainPanel();
             sellingPoint.TurnOn();
             SearchPoint.TurnOff();
+            textBox1.Select();
         }
 
         private void button3_Click(object sender, EventArgs e)

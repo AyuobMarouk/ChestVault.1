@@ -69,6 +69,10 @@ namespace ChestVault
             dataGrid.ReloadDataGrid();
         }
 
+        public void SelectTextbox()
+        {
+            textBox2.Select();
+        }
         private async void SellingPoint_Search_Load(object sender, EventArgs e)
         {
             panel1.Controls.Add(dataGrid.DisplayForm(this));
