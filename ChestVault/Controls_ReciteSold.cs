@@ -316,7 +316,7 @@ namespace ChestVault
             Controls_StatsAnalyytics newform = new Controls_StatsAnalyytics();
 
             List<RecitesSchema> selectedrecite = new List<RecitesSchema>();
-            selectedrecite.Add(SavedRecites[dataGrid.DoubleClick]);
+            selectedrecite.Add(SavedRecites[dataGrid.DoubleClick + (dataGrid.CurrentPage * dataGrid.DisplayLimit)]);
             newform.Show();
             newform.LoadData(selectedrecite);
         }

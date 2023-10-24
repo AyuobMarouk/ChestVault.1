@@ -170,10 +170,10 @@ namespace ChestVault
                 button22.Visible = true;
                 button8.Visible = true;
 
-                textBox1.Text = ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected].Amount.ToString();
-                label6.Text = ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected].Name;
-                label4.Text = (ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected].SellPrice * ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected].Amount).ToString();
-                label2.Text = ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected].SellPrice.ToString();
+                textBox1.Text = ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].Amount.ToString();
+                label6.Text = ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].Name;
+                label4.Text = (ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].SellPrice * ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected].Amount).ToString();
+                label2.Text = ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].SellPrice.ToString();
             }
             else
             {

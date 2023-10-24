@@ -554,7 +554,7 @@ namespace ChestVault
             ChestVault.Me.BuyNewRecite = this;
            
 
-            BoughtItemsSchema item = Recite_items_ToAdd[dataGrid.DoubleClick];
+            BoughtItemsSchema item = Recite_items_ToAdd[dataGrid.DoubleClick + (dataGrid.CurrentPage * dataGrid.DisplayLimit)];
             ValuesSender_BougthItem form = new ValuesSender_BougthItem();
             form.LoadData(item, this);
             this.Enabled = false;

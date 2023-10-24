@@ -95,10 +95,10 @@ namespace ChestVault
         {
             if (dataGrid.Selected >= 0)
             {
-                if (dataGrid.Selected > SearchedItems.Count) return;
-                label1.Text = SearchedItems[dataGrid.Selected].Name.ToString();
+                if (dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit) > SearchedItems.Count) return;
+                label1.Text = SearchedItems[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].Name.ToString();
                 double sum = 0;
-                foreach (var item in SearchedItems[dataGrid.Selected].Info)
+                foreach (var item in SearchedItems[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].Info)
                 {
                     sum += item.Amount;
                 }
@@ -172,7 +172,7 @@ namespace ChestVault
             }
 
 
-            ChestVault.Me.MainForm.sellingpoint.SearchItem(SearchedItems[dataGrid.Selected].Name, 1);
+            ChestVault.Me.MainForm.sellingpoint.SearchItem(SearchedItems[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].Name, 1);
 
             ChestVault.Me.MainForm.sellingpoint.CurrentState = FormState.SellingPoint;
             ChestVault.Me.MainForm.sellingpoint.FillMainPanel();
