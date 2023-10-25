@@ -272,7 +272,6 @@ namespace ChestVault
                 {
                     inSellReceit[CurrentReceit].inSellReceit.RemoveAt(RemoveSpot);
                 }
-            MessageBox.Show(inSellReceit[CurrentReceit].inSellReceit.Count.ToString());
             Calculate();
             sellingPoint.LoadDataGrid(inSellReceit[CurrentReceit].inSellReceit);
         }
