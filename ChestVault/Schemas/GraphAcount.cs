@@ -5,6 +5,14 @@ namespace ChestVault.Schemas
 
     public class GraphAcount
     {
+        /// <summary>
+        ///  Adjustments
+        ///  حسب الاجمالي المباع من فاتورة المبيعات و التأكد من المدفوع ليس الاجمالي
+        ///  عند حساب المكسب تكون العملية ( اجمالي راس المال الفاتورة - المدفوع) تمام
+        ///  الاسترجاع تمام لا تقم بتعديله
+        ///  نفس الفكرة بنسبة للعميل حساب الاجمالي حسب المدفوع
+        ///  نفس الفكرة بنسبة لمبيعات الاسبوع
+        /// </summary>
         public List<long> Retuned = new List<long>();
         public List<long> Sold = new List<long>();
         public int CountSell = 0;
@@ -19,6 +27,12 @@ namespace ChestVault.Schemas
         public List<itemslog> itemslog = new List<itemslog>();
         public WeekMid WeekMid = new WeekMid();
         public List<RemainedItemsInfo> RemainedItems = new List<RemainedItemsInfo>();
+
+
+        /// Second Menu new things to calculate
+        public double TotalNet; // راس الماس البضاعة الموجودة
+        public double CountNet_Items; // مجموع الاصناف التي لها كمية
+        public double CountNet_ItemsAmount; // مجموع كمية كافة الاصناف
     }
     public class RemainedItemsInfo 
     {
