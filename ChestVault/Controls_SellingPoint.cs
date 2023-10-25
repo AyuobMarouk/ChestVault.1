@@ -74,6 +74,7 @@ namespace ChestVault
             ReciteButtons[3] = button8;
             ReciteButtons[4] = button13;
             sellingPoint.LoadDataGrid(new List<SoldItemsSchema>());
+           SelectTextBox();
         }
 
         public void FillMainPanel()
@@ -95,6 +96,7 @@ namespace ChestVault
             panel2.Controls.Add(fillForm);
             fillForm.Show();
             fillForm.Dock = DockStyle.Fill;
+           SelectTextBox();
         }
         public async void FirstReciteLoader()
         {
@@ -144,7 +146,8 @@ namespace ChestVault
             CurrentReceit = SwitchTo;
             sellingPoint.LoadDataGrid(inSellReceit[SwitchTo].inSellReceit);
             ReloadReciteButtons();
-            textBox1.Select();  
+            SelectTextBox();
+            Calculate();
         }
         public async void LoadCustomersComboBox()
         {
@@ -182,14 +185,14 @@ namespace ChestVault
             if (SearchedItem.Count == 0)
             {
                 textBox1.Text = "";
-                textBox1.Select();
+                SelectTextBox();
                 DialogResult resoult = ChestVault.Me.MessageBox("هذا الصنف غير موجود", "غير موجود", Controls_Dialogue.ButtonsType.Ok);
                 return;
             }
             if(SearchedItem[0].Info.Count == 0 && comboBox3.Text != "مسترجعات")
             {
                 textBox1.Text = "";
-                textBox1.Select();
+                SelectTextBox();
                 DialogResult resoult = ChestVault.Me.MessageBox("لا يوجد مخزون للصنف", "المخزون", Controls_Dialogue.ButtonsType.Ok);
                 return;
             }
@@ -216,7 +219,7 @@ namespace ChestVault
                     if (TotalStorage < newitem.Amount + inSellReceit[CurrentReceit].inSellReceit[i].Amount && comboBox3.Text != "مسترجعات")
                     {
                         textBox1.Text = "";
-                        textBox1.Select();
+                       SelectTextBox();
                         DialogResult resoult = ChestVault.Me.MessageBox("مخزون الصنف لا يفوق هذا العدد", "لا يوجد مخزون", Controls_Dialogue.ButtonsType.Ok);
                         return;
                     }
@@ -240,7 +243,7 @@ namespace ChestVault
                     Add = false;
                     RemoveSpot = i;
                     textBox1.Text = "";
-                    textBox1.Select();
+                    SelectTextBox();
                     break;
 
                 }
@@ -269,6 +272,7 @@ namespace ChestVault
                 {
                     inSellReceit[CurrentReceit].inSellReceit.RemoveAt(RemoveSpot);
                 }
+            MessageBox.Show(inSellReceit[CurrentReceit].inSellReceit.Count.ToString());
             Calculate();
             sellingPoint.LoadDataGrid(inSellReceit[CurrentReceit].inSellReceit);
         }
@@ -339,7 +343,6 @@ namespace ChestVault
             await db.AddRecit(newRecite);
             comboBox3.Text = "زبون عام";
             RemoveReceit();
-            Calculate();
             ChangeReciteNumbers(newRecite.Number);
             SwitchRecites(CurrentReceit);
         }
@@ -478,7 +481,6 @@ namespace ChestVault
             }
 
             RemoveReceit();
-            Calculate();
             ChangeReciteNumbers(newRecite.Number);
             SwitchRecites(CurrentReceit);
             LoadCustomersComboBox();
@@ -495,7 +497,6 @@ namespace ChestVault
                 inSellReceit.Add(newrecite);
                 int tmp = inSellReceit.Count - 1;
                 SwitchRecites(tmp);
-
                 DisplayReciteNumber();
                 ReloadReciteButtons();
             }
@@ -503,6 +504,7 @@ namespace ChestVault
             {
                 DialogResult resoult = ChestVault.Me.MessageBox("يمكنك فتح 5 فواتير كحد أقصي", "فاتورة جديد", Controls_Dialogue.ButtonsType.Ok);
             }
+           SelectTextBox();
         }
         public void ReloadReciteButtons()
         {
@@ -525,30 +527,11 @@ namespace ChestVault
             }
             DisplayReciteNumber();
         }
-        #region recitesbutton
-        private void button17_Click(object sender, EventArgs e)
+        public void ReciteChanger_Click(object sender, EventArgs e)
         {
-            SwitchRecites(0);
+            int Number = int.Parse((sender as Button).AccessibleName);
+            SwitchRecites(Number);
         }
-        private void button16_Click(object sender, EventArgs e)
-        {
-            SwitchRecites(1);
-        }
-        private void button15_Click(object sender, EventArgs e)
-        {
-            SwitchRecites(2);
-        }
-        private void button8_Click(object sender, EventArgs e)
-        {
-            SwitchRecites(3);
-        }
-        private void button13_Click(object sender, EventArgs e)
-        {
-            SwitchRecites(4);
-        }
-        #endregion
-
-        // +
 
         public async void PlusItem(int Amount)
         {
@@ -559,7 +542,7 @@ namespace ChestVault
             }
             List<ItemsSchema> itemselected = new List<ItemsSchema>();
 
-            itemselected = await db.GetItem(inSellReceit[CurrentReceit].inSellReceit[sellingPoint.dataGrid.Selected].Name);
+            itemselected = await db.GetItem(inSellReceit[CurrentReceit].inSellReceit[sellingPoint.dataGrid.Selected + (sellingPoint.dataGrid.CurrentPage * sellingPoint.dataGrid.DisplayLimit)].Name);
             SearchItem(itemselected[0].Name, Amount);
         }
         public async void MinusItems(int Amount)
@@ -571,9 +554,9 @@ namespace ChestVault
             }
             List<ItemsSchema> itemselected = new List<ItemsSchema>();
 
-            itemselected = await db.GetItem(inSellReceit[CurrentReceit].inSellReceit[sellingPoint.dataGrid.Selected].Name);
+            itemselected = await db.GetItem(inSellReceit[CurrentReceit].inSellReceit[sellingPoint.dataGrid.Selected + (sellingPoint.dataGrid.CurrentPage * sellingPoint.dataGrid.DisplayLimit)].Name);
 
-            if (Amount + inSellReceit[CurrentReceit].inSellReceit[sellingPoint.dataGrid.Selected].Amount <= 0)
+            if (Amount + inSellReceit[CurrentReceit].inSellReceit[sellingPoint.dataGrid.Selected + (sellingPoint.dataGrid.CurrentPage * sellingPoint.dataGrid.DisplayLimit)].Amount <= 0)
             {
                 DialogResult resoult = ChestVault.Me.MessageBox("هل أنتا متأكد من مسح الصنف من الفاتورة", "مسح الصنف من الفاتورة", Controls_Dialogue.ButtonsType.SureCancel);
                 if (resoult == DialogResult.OK)
@@ -588,21 +571,18 @@ namespace ChestVault
 
         private void comboBox3_TextChanged(object sender, EventArgs e)
         {
+            if (CustomerName == "مسترجعات")
+            {
 
+            }
             CustomerName = comboBox3.Text;
             sellingPoint.ChangeCustomer();
         }
-
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-        }
-
         private void button7_Click(object sender, EventArgs e)
         {
             this.Hide();
             ChestVault.Me.MainForm.FillWithMainMenu();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (CurrentState == FormState.SellingPoint) return;
@@ -620,6 +600,44 @@ namespace ChestVault
             sellingPoint.TurnOff();
             SearchPoint.TurnOn();
         }
+
+        #region Selecting BarCode Textbox Measurments
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SelectTextBox();
+            RemoveReceit();
+            SwitchRecites(CurrentReceit);
+        }
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           SelectTextBox();
+        }
+        private void comboBox3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+               SelectTextBox();
+            }
+        }
+        private void panel1_Enter(object sender, EventArgs e)
+        {
+            SelectTextBox();
+        }
+        private void Controls_SellingPoint_Enter(object sender, EventArgs e)
+        {
+            SelectTextBox();
+        }
+        private void label1_Click(object sender, EventArgs e)
+        {
+            SelectTextBox();
+        }
+
+        public void SelectTextBox()
+        {
+            if (textBox1.Text.Length == 0) textBox1.Select();
+            else textBox1.SelectAll();
+        }
+        #endregion
     }
 
     public class ReceitsInSell

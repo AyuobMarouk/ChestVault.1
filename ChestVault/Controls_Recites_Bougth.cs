@@ -237,7 +237,7 @@ namespace ChestVault
         private void Controls_Recites_Bougth_TextChanged(object sender, EventArgs e)
         {
                 ChestVault.Me.EditReciteSchema = true;
-                ChestVault.Me.EditingSchema = Recite_info[dataGrid.DoubleClick];
+                ChestVault.Me.EditingSchema = Recite_info[dataGrid.DoubleClick + (dataGrid.CurrentPage * dataGrid.DisplayLimit)];
                 Controls_Buy_Recite form = new Controls_Buy_Recite();
                 ChestVault.Me.BuyNewRecite = form;
                 form.Enabled = true;

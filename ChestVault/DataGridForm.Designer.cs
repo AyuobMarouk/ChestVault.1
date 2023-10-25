@@ -35,11 +35,13 @@ namespace ChestVault
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.BodyPanel = new System.Windows.Forms.Panel();
             this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.SettingsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // SettingsPanel
             // 
+            this.SettingsPanel.Controls.Add(this.label1);
             this.SettingsPanel.Controls.Add(this.button22);
             this.SettingsPanel.Controls.Add(this.button23);
             this.SettingsPanel.Controls.Add(this.textBox1);
@@ -114,6 +116,15 @@ namespace ChestVault
             this.HeaderPanel.Size = new System.Drawing.Size(800, 42);
             this.HeaderPanel.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(753, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 80;
+            this.label1.Text = "label1";
+            // 
             // DataGridForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,7 +142,6 @@ namespace ChestVault
             this.ResumeLayout(false);
 
         }
-
         #endregion
 
         private System.Windows.Forms.Panel SettingsPanel;
@@ -140,5 +150,6 @@ namespace ChestVault
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Label label1;
     }
 }

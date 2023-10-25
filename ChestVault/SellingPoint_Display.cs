@@ -42,6 +42,7 @@ namespace ChestVault
         }
         public void LoadDataGrid(List<SoldItemsSchema> info)
         {
+            dataGrid.SettingsDisplay = false;
 
             DataGridColumn itemname = new DataGridColumn();
             itemname.LabelSize = new Size(353, 40);
@@ -133,7 +134,6 @@ namespace ChestVault
                 if (textBox2.Text == "كامل" || textBox2.Text == "") textBox2.Text = TotalPrice.ToString() ;
             }
         }
-
         public void ChangeTotalPrice(double price)
         {
             TotalPrice = price;
@@ -159,6 +159,7 @@ namespace ChestVault
         {
             if(dataGrid.Selected >= 0)
             {
+                if (dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit) > ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit.Count - 1) return;
                 label6.Visible = true;
                 label4.Visible = true;
                 label2.Visible = true;
@@ -170,10 +171,10 @@ namespace ChestVault
                 button22.Visible = true;
                 button8.Visible = true;
 
-                textBox1.Text = ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected].Amount.ToString();
-                label6.Text = ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected].Name;
-                label4.Text = (ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected].SellPrice * ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected].Amount).ToString();
-                label2.Text = ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected].SellPrice.ToString();
+                textBox1.Text = ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].Amount.ToString();
+                label6.Text = ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].Name;
+                label4.Text = (ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].SellPrice * ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected].Amount).ToString();
+                label2.Text = ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].SellPrice.ToString();
             }
             else
             {

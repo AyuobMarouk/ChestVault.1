@@ -65,6 +65,7 @@
             this.label1.TabIndex = 47;
             this.label1.Text = "نقطة بيع";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -118,7 +119,9 @@
             this.comboBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox3.Size = new System.Drawing.Size(157, 31);
             this.comboBox3.TabIndex = 54;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             this.comboBox3.TextChanged += new System.EventHandler(this.comboBox3_TextChanged);
+            this.comboBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBox3_KeyDown);
             // 
             // label6
             // 
@@ -177,6 +180,7 @@
             // 
             // button13
             // 
+            this.button13.AccessibleName = "4";
             this.button13.AutoSize = true;
             this.button13.BackColor = System.Drawing.Color.White;
             this.button13.Dock = System.Windows.Forms.DockStyle.Right;
@@ -192,10 +196,11 @@
             this.button13.Text = "أضافة بار كود";
             this.button13.UseVisualStyleBackColor = false;
             this.button13.Visible = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.button13.Click += new System.EventHandler(this.ReciteChanger_Click);
             // 
             // button8
             // 
+            this.button8.AccessibleName = "3";
             this.button8.AutoSize = true;
             this.button8.BackColor = System.Drawing.Color.White;
             this.button8.Dock = System.Windows.Forms.DockStyle.Right;
@@ -211,10 +216,11 @@
             this.button8.Text = "أضافة بار كود";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Visible = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button8.Click += new System.EventHandler(this.ReciteChanger_Click);
             // 
             // button15
             // 
+            this.button15.AccessibleName = "2";
             this.button15.AutoSize = true;
             this.button15.BackColor = System.Drawing.Color.White;
             this.button15.Dock = System.Windows.Forms.DockStyle.Right;
@@ -230,10 +236,11 @@
             this.button15.Text = "أضافة بار كود";
             this.button15.UseVisualStyleBackColor = false;
             this.button15.Visible = false;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
+            this.button15.Click += new System.EventHandler(this.ReciteChanger_Click);
             // 
             // button16
             // 
+            this.button16.AccessibleName = "1";
             this.button16.AutoSize = true;
             this.button16.BackColor = System.Drawing.Color.White;
             this.button16.Dock = System.Windows.Forms.DockStyle.Right;
@@ -249,10 +256,11 @@
             this.button16.Text = "أضافة بار كود";
             this.button16.UseVisualStyleBackColor = false;
             this.button16.Visible = false;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
+            this.button16.Click += new System.EventHandler(this.ReciteChanger_Click);
             // 
             // button17
             // 
+            this.button17.AccessibleName = "0";
             this.button17.AutoSize = true;
             this.button17.BackColor = System.Drawing.Color.White;
             this.button17.Dock = System.Windows.Forms.DockStyle.Right;
@@ -268,7 +276,7 @@
             this.button17.Text = "أضافة بار كود";
             this.button17.UseVisualStyleBackColor = false;
             this.button17.Visible = false;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
+            this.button17.Click += new System.EventHandler(this.ReciteChanger_Click);
             // 
             // button1
             // 
@@ -304,24 +312,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(229, 614);
             this.panel1.TabIndex = 0;
+            this.panel1.Enter += new System.EventHandler(this.panel1_Enter);
             // 
             // button4
             // 
             this.button4.AutoSize = true;
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button4.BackColor = System.Drawing.Color.White;
             this.button4.BackgroundImage = global::ChestVault.Properties.Resources.delete;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(209)))), ((int)(((byte)(151)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button4.Location = new System.Drawing.Point(48, 420);
+            this.button4.Location = new System.Drawing.Point(177, 423);
             this.button4.MinimumSize = new System.Drawing.Size(2, 0);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(29, 29);
+            this.button4.Size = new System.Drawing.Size(50, 50);
             this.button4.TabIndex = 62;
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Visible = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -388,6 +397,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.Controls_SellingPoint_Load);
+            this.Enter += new System.EventHandler(this.Controls_SellingPoint_Enter);
             this.panel3.ResumeLayout(false);
             this.Special.ResumeLayout(false);
             this.Special.PerformLayout();

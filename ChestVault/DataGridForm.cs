@@ -31,9 +31,8 @@ namespace ChestVault
             {
                 ThisDataGrid.CurrentPage++;
                 ThisDataGrid.ReloadDataGrid();
+                FixData();
             }
-
-            textBox1.Text = (ThisDataGrid.CurrentPage + 1).ToString();
         }
 
         private void button22_Click(object sender, EventArgs e)
@@ -42,9 +41,9 @@ namespace ChestVault
             {
                 ThisDataGrid.CurrentPage--;
                 ThisDataGrid.ReloadDataGrid();
+                FixData();
             }
-
-            textBox1.Text = (ThisDataGrid.CurrentPage + 1).ToString();
+            
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
@@ -58,6 +57,20 @@ namespace ChestVault
                     ThisDataGrid.ReloadDataGrid();
                 }
             }
+        }
+        public void FixData()
+        {
+            textBox1.Text = (ThisDataGrid.CurrentPage + 1).ToString();
+            // needs math
+            label1.Text =  (ThisDataGrid.CurrentPage * ThisDataGrid.DisplayLimit).ToString() + "/" + (ThisDataGrid.LastPage * ThisDataGrid.DisplayLimit).ToString();
+            //
+            label1.Left = this.Size.Width - label1.Size.Width;
+
+            textBox1.Left = (this.Size.Width / 2) - (textBox1.Size.Width / 2);
+            button23.Left = (this.Size.Width / 2) + (textBox1.Size.Width / 2);
+
+            button22.Left = (this.Size.Width / 2) - ((textBox1.Size.Width / 2) + button22.Size.Width);
+
         }
     }
 }

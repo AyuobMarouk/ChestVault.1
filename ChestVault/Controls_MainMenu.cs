@@ -65,6 +65,8 @@ namespace ChestVault
             FilledWindow.Show();
             FilledWindow.Dock = DockStyle.Fill;
             SidePanel.TimerState(false);
+
+            if (Display == sellingpoint) sellingpoint.SelectTextBox();
         }
         public void FillWithMainMenu()
         {

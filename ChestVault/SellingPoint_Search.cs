@@ -93,9 +93,10 @@ namespace ChestVault
         {
             if (dataGrid.Selected >= 0)
             {
-                label1.Text = SearchedItems[dataGrid.Selected].Name.ToString();
+                if (dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit) > SearchedItems.Count - 1) return;
+                label1.Text = SearchedItems[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].Name.ToString();
                 double sum = 0;
-                foreach (var item in SearchedItems[dataGrid.Selected].Info)
+                foreach (var item in SearchedItems[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].Info)
                 {
                     sum += item.Amount;
                 }
@@ -162,14 +163,14 @@ namespace ChestVault
                 ChestVault.Me.MessageBox("يرجي اختيار صنف للاضافة", "بحث", Controls_Dialogue.ButtonsType.Ok);
                 return;
             }
-            if(int.Parse(label2.Text) <=0)
+            if(int.Parse(label2.Text) <=0 && ChestVault.Me.MainForm.sellingpoint.CustomerName != "مسترجعات")
             {
                 ChestVault.Me.MessageBox("لا يوجد مخزون", "بحث", Controls_Dialogue.ButtonsType.Ok);
                 return;
             }
 
 
-            ChestVault.Me.MainForm.sellingpoint.SearchItem(SearchedItems[dataGrid.Selected].Name, 1);
+            ChestVault.Me.MainForm.sellingpoint.SearchItem(SearchedItems[dataGrid.Selected + (dataGrid.DisplayLimit * dataGrid.CurrentPage)].Name, 1);
 
             ChestVault.Me.MainForm.sellingpoint.CurrentState = FormState.SellingPoint;
             ChestVault.Me.MainForm.sellingpoint.FillMainPanel();

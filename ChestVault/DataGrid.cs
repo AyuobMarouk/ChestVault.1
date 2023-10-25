@@ -62,6 +62,7 @@ namespace ChestVault
             Precion = 2;
             DisplayLimit = 10;
             CurrentPage = 0;
+            LastPage = 1;
 
             FormColor = Color.FromArgb(31, 31, 31);
 
@@ -98,17 +99,23 @@ namespace ChestVault
             ThisForm.ThisDataGrid = this;
             Sender = send;
 
+            if (Column.Count == 0) SettingsPanel.Visible = false;
             StandardConfiguarations();
             return ThisForm;
         }
         public void ReloadDataGrid()
         {
-            SettingsPanel.Visible = SettingsDisplay;
-            if(SettingsDisplay)
+            if (SettingsDisplay)
             {
                 LastPage = (int)(Column[0].Text.Count / DisplayLimit) + ((Column[0].Text.Count % DisplayLimit != 0) ? 1 : 0);
             
             }
+            else
+            {
+                DisplayLimit = Column[0].Label.Count;
+            }
+
+            if (CurrentPage > LastPage - 1) CurrentPage = LastPage;
             #region Creating the Headers
             if (Column[0].Label.Count == 0 && Column[0].HeaderTitle != "")
                 for (int i = 0; i < Column.Count; i++)
@@ -139,6 +146,7 @@ namespace ChestVault
                 }
             }
             #endregion
+
             #region Adding Controls and Fixing Their Values
                 for (int i = 0; i < Column.Count; i++)
                 {
@@ -148,13 +156,13 @@ namespace ChestVault
 
                 int Limit = DisplayLimit;
 
-                if (CurrentPage == LastPage)
+                if (CurrentPage == LastPage && SettingsDisplay)
                 {
                     Limit = Column[i].Text.Count % DisplayLimit == 0 ? DisplayLimit : Column[i].Text.Count % DisplayLimit;
                 }
 
                 int x = (CurrentPage * DisplayLimit) + 1;
-                int index = x % DisplayLimit;
+                int index = x % ((DisplayLimit == 0)? 1 : DisplayLimit);
                 for (; index <= Limit && Column[i].Label.Count != 1; index++,x++)
                     {
                     if (index >= Column[i].Label.Count) break;
@@ -176,6 +184,8 @@ namespace ChestVault
                     }
                 }
             #endregion
+            if(SettingsDisplay)ThisForm.FixData();
+            SettingsPanel.Visible = (SettingsDisplay && LastPage > 1);
         }
         public void CreateHeader(int Row)
         {
