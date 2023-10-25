@@ -144,7 +144,7 @@ namespace ChestVault
             CurrentReceit = SwitchTo;
             sellingPoint.LoadDataGrid(inSellReceit[SwitchTo].inSellReceit);
             ReloadReciteButtons();
-            
+            textBox1.Select();  
         }
         public async void LoadCustomersComboBox()
         {

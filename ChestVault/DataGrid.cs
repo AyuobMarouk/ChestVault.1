@@ -157,6 +157,7 @@ namespace ChestVault
                 int index = x % DisplayLimit;
                 for (; index <= Limit && Column[i].Label.Count != 1; index++,x++)
                     {
+                    if (index >= Column[i].Label.Count) break;
                         if (Column[i].Text.Count >= x)
                         {
                             Column[i].Label[index].Text = Column[i].Text[x - 1];

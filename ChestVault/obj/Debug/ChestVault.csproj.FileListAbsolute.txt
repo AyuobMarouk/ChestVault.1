@@ -484,3 +484,4 @@ C:\Users\game arena\source\repos\ChestVault.1\ChestVault\obj\Debug\ChestVault.cs
 C:\Users\game arena\source\repos\ChestVault.1\ChestVault\obj\Debug\ChestVault.exe
 C:\Users\game arena\source\repos\ChestVault.1\ChestVault\obj\Debug\ChestVault.pdb
 C:\Users\game arena\source\repos\ChestVault.1\ChestVault\obj\Debug\ChestVault.UserSettings_AddUser.resources
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ChestVault\ChestVault\obj\Debug\ChestVault.UserSettings_AddUser.resources
