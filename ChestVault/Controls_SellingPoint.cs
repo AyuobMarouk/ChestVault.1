@@ -394,7 +394,7 @@ namespace ChestVault
                 newRecite.Number = Recites[Recites.Count - 1].Number + 1;
             newRecite.items = inSellReceit[CurrentReceit].inSellReceit;
             newRecite.Consumer = comboBox3.Text;
-            if (comboBox3.Text == "زبون عام") newRecite.Paid = sum;
+            if (comboBox3.Text == "زبون عام" || comboBox3.Text == "مسترجعات") newRecite.Paid = sum;
             else newRecite.Paid = sellingPoint.PaidPrice;
             newRecite.Total = sum;
             newRecite.Date = (DateTime.Now.Year * 10000) + (DateTime.Now.Month * 100) + DateTime.Now.Day;
@@ -409,7 +409,8 @@ namespace ChestVault
 
             await db.AddRecit(newRecite);
             ChestVault.Me.AddActivity("تمت بيع فاتورة جديدة رقم " + newRecite.Number, "Sold Receit");
-            if (comboBox3.Text != "زبون عام")
+            #region Debt 
+            if (comboBox3.Text != "زبون عام" && comboBox3.Text != "مسترجعات")
             {
                 if (newRecite.Total != newRecite.Paid)
                 {
@@ -447,19 +448,10 @@ namespace ChestVault
                         customer[0].Dept = customer[0].Total - customer[0].Paid;
                         await db.UpdateCustomer(customer[0]);
                 }
-                else
-                {
-                    DeptSchema newCustomer = new DeptSchema();
-                    newCustomer.Paid = 0;
-                    newCustomer.Dept = 0;
-                    newCustomer.Total = 0;
-                    newCustomer.Name = comboBox3.Text;
-                    newCustomer.Title = "زبون";
-                    newCustomer.Info = new List<DeptInfo>();
-
-                    await db.AddCustomer(newCustomer);
-                }
             }
+            #endregion
+
+            #region Updating Item Info 
             foreach (SoldItemsSchema item in inSellReceit[CurrentReceit].inSellReceit)
             {
                 List<ItemsSchema> items = await db.GetItem(item.Name);
@@ -478,6 +470,7 @@ namespace ChestVault
                 }
                 await db.UpdateItem(items[0]);
             }
+            #endregion
 
             RemoveReceit();
             ChangeReciteNumbers(newRecite.Number);
@@ -485,7 +478,6 @@ namespace ChestVault
             LoadCustomersComboBox();
 
         }
-
         private void button6_Click(object sender, EventArgs e)
         {
             if (inSellReceit.Count < 5)

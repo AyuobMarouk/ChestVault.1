@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using ChestVault.Schemas;
 
 namespace ChestVault
 {
@@ -258,15 +259,6 @@ namespace ChestVault
 
             return column2;
         }
-        public void AutoFillRows(List<string> Rows)
-        {
-
-        }
-
-        public void CreateRows(List<string> Rows)
-        {
-
-        }
         #endregion
 
         #region Standard Label Functions
@@ -484,5 +476,12 @@ namespace ChestVault
         public List<string> Text = new List<string>();
         public List<Label> Label = new List<Label>();
         public Size LabelSize;
+    }
+
+    public class DisplayedItemsSchemas
+    {
+        public List<ItemsSchema> ItemSchema;
+        public List<PurchaseSchema> PurchaseSchema;
+        public List<RecitesSchema> RecitesSchema;
     }
 }

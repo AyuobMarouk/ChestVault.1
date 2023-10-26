@@ -31,7 +31,7 @@ namespace ChestVault
 
         public UserSettings_Colors ColorForm;
         public UserSettings_Access AccessForm;
-        async void loadUsers()
+        public async void loadUsers()
         {
             comboBox1.Items.Clear();
             List<UsersSchema> users = await db.GetAllUsers();

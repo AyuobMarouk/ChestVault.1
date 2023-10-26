@@ -49,11 +49,12 @@ namespace ChestVault
                 ChestVault.Me.MessageBox("لا يمكن ان يكون بداية الاسم او كلمة المرور فراغ", "تنبيه", Controls_Dialogue.ButtonsType.Ok);
                 return;
             }
-            if (char.IsDigit(textBox1.Text[0]))
+            if (char.IsDigit(textBox3.Text[0]))
             {
                 ChestVault.Me.MessageBox("لا يمكن ان يكون بداية اسم المستخدم رقم", "تنبيه", Controls_Dialogue.ButtonsType.Ok);
                 return;
             }
+
 
             List<UsersSchema> Users = await db.GetAllUsers();
 
@@ -70,11 +71,15 @@ namespace ChestVault
                     }
                     if (a.Name == "admin") newUser.UserColor = a.UserColor;
                 }
-                newUser.Name = textBox1.Text;
-                newUser.Password = textBox3.Text;
+                newUser.Name = textBox3.Text;
+                newUser.Password = textBox1.Text;
                 newUser.Accessibility = comboBox2.Text;
                 
                 await db.AddUser(newUser);
+                ChestVault.Me.MessageBox("تم أضافة بيانات المستخدم بنجاح", "أضافة مستخدم", Controls_Dialogue.ButtonsType.Ok);
+                ChestVault.Me.MainForm.Enabled = true;
+                (ChestVault.Me.MainForm.FilledWindow as UserSettings).loadUsers();
+                this.Hide();
             }
             else
             {
@@ -92,6 +97,10 @@ namespace ChestVault
                 EditUser.Accessibility = comboBox2.Text;
 
                 await db.UpdateUser(EditUser);
+                ChestVault.Me.MessageBox("تم تعديل بيانات المستخدم بنجاح", "تعديل البيانات", Controls_Dialogue.ButtonsType.Ok);
+                (ChestVault.Me.MainForm.FilledWindow as UserSettings).loadUsers();
+                ChestVault.Me.MainForm.Enabled = true;
+                this.Hide();
             }
 
         }

@@ -66,7 +66,6 @@ namespace ChestVault
         public async void login()
         {
             bool pass = false; // used to display a label is value
-            if (textBox2.Text == "FUCK YOU ALL BITCHES") await new CRUD().UpdateAll();
             foreach (var us in users)
             {
                 if (comboBox1.Text == us.Name)
@@ -115,6 +114,7 @@ namespace ChestVault
                             await db.AddSchedule(newwork);
                         }
                         ChestVault.Me.MainForm.Enabled = true;
+                        ChestVault.Me.MainForm.SidePanel.TimerState(true);
                         this.Hide();
                     }
                 }
@@ -140,18 +140,13 @@ namespace ChestVault
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text == ((DateTime.Now.Year * 10000) + (DateTime.Now.Month * 100) + DateTime.Now.Day).ToString() + "-100")
-            {
-                db.deletAll();
-                ActivateSystem activate = new ActivateSystem();
-                activate.Show();
-                this.Hide();
-            }
-            else
                  login();
         }
 
+        public void CheatCodes()
+        {
 
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
