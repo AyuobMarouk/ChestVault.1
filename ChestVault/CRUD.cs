@@ -10,6 +10,7 @@ using MongoDB.Bson;
 using System.Xml.Linq;
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Drawing;
+using static MongoDB.Driver.WriteConcern;
 
 namespace ChestVault
 {
@@ -277,6 +278,12 @@ namespace ChestVault
         {
             var Purches = ConnectToMongo<PurchaseSchema>(PurchesCollection);
             var results = await Purches.FindAsync(r => r.Date == date);
+            return results.ToList();
+        }
+        public async Task<List<PurchaseSchema>> GetPurchesByName(string item)
+        {
+            var Purches = ConnectToMongo<PurchaseSchema>(PurchesCollection);
+            var results = await Purches.FindAsync(i => i.Items.Any(q => q.Name == item));
             return results.ToList();
         }
         public async Task<bool> DeletePurches(PurchaseSchema purches)
@@ -1002,7 +1009,40 @@ namespace ChestVault
                 acount.WeekMid.Sell[i] /= acount.WeekMid.CountSell[i] == 0 ? 1 : acount.WeekMid.CountSell[i];
             }
             acount.RemainedItems = await GetRemainedItemsInfo();
+            acount = await GetNets(acount);
             return accountTrim(acount);
+        }
+
+        public async Task<GraphAcount> GetNets(GraphAcount acount)
+        {
+            var items = ConnectToMongo<ItemsSchema>(ItemsCollection);
+            var results = await items.FindAsync(a => a.Info.Any(b => b.Amount > 0));
+            acount.CountNet_Items = results.ToList<ItemsSchema>().Count;
+            var amount = 0.0;
+            foreach (var item in results.ToList<ItemsSchema>())
+            {
+                foreach (var item1 in item.Info)
+                {
+                    amount += item1.Amount;
+                }
+            }
+            acount.CountNet_ItemsAmount = ((int) amount * 100) / 100;
+            acount.TotalNet = await GetTotalNet();
+            return acount;
+        }
+        public async Task<double> GetTotalNet()
+        {
+            var items = ConnectToMongo<ItemsSchema>(ItemsCollection);
+            var results = await items.FindAsync(_ => true);
+            var total = 0.0;
+            foreach (var item in results.ToList<ItemsSchema>())
+            {
+                foreach (var item1 in item.Info)
+                {
+                    total += item1.BuyPrice * item1.Amount;
+                }
+            }
+            return ((int)total * 100) / 100;
         }
 
         public async Task<List<RemainedItemsInfo>> GetRemainedItemsInfo()
