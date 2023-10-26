@@ -151,14 +151,14 @@ namespace ChestVault
         }
         public async void LoadCustomersComboBox()
         {
-            List<DeptSchema> names = await db.GetAllCustomers();
+            string[] names = await db.GetAllCustomers();
 
             comboBox3.Items.Clear();
             comboBox3.Items.Add("زبون عام");
             comboBox3.Items.Add("مسترجعات");
-            for (int i = 0; i < names.Count; i++)
+            for (int i = 0; i < names.Count(); i++)
             {
-                comboBox3.Items.Add(names[i].Name);
+                comboBox3.Items.Add(names[i]);
             }
             comboBox3.Text = "زبون عام";
         }

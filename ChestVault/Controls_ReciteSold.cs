@@ -203,11 +203,11 @@ namespace ChestVault
             comboBox2.Items.Clear();
             comboBox2.Items.Add("زبون عام");
             comboBox2.Items.Add("مسترجعات");
-            List<DeptSchema> suppliers = await db.GetAllCustomers();
-            if(suppliers.Count > 0)
-            foreach (DeptSchema a in suppliers)
+            string[] suppliers = await db.GetAllCustomers();
+            if(suppliers.Count() > 0)
+            foreach (string a in suppliers)
             {
-                comboBox2.Items.Add(a.Name);
+                comboBox2.Items.Add(a);
             }
             //users load
             comboBox4.Items.Clear();
