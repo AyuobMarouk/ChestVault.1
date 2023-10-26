@@ -36,6 +36,7 @@ namespace ChestVault
             {
                 comboBox1.Items.Add(u.Name);
             }
+            comboBox1.Select();
         }
         public async void CloseWorkSchedules(bool All)
         {

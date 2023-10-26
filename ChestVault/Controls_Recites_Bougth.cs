@@ -234,15 +234,16 @@ namespace ChestVault
             comboBox3.Text = "مفتوحة";
         }
 
-        private void Controls_Recites_Bougth_TextChanged(object sender, EventArgs e)
+        private async void Controls_Recites_Bougth_TextChanged(object sender, EventArgs e)
         {
-                ChestVault.Me.EditReciteSchema = true;
-                ChestVault.Me.EditingSchema = Recite_info[dataGrid.DoubleClick + (dataGrid.CurrentPage * dataGrid.DisplayLimit)];
-                Controls_Buy_Recite form = new Controls_Buy_Recite();
-                ChestVault.Me.BuyNewRecite = form;
-                form.Enabled = true;
-                form.Show();
-                ChestVault.Me.MainForm.Enabled = false;
+            ChestVault.Me.EditReciteSchema = true;
+            List<PurchaseSchema> Searched = await db.GetPurches(int.Parse(dataGrid.Column[1].Text[dataGrid.DoubleClick + (dataGrid.CurrentPage * dataGrid.DisplayLimit)]));
+            ChestVault.Me.EditingSchema = Searched[0];
+            Controls_Buy_Recite form = new Controls_Buy_Recite();
+            ChestVault.Me.BuyNewRecite = form;
+            form.Enabled = true;
+            form.Show();
+            ChestVault.Me.MainForm.Enabled = false;
         }
 
         private void button3_Click(object sender, EventArgs e)

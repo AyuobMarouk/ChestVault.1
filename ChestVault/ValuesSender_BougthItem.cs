@@ -54,7 +54,8 @@ namespace ChestVault
             textBox2.Text = Item.Name;
             textBox4.Text = Item.Amount.ToString();
             textBox7.Text = Item.BuyPrice.ToString();
-            textBox1.Text = Item.SellPrice.ToString();
+
+            textBox1.Text = item[0].SellPrice.ToString();
 
             Item.SellPrice = item[0].SellPrice;
 

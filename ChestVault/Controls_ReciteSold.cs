@@ -308,15 +308,14 @@ namespace ChestVault
             LoadDataGrid(byuserrecites);
         }
 
-        private void Controls_ReciteSold_TextChanged(object sender, EventArgs e)
+        private async void Controls_ReciteSold_TextChanged(object sender, EventArgs e)
         {
             ChestVault.Me.SoldRecitesWindow = this;
             this.Enabled = false;
 
             Controls_StatsAnalyytics newform = new Controls_StatsAnalyytics();
 
-            List<RecitesSchema> selectedrecite = new List<RecitesSchema>();
-            selectedrecite.Add(SavedRecites[dataGrid.DoubleClick + (dataGrid.CurrentPage * dataGrid.DisplayLimit)]);
+            List<RecitesSchema> selectedrecite = await db.GetRecite(int.Parse(dataGrid.Column[1].Text[dataGrid.DoubleClick + (dataGrid.CurrentPage * dataGrid.DisplayLimit)]));
             newform.Show();
             newform.LoadData(selectedrecite);
         }
@@ -325,7 +324,7 @@ namespace ChestVault
         {
             if (SavedRecites.Count == 0)
             {
-                DialogResult resoult = ChestVault.Me.MessageBox("لا يوجد إحصائيات للعرض", "إحصائيات", Controls_Dialogue.ButtonsType.Ok);
+                ChestVault.Me.MessageBox("لا يوجد إحصائيات للعرض", "إحصائيات", Controls_Dialogue.ButtonsType.Ok);
                 return;
             }
 

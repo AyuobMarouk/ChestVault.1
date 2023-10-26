@@ -103,6 +103,7 @@ namespace ChestVault
                     ChestVault.Me.MainForm.sellingpoint.Calculate();
                 }
             }
+            ChestVault.Me.SellingPoint.SelectTextBox();
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
