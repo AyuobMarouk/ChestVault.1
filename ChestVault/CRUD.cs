@@ -644,11 +644,34 @@ namespace ChestVault
             await Item.InsertOneAsync(customer);
             return;
         }
-        public async Task<List<DeptSchema>> GetAllCustomers()
+        public async Task<string[]> GetAllCustomers()
         {
-            var name = ConnectToMongo<DeptSchema>(DebtCollection);
-            var results = await name.FindAsync(_ => true);
-            return results.ToList();
+            var Customers = ConnectToMongo<DeptSchema>(DebtCollection);
+            var results = await Customers.FindAsync(_ => true);
+            var result = results.ToList();
+            if (result.Count() == 0)
+            {
+                return new string[0];
+            }
+            string list = result[0].Name;
+            bool a;
+            foreach (var name in result)
+            {
+                a = true;
+                foreach (var item in list.Split(','))
+                {
+                    if (name.Name == item)
+                    {
+                        a = false;
+                        break;
+                    }
+                }
+                if (a)
+                {
+                    list = list + ',' + name.Name;
+                }
+            }
+            return (string[])list.Split(',');
         }
         public Task UpdateCustomer(DeptSchema item)
         {
@@ -894,14 +917,14 @@ namespace ChestVault
                 }
                 else
                 {
-                    acount.TotalSell += items.Total;
+                    acount.TotalSell += items.Paid;
                     acount.CountSell++;
-                    acount.WeekMid.Sell[((int)new DateTime(year, month, day).DayOfWeek)] += items.Total;
+                    acount.WeekMid.Sell[((int)new DateTime(year, month, day).DayOfWeek)] += items.Paid;
                     foreach (var user in acount.usersLogs)
                     {
                         if (items.User == user.Name)
                         {
-                            user.TotalSell += items.Total;
+                            user.TotalSell += items.Paid;
                             a = false;
                             break;
                         }
@@ -910,7 +933,7 @@ namespace ChestVault
                     {
                         acount.usersLogs.Add(new UsersLog());
                         acount.usersLogs.Last().Name = items.User;
-                        acount.usersLogs.Last().TotalSell += items.Total;
+                        acount.usersLogs.Last().TotalSell += items.Paid;
                     }
                 }
                 foreach (var item in items.items)
@@ -1016,10 +1039,11 @@ namespace ChestVault
         public async Task<GraphAcount> GetNets(GraphAcount acount)
         {
             var items = ConnectToMongo<ItemsSchema>(ItemsCollection);
-            var results = await items.FindAsync(a => a.Info.Any(b => b.Amount > 0));
-            acount.CountNet_Items = results.ToList<ItemsSchema>().Count;
+            var result = await items.FindAsync(a => a.Info.Any(b => b.Amount > 0));
+            List<ItemsSchema> results = result.ToList<ItemsSchema>();
+            acount.CountNet_Items = results.Count;
             var amount = 0.0;
-            foreach (var item in results.ToList<ItemsSchema>())
+            foreach (var item in results)
             {
                 foreach (var item1 in item.Info)
                 {
