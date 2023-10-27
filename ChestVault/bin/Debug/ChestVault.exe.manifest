@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ChestVault.exe" size="657808">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ChestVault.exe" size="659344">
       <assemblyIdentity name="ChestVault" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KtVBH3ZTyD2ScjUYOWqvGjstmJGs3OLydtPV1S53r34=</dsig:DigestValue>
+        <dsig:DigestValue>WA9S62QMV+aTOOz6oIGBO62lW0igm476RcmPqeGw40U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

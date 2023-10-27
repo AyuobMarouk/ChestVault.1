@@ -575,6 +575,7 @@
   <ItemGroup>
     <Content Include="Artboard-1.ico" />
     <Content Include="mongocrypt.dll" />
+    <None Include="Resources\Activity.png" />
     <None Include="Resources\Settings1.png" />
     <None Include="Resources\Drinks.png" />
     <None Include="Resources\Groccery.png" />
