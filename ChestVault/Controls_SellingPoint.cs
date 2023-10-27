@@ -344,6 +344,7 @@ namespace ChestVault
             RemoveReceit();
             ChangeReciteNumbers(newRecite.Number);
             SwitchRecites(CurrentReceit);
+
         }
         public void Calculate()
         {
@@ -362,11 +363,13 @@ namespace ChestVault
             if(CurrentState != FormState.SellingPoint)
             {
                 ChestVault.Me.MessageBox("يرجي فتح الفاتورة", "الفائمة مغلقة", Controls_Dialogue.ButtonsType.Ok);
+                SelectTextBox();
                 return;
             }
             if(inSellReceit[CurrentReceit].inSellReceit.Count == 0)
             {
                 ChestVault.Me.MessageBox("لا يمكن حفظ فاتورة خالية", "فاتورة خالية", Controls_Dialogue.ButtonsType.Ok);
+                SelectTextBox();
                 return;
             }
             if (comboBox3.Text == "مسترجعات")
