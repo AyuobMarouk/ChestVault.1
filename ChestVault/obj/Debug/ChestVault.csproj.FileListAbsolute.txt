@@ -565,3 +565,4 @@ C:\Users\ajwad\Source\Repos\ChestVault.1\ChestVault\obj\Debug\ChestVault.applica
 C:\Users\ajwad\Source\Repos\ChestVault.1\ChestVault\obj\Debug\ChestVault.csproj.CopyComplete
 C:\Users\ajwad\Source\Repos\ChestVault.1\ChestVault\obj\Debug\ChestVault.exe
 C:\Users\ajwad\Source\Repos\ChestVault.1\ChestVault\obj\Debug\ChestVault.pdb
+C:\Users\game arena\source\repos\ChestVault.1\ChestVault\obj\Debug\ChestVault.Addon_PriceHistory.resources

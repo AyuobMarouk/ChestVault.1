@@ -35,6 +35,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.TitlePanel.SuspendLayout();
             this.Special.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -76,6 +77,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 210);
@@ -93,10 +95,10 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button1.Location = new System.Drawing.Point(260, 0);
+            this.button1.Location = new System.Drawing.Point(270, 0);
             this.button1.MinimumSize = new System.Drawing.Size(2, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(260, 58);
+            this.button1.Size = new System.Drawing.Size(250, 58);
             this.button1.TabIndex = 44;
             this.button1.Text = "أضافة صنف";
             this.button1.UseVisualStyleBackColor = false;
@@ -114,7 +116,7 @@
             this.button7.Location = new System.Drawing.Point(0, 0);
             this.button7.MinimumSize = new System.Drawing.Size(1, 0);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(260, 58);
+            this.button7.Size = new System.Drawing.Size(250, 58);
             this.button7.TabIndex = 43;
             this.button7.Text = "أضافة صنف";
             this.button7.UseVisualStyleBackColor = false;
@@ -131,6 +133,15 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "عرض كافة الاصناف";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(250, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(20, 58);
+            this.panel2.TabIndex = 45;
             // 
             // Controls_Dialogue
             // 
@@ -159,5 +170,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Panel panel2;
     }
 }

@@ -504,5 +504,12 @@ namespace ChestVault
         {
             // print
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Addon_PriceHistory form = new Addon_PriceHistory();
+            form.Show();
+            this.Enabled = false;
+        }
     }
 }

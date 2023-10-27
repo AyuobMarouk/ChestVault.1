@@ -386,31 +386,6 @@ namespace ChestVault
             await Purches.ReplaceOneAsync(fitler, purches, new ReplaceOptions { IsUpsert = true });
             return (true);
         }
-
-        public async Task UpdateAll()
-        {
-            var purches = await GetAllPurches();
-            var items = await GetAllItems();
-            foreach (var purech in purches.ToList<PurchaseSchema>())
-            {
-                foreach (var pur in purech.Items)
-                {
-                    foreach (var item in items.ToList<ItemsSchema>())
-                    {
-                        if (pur.Name == item.Name)
-                        {
-                            if (item.SellPrice == 0)
-                            {
-                                item.SellPrice = pur.SellPrice;
-                                await UpdateItem(item);
-                            }
-                        }
-                    }
-                }
-            }
-
-
-        }
         public async Task<BoughtItemsSchema> GetSoldItem(string name)
         {
             var Purches = ConnectToMongo<PurchaseSchema>(PurchesCollection);
@@ -428,6 +403,8 @@ namespace ChestVault
             }
             return null;
         }  
+
+
         public async Task<List<double>> GetItemHistory(string name, bool buy)
         {
             List<double> history = new List<double>();
@@ -1157,10 +1134,34 @@ namespace ChestVault
         #endregion
 
 
-        public async void deletAll()
+        #region Cheat Codes
+        public async void deleteDB()
         {
             var client = new MongoClient(ConnectionString);
             await client.DropDatabaseAsync(DatabaseName);
         }
+        public async Task UpdateAllPurchase()
+        {
+            var purches = await GetAllPurches();
+            var items = await GetAllItems();
+            foreach (var purech in purches.ToList<PurchaseSchema>())
+            {
+                foreach (var pur in purech.Items)
+                {
+                    foreach (var item in items.ToList<ItemsSchema>())
+                    {
+                        if (pur.Name == item.Name)
+                        {
+                            if (item.SellPrice == 0)
+                            {
+                                item.SellPrice = pur.SellPrice;
+                                await UpdateItem(item);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #endregion
     }
 }
