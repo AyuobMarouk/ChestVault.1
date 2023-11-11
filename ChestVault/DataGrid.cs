@@ -19,6 +19,9 @@ namespace ChestVault
         public int CurrentPage = 0;
         public int LastPage = 0;
 
+
+        private int TextCount;
+
         public int Selected = -1;
         public int DoubleClick = -1;
 
@@ -117,6 +120,7 @@ namespace ChestVault
             }
 
             if (CurrentPage > LastPage - 1) CurrentPage = LastPage;
+
             #region Creating the Headers
             if (Column[0].Label.Count == 0 && Column[0].HeaderTitle != "")
                 for (int i = 0; i < Column.Count; i++)
@@ -124,36 +128,14 @@ namespace ChestVault
                     CreateHeader(i);
                 }
             #endregion
-            #region Fixing the removed selected Row
-            if (Selected + 1 > Column[0].Text.Count)
-            {
-                for (int i = 0; i < Column.Count; i++)
-                {
-                    Column[i].Label[Selected + 1].ForeColor = FontColor;
-                    Column[i].Label[Selected + 1].BackColor = (Selected + 1 % 2 == 0) ? Back2Color : backGroundColor;
-                }
-                if (Column[0].Text.Count > 0)
-                {
-                    Selected = Column[0].Text.Count - 1;
-                    for (int i = 0; i < Column.Count; i++)
-                    {
-                        Column[i].Label[Selected + 1].ForeColor = SelectedForeColor;
-                        Column[i].Label[Selected + 1].BackColor = SelectedBackColor;
-                    }
-                }
-                else
-                {
-                    Selected = -1;
-                }
-            }
-            #endregion
 
             #region Adding Controls and Fixing Their Values
-                for (int i = 0; i < Column.Count; i++)
-                {
-                    if (Column[i].dataType == DataGridColumn.DataType.Double) Column[i] = DoubleTrim(Column[i]);
+            int GoingToSelect = 0;
+            for (int i = 0; i < Column.Count; i++)
+            {
+                if (Column[i].dataType == DataGridColumn.DataType.Double) Column[i] = DoubleTrim(Column[i]);
 
-                    Column[i].Label[0].Text = Column[i].HeaderTitle;
+                Column[i].Label[0].Text = Column[i].HeaderTitle;
 
                 int Limit = DisplayLimit;
 
@@ -163,30 +145,45 @@ namespace ChestVault
                 }
 
                 int x = (CurrentPage * DisplayLimit) + 1;
-                int index = x % ((DisplayLimit == 0)? 1 : DisplayLimit);
-                for (; index <= Limit && Column[i].Label.Count != 1; index++,x++)
-                    {
-                    if (index >= Column[i].Label.Count) break;
-                        if (Column[i].Text.Count >= x)
-                        {
-                            Column[i].Label[index].Text = Column[i].Text[x - 1];
-                            Column[i].Label[index].Visible = true;
-                        }
-                        else Column[i].Label[index].Visible = false;
+                int index = x % ((DisplayLimit == 0) ? 1 : DisplayLimit);
 
-                    }
-                    for (x -= 1; x < Column[i].Text.Count; x++)
+                for (; index <= Limit && Column[i].Label.Count != 1; index++, x++)
+                {
+                    if (index >= Column[i].Label.Count) break;
+                    if (Column[i].Text.Count >= x)
                     {
-                        if (DisplayLimit != 0)
-                        {
-                            if (x >= DisplayLimit) break;
-                        }
-                        CreateLabel(i, x);
+                        Column[i].Label[index].Text = Column[i].Text[x - 1];
+                        Column[i].Label[index].Visible = true;
+                        GoingToSelect = x - 1;
                     }
+                    else Column[i].Label[index].Visible = false;
+
                 }
+                for (x -= 1; x < Column[i].Text.Count; x++)
+                {
+                    if (DisplayLimit != 0)
+                    {
+                        if (x >= DisplayLimit) break;
+                    }
+                    CreateLabel(i, x);
+                    GoingToSelect = x;
+                }
+            }
             #endregion
-            if(SettingsDisplay)ThisForm.FixData();
+
+            if(SettingsDisplay) ThisForm.FixData();
             SettingsPanel.Visible = (SettingsDisplay && LastPage > 1);
+
+            if (SelectAble)
+            {
+                if (TextCount != Column[0].Text.Count)
+                {
+                    TextCount = Column[0].Text.Count;
+                    RemoveSelection(Selected);
+                    Selected = (Column[0].Text.Count == 0) ? -1 : GoingToSelect;
+                    SelectControl(Selected);
+                }
+            }
         }
         public void CreateHeader(int Row)
         {
@@ -246,6 +243,56 @@ namespace ChestVault
             }
         }
 
+        #region Select and Hover Effects
+
+        private void SelectControl(int Row)
+        {
+            if (Row < 0 || Column[0].Text.Count < 1) return;
+
+            for (int i = 0; i < Column.Count; i++)
+            {
+                Column[i].Label[Row + 1].ForeColor = SelectedForeColor;
+                Column[i].Label[Row + 1].BackColor = SelectedBackColor;
+            }
+
+            Sender.Text = "Click";
+        }
+        private void RemoveSelection(int Row)
+        {
+            if (Row < 0 || Column[0].Text.Count < 1) return;
+            for (int i = 0; i < Column.Count; i++)
+            {
+                Column[i].Label[Row + 1].ForeColor = FontColor;
+                Column[i].Label[Row + 1].BackColor = (Selected + 1 % 2 == 0) ? Back2Color : backGroundColor;
+            }
+        }
+
+        private void HoverControl(int Row)
+        {
+            if (Row != Selected + 1)
+            {
+                for (int i = 0; i < Column.Count; i++)
+                {
+                    Column[i].Label[Row].ForeColor = HoverForeColor;
+                    Column[i].Label[Row].BackColor = HoverBackColor;
+                }
+            }
+        }
+
+        private void RemoveHover(int Row)
+        {
+            if (Row != Selected + 1)
+            {
+                for(int i = 0; i < Column.Count; i++)
+                {
+                    Column[i].Label[Row].ForeColor = FontColor;
+                    Column[i].Label[Row].BackColor = (Row % 2 == 0) ? Back2Color : backGroundColor;
+                }
+            }
+        }
+
+        #endregion
+
         #region Unused Functions And Experiments Functions
         public DataGridColumn ReverseValues(DataGridColumn column)
         {
@@ -265,60 +312,25 @@ namespace ChestVault
         private void LabelHoverOn(object sender, EventArgs e)
         {
             int hover = int.Parse(((Label)sender).Name) + 1;
-            for(int i = 0;i < Column.Count;i++)
-            {
-               for(int x=  0; x < Column[i].Label.Count;x++)
-                {
-                    if(x == hover && hover > 0 && x != Selected + 1)
-                    {
-                        Column[i].Label[x].ForeColor = HoverForeColor;
-                        Column[i].Label[x].BackColor = HoverBackColor;
-                    }
-                    else
-                    {
-                        if (x != 0 && x != Selected + 1)
-                        {
-                            Column[i].Label[x].ForeColor = FontColor;
-                            Column[i].Label[x].BackColor = (x % 2 == 0) ? Back2Color : backGroundColor;
-                        }
-                    }
-                }
-            }
+            HoverControl(hover);
         }
         private void LabelLeave(object sender, EventArgs e)
         {
             int t = int.Parse(((Label)sender).Name) + 1;
-            if (t != Selected + 1)
-            {
-                for (int i = 0; i < Column.Count; i++)
-                {
-                    Column[i].Label[t].ForeColor = FontColor;
-                    Column[i].Label[t].BackColor = (t % 2 == 0) ? Back2Color : backGroundColor;
-                }
-            }
+            RemoveHover(t);
         }
         private void LabelClick(object sender, EventArgs e)
         {
-            for (int i = 0; i < Column.Count && Selected + 1 > 0; i++)
-            {
-                Column[i].Label[Selected + 1].ForeColor = FontColor;
-                Column[i].Label[Selected + 1].BackColor = (Selected + 1 % 2 == 0) ? Back2Color : backGroundColor;
-            }
+            if (Selected >= 0) RemoveSelection(Selected);
 
             Selected = int.Parse(((Label)sender).Name);
             
-            for (int i = 0; i < Column.Count; i++)
-            {
-                Column[i].Label[Selected + 1].ForeColor = SelectedForeColor;
-                Column[i].Label[Selected + 1].BackColor = SelectedBackColor;
-            }
-
-
+            SelectControl(Selected);
         }
         private void LabelDoubleClick(object sender, EventArgs e)
         {
             DoubleClick = int.Parse(((Label)sender).Name);
-            Sender.Text = Sender.Text + "\0";
+            Sender.Text = "DoubleClick";
         }
         #endregion
 

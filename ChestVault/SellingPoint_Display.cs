@@ -23,22 +23,14 @@ namespace ChestVault
 
         public double TotalPrice;
 
+        private bool ChanginValue;
+        private int prevValue;
+
         public double PaidPrice;
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void SellingPoint_Display_Load(object sender, EventArgs e)
         {
             panel2.Controls.Add(dataGrid.DisplayForm(this));
             LoadDataGrid(new List<SoldItemsSchema>());
-            timer1.Start();
         }
         public void LoadDataGrid(List<SoldItemsSchema> info)
         {
@@ -132,7 +124,7 @@ namespace ChestVault
             else
             {
                 textBox2.Enabled = true;
-                if (textBox2.Text == "كامل" || textBox2.Text == "") textBox2.Text = TotalPrice.ToString() ;
+                if (textBox2.Text == "كامل" || textBox2.Text == "") textBox2.Text = "0" ;
             }
         }
         public void ChangeTotalPrice(double price)
@@ -155,11 +147,39 @@ namespace ChestVault
         {
 
         }
-
-        private void timer1_Tick(object sender, EventArgs e)
+        private void button23_Click(object sender, EventArgs e)
         {
-            if(dataGrid.Selected >= 0)
+            if (dataGrid.Selected < 0) return;
+
+
+            ChestVault.Me.MainForm.sellingpoint.PlusItem((ChanginValue) ? int.Parse(textBox1.Text) - prevValue : 1);
+            ChanginValue = false;
+        }
+        private void button22_Click(object sender, EventArgs e)
+        {
+            if (dataGrid.Selected < 0) return;
+
+            ChestVault.Me.MainForm.sellingpoint.PlusItem((ChanginValue) ? int.Parse(textBox1.Text) - prevValue : -1);
+            ChanginValue = false;
+        }
+        private void SellingPoint_Display_TextChanged(object sender, EventArgs e)
+        {
+            if(this.Text == "DoubleClick")
             {
+
+            }
+            else if (this.Text == "Click")
+            {
+                SelectedValues();
+            }
+            Text = "Chest Vault";
+            ChanginValue = false;
+        }
+        public void SelectedValues()
+        {
+            if (dataGrid.Selected >= 0)
+            {
+
                 if (dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit) > ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit.Count - 1) return;
                 label6.Visible = true;
                 label4.Visible = true;
@@ -176,39 +196,24 @@ namespace ChestVault
                 label6.Text = ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].Name;
                 label4.Text = (ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].SellPrice * ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected].Amount).ToString();
                 label2.Text = ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].SellPrice.ToString();
+
+            }
+        }
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool t = char.IsDigit(e.KeyChar);
+            if(t)
+            {
+                if (!ChanginValue)
+                {
+                    ChanginValue = true;
+                    prevValue = int.Parse(textBox1.Text);
+                }
             }
             else
             {
-                label6.Visible = false;
-                label4.Visible = false;
-                label2.Visible = false;
-                label1.Visible = false;
-                label3.Visible = false;
-                label5.Visible = false;
-                textBox1.Visible = false;
-                button23.Visible = false;
-                button22.Visible = false;
-                button8.Visible = false;
+                e.Handled = true;
             }
-        }
-
-        private void button23_Click(object sender, EventArgs e)
-        {
-            ChestVault.Me.MainForm.sellingpoint.PlusItem(1);
-        }
-
-        private void button22_Click(object sender, EventArgs e)
-        {
-            ChestVault.Me.MainForm.sellingpoint.MinusItems(-1);
-        }
-
-        public void TurnOn()
-        {
-            timer1.Start();
-        }
-        public void TurnOff()
-        {
-            timer1.Stop();
         }
     }
 }

@@ -89,33 +89,6 @@ namespace ChestVault
             SearchedItems = await db.GetItemby((Type == "") ? null : Type, ((ItemName)? ((textBox2.Text == "")? null : textBox2.Text) : null), (ItemName) ? null : ((textBox2.Text == "") ? null : textBox2.Text));
             LoadDataGrid();
         }
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (dataGrid.Selected >= 0)
-            {
-                if (dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit) > SearchedItems.Count - 1) return;
-                label1.Text = SearchedItems[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].Name.ToString();
-                double sum = 0;
-                foreach (var item in SearchedItems[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].Info)
-                {
-                    sum += item.Amount;
-                }
-                label2.Text = sum.ToString();
-
-                label1.Visible = true;
-                label2.Visible = true;
-            }
-        }
-
-        public void TurnOn()
-        {
-            timer1.Start();
-        }
-        public void TurnOff()
-        {
-            timer1.Stop();
-        }
-
         private async void comboBox1_TextChanged(object sender, EventArgs e)
         {
             List<FastSellSchema> itemsBuFastSell = await db.GetFastSellByMenu(comboBox1.Text);
@@ -124,8 +97,7 @@ namespace ChestVault
 
             foreach (var item in itemsBuFastSell)
             {
-                List<ItemsSchema> items = new List<ItemsSchema>();
-                items = await db.GetItemby((Type == "")? null : Type, item.Name,null);
+                List<ItemsSchema> items = await db.GetItemby((Type == "") ? null : Type, item.Name, null);
                 SearchedItems.Add(items[0]);
             }
             LoadDataGrid();
@@ -174,11 +146,33 @@ namespace ChestVault
 
             ChestVault.Me.MainForm.sellingpoint.CurrentState = FormState.SellingPoint;
             ChestVault.Me.MainForm.sellingpoint.FillMainPanel();
-            ChestVault.Me.MainForm.sellingpoint.sellingPoint.TurnOn();
-            ChestVault.Me.MainForm.sellingpoint.SearchPoint.TurnOff();
-
             ChestVault.Me.MainForm.sellingpoint.sellingPoint.LoadDataGrid(ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit);
         }
 
+        private void SellingPoint_Search_TextChanged(object sender, EventArgs e)
+        {
+            if(this.Text == "DoubleClick")
+            {
+
+            }
+            else if(this.Text == "Click")
+            {
+                if (dataGrid.Selected >= 0)
+                {
+                    if (dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit) > SearchedItems.Count - 1) return;
+                    label1.Text = SearchedItems[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].Name.ToString();
+                    double sum = 0;
+                    foreach (var item in SearchedItems[dataGrid.Selected + (dataGrid.CurrentPage * dataGrid.DisplayLimit)].Info)
+                    {
+                        sum += item.Amount;
+                    }
+                    label2.Text = sum.ToString();
+
+                    label1.Visible = true;
+                    label2.Visible = true;
+                }
+            }
+            this.Text = "Chest Vault";
+        }
     }
 }

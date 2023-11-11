@@ -86,7 +86,7 @@ namespace ChestVault
             DataGridColumn date = new DataGridColumn();
             date.LabelSize = new Size(200, 40);
             date.HeaderTitle = "التاريخ";
-            date.dataType = DataGridColumn.DataType.Date;
+            date.dataType = DataGridColumn.DataType.Text;
 
             foreach (ActivitiesSchema a in activities)
             {

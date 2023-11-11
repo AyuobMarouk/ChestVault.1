@@ -70,7 +70,6 @@ namespace ChestVault
             button23.Left = (this.Size.Width / 2) + (textBox1.Size.Width / 2);
 
             button22.Left = (this.Size.Width / 2) - ((textBox1.Size.Width / 2) + button22.Size.Width);
-
         }
     }
 }

@@ -53,8 +53,6 @@ namespace ChestVault
             sellingPoint = new SellingPoint_Display();
             SearchPoint = new SellingPoint_Search();
             CurrentState = FormState.SellingPoint;
-            sellingPoint.TurnOn();
-            SearchPoint.TurnOff();
             FillMainPanel();
             //LoadFastSellinG();
 
@@ -106,8 +104,7 @@ namespace ChestVault
             if (Recites.Count == 0) inSellReceit[CurrentReceit].ReciteNumber = 1;
             else inSellReceit[CurrentReceit].ReciteNumber = Recites[Recites.Count - 1].Number + 1;
 
-            ReloadReciteButtons();
-            DisplayReciteNumber();
+            SwitchRecites(CurrentReceit);
         }
 
         public void ChangeReciteNumbers(int Next)
@@ -148,6 +145,7 @@ namespace ChestVault
             ReloadReciteButtons();
             SelectTextBox();
             Calculate();
+            DisplayReciteNumber();
         }
         public async void LoadCustomersComboBox()
         {
@@ -274,6 +272,7 @@ namespace ChestVault
                 }
             Calculate();
             sellingPoint.LoadDataGrid(inSellReceit[CurrentReceit].inSellReceit);
+            sellingPoint.SelectedValues();
         }
         public async void ReturnItems()
         {
@@ -491,8 +490,6 @@ namespace ChestVault
                 inSellReceit.Add(newrecite);
                 int tmp = inSellReceit.Count - 1;
                 SwitchRecites(tmp);
-                DisplayReciteNumber();
-                ReloadReciteButtons();
             }
             else
             {
@@ -519,7 +516,6 @@ namespace ChestVault
                     ReciteButtons[i].Visible = false;
                 }
             }
-            DisplayReciteNumber();
         }
         public void ReciteChanger_Click(object sender, EventArgs e)
         {
@@ -537,6 +533,7 @@ namespace ChestVault
             List<ItemsSchema> itemselected = new List<ItemsSchema>();
 
             itemselected = await db.GetItem(inSellReceit[CurrentReceit].inSellReceit[sellingPoint.dataGrid.Selected + (sellingPoint.dataGrid.CurrentPage * sellingPoint.dataGrid.DisplayLimit)].Name);
+            
             SearchItem(itemselected[0].Name, Amount);
         }
         public async void MinusItems(int Amount)
@@ -582,8 +579,6 @@ namespace ChestVault
             if (CurrentState == FormState.SellingPoint) return;
             CurrentState = FormState.SellingPoint;
             FillMainPanel();
-            sellingPoint.TurnOn();
-            SearchPoint.TurnOff();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -591,8 +586,6 @@ namespace ChestVault
             if (CurrentState == FormState.Search) return;
             CurrentState = FormState.Search;
             FillMainPanel();
-            sellingPoint.TurnOff();
-            SearchPoint.TurnOn();
         }
 
         #region Selecting BarCode Textbox Measurments

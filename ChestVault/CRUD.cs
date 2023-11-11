@@ -21,6 +21,7 @@ namespace ChestVault
         private const string ConnectionString = "mongodb://127.0.0.1:27017";
 
         private const string DatabaseName = "vault";
+
         private const string UsersCollection = "users";
         private const string ItemsCollection = "items";
         private const string RecitsCollection = "recits";
@@ -1132,7 +1133,6 @@ namespace ChestVault
             return ((int) (number * 100) / 100.0);
         }
         #endregion
-
 
         #region Cheat Codes
         public async void deleteDB()

@@ -401,10 +401,6 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.ChangeCatagory);
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // SellingPoint_Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,6 +412,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SellingPoint_Search";
             this.Load += new System.EventHandler(this.SellingPoint_Search_Load);
+            this.TextChanged += new System.EventHandler(this.SellingPoint_Search_TextChanged);
             this.Special.ResumeLayout(false);
             this.Special.PerformLayout();
             this.panel2.ResumeLayout(false);

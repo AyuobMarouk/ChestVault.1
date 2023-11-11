@@ -33,6 +33,9 @@ namespace ChestVault.Schemas
         public double TotalNet; // راس الماس البضاعة الموجودة
         public double CountNet_Items; // مجموع الاصناف التي لها كمية
         public double CountNet_ItemsAmount; // مجموع كمية كافة الاصناف
+
+        public double MidRecite;
+        public double MidRecitePrice;
     }
     public class RemainedItemsInfo 
     {
