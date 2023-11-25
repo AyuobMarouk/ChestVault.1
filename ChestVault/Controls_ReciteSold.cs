@@ -310,14 +310,18 @@ namespace ChestVault
 
         private async void Controls_ReciteSold_TextChanged(object sender, EventArgs e)
         {
-            ChestVault.Me.SoldRecitesWindow = this;
-            this.Enabled = false;
+            if (Text == "DoubleClick")
+            {
+                ChestVault.Me.SoldRecitesWindow = this;
+                this.Enabled = false;
 
-            Controls_StatsAnalyytics newform = new Controls_StatsAnalyytics();
+                Controls_StatsAnalyytics newform = new Controls_StatsAnalyytics();
 
-            List<RecitesSchema> selectedrecite = await db.GetRecite(int.Parse(dataGrid.Column[1].Text[dataGrid.DoubleClick + (dataGrid.CurrentPage * dataGrid.DisplayLimit)]));
-            newform.Show();
-            newform.LoadData(selectedrecite);
+                List<RecitesSchema> selectedrecite = await db.GetRecite(int.Parse(dataGrid.Column[1].Text[dataGrid.DoubleClick + (dataGrid.CurrentPage * dataGrid.DisplayLimit)]));
+                newform.Show();
+                newform.LoadData(selectedrecite, selectedrecite[0].Consumer);
+            }
+            Text = "Chest Vault";
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -333,8 +337,18 @@ namespace ChestVault
 
             Controls_StatsAnalyytics newform = new Controls_StatsAnalyytics();
 
+            string Customername = SavedRecites[0].Consumer;
+
+            for(int i = 0; i < SavedRecites.Count; i++)
+            {
+                if (SavedRecites[i].Consumer != Customername)
+                {
+                    Customername = "مختلط";
+                }
+            }
+
             newform.Show();
-            newform.LoadData(SavedRecites);
+            newform.LoadData(SavedRecites, Customername);
         }
 
         private void button4_Click(object sender, EventArgs e)

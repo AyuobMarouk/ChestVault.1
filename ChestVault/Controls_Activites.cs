@@ -73,6 +73,7 @@ namespace ChestVault
 
         public void LoadDataGrid()
         {
+            dataGrid.SelectAble = false;
             DataGridColumn activ = new DataGridColumn();
             activ.LabelSize = new Size(465, 40);
             activ.HeaderTitle = "النشاط";

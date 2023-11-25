@@ -35,8 +35,6 @@ namespace ChestVault
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -95,7 +93,7 @@ namespace ChestVault
             "مدير مشتريات",
             "تحليل بيانات",
             "مسؤل"});
-            this.comboBox2.Location = new System.Drawing.Point(606, 137);
+            this.comboBox2.Location = new System.Drawing.Point(606, 115);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBox2.Size = new System.Drawing.Size(166, 21);
@@ -105,7 +103,7 @@ namespace ChestVault
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label2.Location = new System.Drawing.Point(778, 127);
+            this.label2.Location = new System.Drawing.Point(778, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 31);
             this.label2.TabIndex = 57;
@@ -127,27 +125,6 @@ namespace ChestVault
             this.button1.Text = "اضافة مستخدم";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox3
-            // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(606, 102);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox3.Size = new System.Drawing.Size(166, 27);
-            this.textBox3.TabIndex = 74;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label3.Location = new System.Drawing.Point(771, 92);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 31);
-            this.label3.TabIndex = 73;
-            this.label3.Text = "كلمة المرور";
             // 
             // button3
             // 
@@ -330,10 +307,8 @@ namespace ChestVault
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox2);
@@ -359,8 +334,6 @@ namespace ChestVault
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;

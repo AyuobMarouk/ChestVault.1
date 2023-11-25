@@ -319,7 +319,12 @@ namespace ChestVault
 
                     BoughtItemsSchema lastbougth = await db.GetSoldItem(item.Name);
 
-                    if (lastbougth == null) return; // needs meme
+                    if (lastbougth == null)
+                    {
+                        SelectTextBox();
+                        return; // needs meme
+
+                    }
                     else
                     {
                         newinfo.ExpDate = lastbougth.ExpDate;
@@ -343,6 +348,7 @@ namespace ChestVault
             RemoveReceit();
             ChangeReciteNumbers(newRecite.Number);
             SwitchRecites(CurrentReceit);
+            SelectTextBox();
 
         }
         public void Calculate()
@@ -373,6 +379,7 @@ namespace ChestVault
             }
             if (comboBox3.Text == "مسترجعات")
             {
+                SelectTextBox();
                 ReturnItems();
                 return;
             }
@@ -478,6 +485,7 @@ namespace ChestVault
             ChangeReciteNumbers(newRecite.Number);
             SwitchRecites(CurrentReceit);
             LoadCustomersComboBox();
+            SelectTextBox();
 
         }
         private void button6_Click(object sender, EventArgs e)
@@ -579,6 +587,7 @@ namespace ChestVault
             if (CurrentState == FormState.SellingPoint) return;
             CurrentState = FormState.SellingPoint;
             FillMainPanel();
+            SelectTextBox();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -586,6 +595,7 @@ namespace ChestVault
             if (CurrentState == FormState.Search) return;
             CurrentState = FormState.Search;
             FillMainPanel();
+            SelectTextBox();
         }
 
         #region Selecting BarCode Textbox Measurments
@@ -625,6 +635,16 @@ namespace ChestVault
             else textBox1.SelectAll();
         }
         #endregion
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            SelectTextBox();
+        }
+
+        private void Controls_SellingPoint_Click(object sender, EventArgs e)
+        {
+            SelectTextBox();
+        }
     }
 
     public class ReceitsInSell

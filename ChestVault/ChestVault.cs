@@ -10,6 +10,7 @@ using ChestVault.Schemas;
 using System.Drawing.Drawing2D;
 using static ChestVault.Controls_Dialogue;
 using System.Windows.Forms.VisualStyles;
+using static ChestVault.InputField;
 
 namespace ChestVault
 {
@@ -39,6 +40,8 @@ namespace ChestVault
 
         public Controls_ReciteSold SoldRecitesWindow;
 
+        public string InputFieldWindow;
+
         #region Data Base Related Functions
         public async void AddActivity(string Message,string Reason)
         {
@@ -63,6 +66,17 @@ namespace ChestVault
             newDialogue.LoadData(Message, Title, buttonsType);
 
             DialogResult resoult = newDialogue.ShowDialog();
+
+            return resoult;
+        }
+
+        public DialogResult InputField(string Message, InputFieldType fieldType)
+        {
+            InputField checkDialogue = new InputField();
+
+            checkDialogue.LoadData(Message, fieldType) ;
+
+            DialogResult resoult = checkDialogue.ShowDialog();
 
             return resoult;
         }

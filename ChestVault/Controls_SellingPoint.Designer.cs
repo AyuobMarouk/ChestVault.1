@@ -312,6 +312,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(229, 614);
             this.panel1.TabIndex = 0;
+            this.panel1.Click += new System.EventHandler(this.panel1_Click);
             this.panel1.Enter += new System.EventHandler(this.panel1_Enter);
             // 
             // button4
@@ -397,6 +398,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.Controls_SellingPoint_Load);
+            this.Click += new System.EventHandler(this.Controls_SellingPoint_Click);
             this.Enter += new System.EventHandler(this.Controls_SellingPoint_Enter);
             this.panel3.ResumeLayout(false);
             this.Special.ResumeLayout(false);

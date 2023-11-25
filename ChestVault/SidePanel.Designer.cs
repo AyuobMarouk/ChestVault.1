@@ -38,7 +38,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
@@ -57,6 +56,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -176,29 +176,9 @@
             this.button13.TabIndex = 44;
             this.button13.Text = "إعدادات النظام";
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             this.button13.MouseEnter += new System.EventHandler(this.ButtonsMouseOver);
             this.button13.MouseLeave += new System.EventHandler(this.LeaveMouseOver);
-            // 
-            // button14
-            // 
-            this.button14.AccessibleDescription = "إعدادات المستخدمين";
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(209)))), ((int)(((byte)(151)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.Location = new System.Drawing.Point(205, 295);
-            this.button14.MinimumSize = new System.Drawing.Size(3, 1);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(100, 100);
-            this.button14.TabIndex = 43;
-            this.button14.Text = "إعدادات المستخدمين";
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            this.button14.MouseEnter += new System.EventHandler(this.ButtonsMouseOver);
-            this.button14.MouseLeave += new System.EventHandler(this.LeaveMouseOver);
             // 
             // panel4
             // 
@@ -570,6 +550,27 @@
             this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button2.MouseEnter += new System.EventHandler(this.ButtonsMouseOver);
             this.button2.MouseLeave += new System.EventHandler(this.LeaveMouseOver);
+            // 
+            // button14
+            // 
+            this.button14.AccessibleDescription = "إعدادات المستخدمين";
+            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.button14.BackgroundImage = global::ChestVault.Properties.Resources.UserSettings;
+            this.button14.FlatAppearance.BorderSize = 0;
+            this.button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(209)))), ((int)(((byte)(151)))));
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button14.ForeColor = System.Drawing.Color.White;
+            this.button14.Location = new System.Drawing.Point(205, 295);
+            this.button14.MinimumSize = new System.Drawing.Size(3, 1);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(100, 100);
+            this.button14.TabIndex = 43;
+            this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.button14.MouseEnter += new System.EventHandler(this.ButtonsMouseOver);
+            this.button14.MouseLeave += new System.EventHandler(this.LeaveMouseOver);
             // 
             // button4
             // 

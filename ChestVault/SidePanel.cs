@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChestVault.Schemas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,7 @@ namespace ChestVault
         public List<Button> MainButtons = new List<Button>();
         public List<Button> SideButtons = new List<Button>();
 
+        CRUD db = new CRUD();
         private void timer1_Tick(object sender, EventArgs e)
         {
             label7.Text = DateTime.Now.ToString();
@@ -315,6 +317,11 @@ namespace ChestVault
                 Controls_LoginForm Login = new Controls_LoginForm();
                 Login.Show();
             }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

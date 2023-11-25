@@ -236,14 +236,18 @@ namespace ChestVault
 
         private async void Controls_Recites_Bougth_TextChanged(object sender, EventArgs e)
         {
-            ChestVault.Me.EditReciteSchema = true;
-            List<PurchaseSchema> Searched = await db.GetPurches(int.Parse(dataGrid.Column[1].Text[dataGrid.DoubleClick + (dataGrid.CurrentPage * dataGrid.DisplayLimit)]));
-            ChestVault.Me.EditingSchema = Searched[0];
-            Controls_Buy_Recite form = new Controls_Buy_Recite();
-            ChestVault.Me.BuyNewRecite = form;
-            form.Enabled = true;
-            form.Show();
-            ChestVault.Me.MainForm.Enabled = false;
+            if (Text == "DoubleClick")
+            {
+                ChestVault.Me.EditReciteSchema = true;
+                List<PurchaseSchema> Searched = await db.GetPurches(int.Parse(dataGrid.Column[1].Text[dataGrid.DoubleClick + (dataGrid.CurrentPage * dataGrid.DisplayLimit)]));
+                ChestVault.Me.EditingSchema = Searched[0];
+                Controls_Buy_Recite form = new Controls_Buy_Recite();
+                ChestVault.Me.BuyNewRecite = form;
+                form.Enabled = true;
+                form.Show();
+                ChestVault.Me.MainForm.Enabled = false;
+            }
+            Text = "Chest Vault";
         }
 
         private void button3_Click(object sender, EventArgs e)

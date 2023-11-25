@@ -167,6 +167,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UserSettings_AddUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserSettings_AddUser";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UserSettings_AddUser_FormClosed);
             this.Load += new System.EventHandler(this.UserSettings_AddUser_Load);

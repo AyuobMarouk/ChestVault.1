@@ -187,9 +187,13 @@ namespace ChestVault
 
         private void Controls_AllItems_TextChanged(object sender, EventArgs e)
         {
-            Controls_Items form = new Controls_Items();
-            form.Show();
-            form.SearchItem(dataGrid.Column[0].Text[dataGrid.DoubleClick + (dataGrid.CurrentPage * dataGrid.DisplayLimit)], false);
+            if (Text == "DoubleClick")
+            {
+                Controls_Items form = new Controls_Items();
+                form.Show();
+                form.SearchItem(dataGrid.Column[0].Text[dataGrid.DoubleClick + (dataGrid.CurrentPage * dataGrid.DisplayLimit)], false);
+            }
+            Text = "Chest Vault";
         }
     }
 }

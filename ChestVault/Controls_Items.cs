@@ -115,6 +115,7 @@ namespace ChestVault
         public void LoadDataGrid(List<ItemInfo> info)
         {
             dataGrid.SettingsDisplay = false;
+            dataGrid.SelectAble = false;
 
             DataGridColumn price = new DataGridColumn();
             price.LabelSize = new Size(150, 40);

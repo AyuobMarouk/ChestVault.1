@@ -553,21 +553,25 @@ namespace ChestVault
 
         private void Controls_Buy_Recite_TextChanged(object sender, EventArgs e)
         {
-            ChestVault.Me.BuyNewRecite = this;
-            BoughtItemsSchema item = new BoughtItemsSchema();
-
-            for (int i = 0; i < Recite_items_ToAdd.Count; i++)
+            if (Text == "DoubleClick")
             {
-                if (dataGrid.Column[0].Text[dataGrid.DoubleClick + (dataGrid.DisplayLimit * dataGrid.CurrentPage)] == Recite_items_ToAdd[i].Name)
+                ChestVault.Me.BuyNewRecite = this;
+                BoughtItemsSchema item = new BoughtItemsSchema();
+
+                for (int i = 0; i < Recite_items_ToAdd.Count; i++)
                 {
-                    item = Recite_items_ToAdd[i];
-                    break;
+                    if (dataGrid.Column[0].Text[dataGrid.DoubleClick + (dataGrid.DisplayLimit * dataGrid.CurrentPage)] == Recite_items_ToAdd[i].Name)
+                    {
+                        item = Recite_items_ToAdd[i];
+                        break;
+                    }
                 }
+                ValuesSender_BougthItem form = new ValuesSender_BougthItem();
+                form.LoadData(item, this);
+                this.Enabled = false;
+                form.Show();
             }
-            ValuesSender_BougthItem form = new ValuesSender_BougthItem();
-            form.LoadData(item, this);
-            this.Enabled = false;
-            form.Show();
+            Text = "Chest Vault";
         }
         #region Draggable Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

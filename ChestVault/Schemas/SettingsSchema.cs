@@ -11,5 +11,7 @@ namespace ChestVault.Schemas
         public string Id { get; set; }
         public int NotificationAmount { get; set; }
         public DateTime SignUpDate { get; set; }
+
+        public string ShopName { get;set; }
     }
 }

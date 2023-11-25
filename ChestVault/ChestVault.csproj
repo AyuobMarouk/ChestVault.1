@@ -261,6 +261,12 @@
     <Compile Include="DataGridForm.Designer.cs">
       <DependentUpon>DataGridForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InputField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputField.Designer.cs">
+      <DependentUpon>InputField.cs</DependentUpon>
+    </Compile>
     <Compile Include="FastSell_Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -397,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataGridForm.resx">
       <DependentUpon>DataGridForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputField.resx">
+      <DependentUpon>InputField.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FastSell_Settings.resx">
       <DependentUpon>FastSell_Settings.cs</DependentUpon>
@@ -575,6 +584,7 @@
   <ItemGroup>
     <Content Include="Artboard-1.ico" />
     <Content Include="mongocrypt.dll" />
+    <None Include="Resources\UserSettings.png" />
     <None Include="Resources\Activity.png" />
     <None Include="Resources\Settings1.png" />
     <None Include="Resources\Drinks.png" />

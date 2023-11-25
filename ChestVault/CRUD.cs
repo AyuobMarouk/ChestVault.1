@@ -450,6 +450,13 @@ namespace ChestVault
         #endregion
 
         #region Sold Recite
+
+        public Task UpdateSoldRecite(RecitesSchema recite)
+        {
+            var User = ConnectToMongo<RecitesSchema>(RecitsCollection);
+            var fitler = Builders<RecitesSchema>.Filter.Eq("Id", recite.Id);
+            return User.ReplaceOneAsync(fitler, recite, new ReplaceOptions { IsUpsert = true });
+        }
         public async Task<List<int>> GetRecitesMonthMed(DateTime day, bool a, string name)
         {
             int end = day.Year * 10000 + day.Month * 100 + day.Day;

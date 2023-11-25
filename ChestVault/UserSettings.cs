@@ -40,9 +40,15 @@ namespace ChestVault
                 comboBox1.Items.Add(a.Name);
             }
         }
-        private void comboBox1_TextChanged(object sender, EventArgs e)
+        private async void comboBox1_TextChanged(object sender, EventArgs e)
         {
-            if(currentForm == CurrentForm.Colors)
+            List<UsersSchema> users = await db.GetUsers(comboBox1.Text);
+            comboBox2.Text = users[0].Accessibility;
+
+            button8.Visible = true;
+            button9.Visible = true;
+
+            if (currentForm == CurrentForm.Colors)
             {
                 LoadColorForm();
             }
@@ -54,6 +60,8 @@ namespace ChestVault
         private void UserSettings_Load(object sender, EventArgs e)
         {
             currentForm = CurrentForm.Colors;
+            button8.Visible = false;
+            button9.Visible = false;
             loadUsers();
         }
 
@@ -107,9 +115,17 @@ namespace ChestVault
         // Save User Info
         private async void button8_Click(object sender, EventArgs e)
         {
+            List<UsersSchema> a = await db.GetUsers(comboBox1.Text);
+            List<UsersSchema> admin = await db.GetUsers("admin");
+
+            DialogResult check = ChestVault.Me.InputField("تأكيد كلمة المرور",InputField.InputFieldType.PasswordChecker);
+            if (ChestVault.Me.InputFieldWindow != a[0].Password || ChestVault.Me.InputFieldWindow != admin[0].Password)
+            {
+                ChestVault.Me.MessageBox("لا يمكن الحفظ", "كلمة المرور خطاء", Controls_Dialogue.ButtonsType.Ok);
+                return;
+            }
             if(ColorForm != null) ColorForm.UpdateColer();
 
-            List<UsersSchema> a = await db.GetUsers(ChestVault.Me.CurrentUser.Name);
             ChestVault.Me.CurrentUser = a[0];
 
             #region Change System Colors
@@ -134,8 +150,17 @@ namespace ChestVault
         {
             LoadAccess();
         }
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
+            List<UsersSchema> admin = await db.GetUsers("admin");
+
+            DialogResult check = ChestVault.Me.InputField("تأكيد الصلاحيات", InputField.InputFieldType.PasswordChecker);
+            if (ChestVault.Me.InputFieldWindow != admin[0].Password)
+            {
+                ChestVault.Me.MessageBox("لا يمكن الدخول", "كلمة المرور خطاء", Controls_Dialogue.ButtonsType.Ok);
+                return;
+            }
+
             UserSettings_AddUser form = new UserSettings_AddUser();
             ChestVault.Me.MainForm.Enabled = false;
             if (comboBox1.Text == "")

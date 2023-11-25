@@ -34,8 +34,18 @@ namespace ChestVault
             textBox3.Text = EditUser.Password;
             comboBox2.Text = EditUser.Accessibility;
 
-            if (EditUser.Name == "admin") textBox1.Enabled = false;
+            if (EditUser.Name == "admin") textBox3.Enabled = false;
             comboBox2.Enabled = false;
+
+            if(textBox3.Text != "")
+            {
+                label1.Text = "تعديل بيانات المستخدم";
+            }
+            else
+            {
+                label1.Text = "أضافة مستخدم جديد";
+
+            }
         }
         private async void button11_Click(object sender, EventArgs e)
         {
