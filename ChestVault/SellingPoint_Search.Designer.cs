@@ -170,6 +170,9 @@
             this.textBox2.Size = new System.Drawing.Size(324, 20);
             this.textBox2.TabIndex = 73;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
+            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // comboBox1
             // 

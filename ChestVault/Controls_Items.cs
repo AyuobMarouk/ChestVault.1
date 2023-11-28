@@ -229,7 +229,6 @@ namespace ChestVault
         {
             panel1.Controls.Add(dataGrid.DisplayForm(this));
             ResetFields();
-            DrawGraphs("");
         }
         private void ResetFields()
         {

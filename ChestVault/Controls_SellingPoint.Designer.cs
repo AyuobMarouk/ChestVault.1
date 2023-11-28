@@ -45,6 +45,7 @@
             this.button17 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -101,12 +102,12 @@
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(17, 10);
+            this.label3.Location = new System.Drawing.Point(0, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(203, 37);
+            this.label3.Size = new System.Drawing.Size(229, 37);
             this.label3.TabIndex = 50;
             this.label3.Text = "رقم الفاتورة";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // comboBox3
             // 
@@ -299,6 +300,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
@@ -315,17 +317,29 @@
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
             this.panel1.Enter += new System.EventHandler(this.panel1_Enter);
             // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(138, 1);
+            this.label4.MinimumSize = new System.Drawing.Size(1, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 24);
+            this.label4.TabIndex = 63;
+            this.label4.Text = "رقم الفاتورة";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // button4
             // 
             this.button4.AutoSize = true;
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.BackgroundImage = global::ChestVault.Properties.Resources.delete;
+            this.button4.BackColor = System.Drawing.Color.Black;
+            this.button4.BackgroundImage = global::ChestVault.Properties.Resources.deleteicon;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(209)))), ((int)(((byte)(151)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button4.Location = new System.Drawing.Point(177, 423);
+            this.button4.Location = new System.Drawing.Point(175, 483);
             this.button4.MinimumSize = new System.Drawing.Size(2, 0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(50, 50);
@@ -344,7 +358,7 @@
             this.button3.Location = new System.Drawing.Point(0, 299);
             this.button3.MinimumSize = new System.Drawing.Size(1, 0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(181, 41);
+            this.button3.Size = new System.Drawing.Size(168, 41);
             this.button3.TabIndex = 61;
             this.button3.Text = "بحث عن الاصناف";
             this.button3.UseVisualStyleBackColor = false;
@@ -361,7 +375,7 @@
             this.button2.Location = new System.Drawing.Point(0, 252);
             this.button2.MinimumSize = new System.Drawing.Size(1, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(181, 41);
+            this.button2.Size = new System.Drawing.Size(168, 41);
             this.button2.TabIndex = 60;
             this.button2.Text = "قائمة البيع";
             this.button2.UseVisualStyleBackColor = false;
@@ -431,5 +445,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label4;
     }
 }

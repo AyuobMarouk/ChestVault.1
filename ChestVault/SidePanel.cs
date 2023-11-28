@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ChestVault
 {
@@ -17,11 +18,56 @@ namespace ChestVault
         {
             InitializeComponent();
         }
-        public List<Form> MinimizedForms = new List<Form>();
-        public List<Button> MiniButtons = new List<Button>();
 
-        public List<Button> MainButtons = new List<Button>();
-        public List<Button> SideButtons = new List<Button>();
+        public List<MainMenuSearch> QuickSearch;
+        public List<MainMenuSearch> ReturnDefaultValues()
+        {
+            List<MainMenuSearch> mainMenuSearches = new List<MainMenuSearch>();
+
+            MainMenuSearch sellPoint = new MainMenuSearch();
+            sellPoint.SearchValue = "نقطة بيع";
+            sellPoint.formType = ChestVault.Me.SellingPoint;
+            mainMenuSearches.Add(sellPoint);
+
+            MainMenuSearch soldrecite = new MainMenuSearch();
+            soldrecite.SearchValue = "إدارة الفواتير المباعة";
+            soldrecite.formType = new Controls_ReciteSold();
+            mainMenuSearches.Add(soldrecite);
+
+            MainMenuSearch bougthrecite = new MainMenuSearch();
+            bougthrecite.SearchValue = "إدارة الفواتير المشترية";
+            bougthrecite.formType = new Controls_Recites_Bougth();
+            mainMenuSearches.Add(bougthrecite);
+
+
+            return mainMenuSearches;
+
+        }
+        public void SearchCLicked()
+        {
+            switch(SearchingMenu.SelectedValue)
+            {
+                case "نقطة بيع":
+                    ChestVault.Me.MainForm.FillNewWindow(ChestVault.Me.MainForm.sellingpoint);
+                    break;
+                case "إدارة الفواتير المشترية":
+                    Controls_Recites_Bougth recitebougthform = new Controls_Recites_Bougth();
+                    ChestVault.Me.MainForm.FillNewWindow(recitebougthform);
+                    break;
+                case "إدارة الفواتير المباعة":
+                    Controls_ReciteSold recitesoldform = new Controls_ReciteSold();
+                    ChestVault.Me.MainForm.FillNewWindow(recitesoldform);
+                    break;
+            }
+            SearchingMenu.Hide();
+        }
+        public SearchMenu SearchingMenu = new SearchMenu();
+
+        public List<Form> MinimizedForms = new List<Form>();
+        public List<System.Windows.Forms.Button> MiniButtons = new List<System.Windows.Forms.Button>();
+
+        public List<System.Windows.Forms.Button> MainButtons = new List<System.Windows.Forms.Button>();
+        public List<System.Windows.Forms.Button> SideButtons = new List<System.Windows.Forms.Button>();
 
         CRUD db = new CRUD();
         private void timer1_Tick(object sender, EventArgs e)
@@ -38,18 +84,23 @@ namespace ChestVault
         }
         private void SidePanel_Load(object sender, EventArgs e)
         {
+            QuickSearch = ReturnDefaultValues();
+            Point location = this.PointToScreen(textBox1.Location);
+            SearchingMenu.Setup(location, textBox1.Size, this);
+
+
             TimerState(true);
             for(int i = 0; i < this.Controls.Count; i++)
             {
-                if (this.Controls[i].GetType() == typeof(Button)) 
+                if (this.Controls[i].GetType() == typeof(System.Windows.Forms.Button)) 
                 {
                     if (this.Controls[i].MinimumSize.Width == 1)
                     {
-                        MainButtons.Add((Button)this.Controls[i]);
+                        MainButtons.Add((System.Windows.Forms.Button)this.Controls[i]);
                     }
                     else if (this.Controls[i].MinimumSize.Width > 1 && this.Controls[i].MinimumSize.Width < 10)
                     {
-                        SideButtons.Add((Button)this.Controls[i]);
+                        SideButtons.Add((System.Windows.Forms.Button)this.Controls[i]);
                         this.Controls[i].Visible = false;
                     }
                 }
@@ -58,7 +109,7 @@ namespace ChestVault
             {
                 if (a.MinimumSize.Width == 10)
                 {
-                    MiniButtons.Add((Button)a);
+                    MiniButtons.Add((System.Windows.Forms.Button)a);
                 }
             }
 
@@ -86,11 +137,11 @@ namespace ChestVault
 
             foreach (Control a in panel4.Controls)
             {
-                if (a.GetType() == typeof(Button))
+                if (a.GetType() == typeof(System.Windows.Forms.Button))
                 {
                     if (a.MinimumSize.Width == 10)
                     {
-                        Button s = a as Button;
+                        System.Windows.Forms.Button s = a as System.Windows.Forms.Button;
                         s.BackColor = ChestVault.Me.customizeableUsers.ExtraButtonBG;
                         s.FlatAppearance.MouseDownBackColor = ChestVault.Me.customizeableUsers.ExtraButtonBG;
                         s.FlatAppearance.MouseOverBackColor = ChestVault.Me.customizeableUsers.ButtHoverColor;
@@ -107,7 +158,7 @@ namespace ChestVault
 
                     a.BackColor = Color.Transparent;
                 }
-                else if (a.GetType() == typeof(TextBox))
+                else if (a.GetType() == typeof(System.Windows.Forms.TextBox))
                 {
 
                 }
@@ -119,11 +170,11 @@ namespace ChestVault
                         a.BackColor = ChestVault.Me.customizeableUsers.TitlePanelColor;
                     }
                 }
-                else if (a.GetType() == typeof(Button))
+                else if (a.GetType() == typeof(System.Windows.Forms.Button))
                 {
                     if (a.MinimumSize.Width == 10)
                     {
-                        Button s = a as Button;
+                        System.Windows.Forms.Button s = a as System.Windows.Forms.Button;
                         s.BackColor = ChestVault.Me.customizeableUsers.ExtraButtonBG;
                         s.FlatAppearance.MouseDownBackColor = ChestVault.Me.customizeableUsers.ExtraButtonBG;
                         s.FlatAppearance.MouseOverBackColor = ChestVault.Me.customizeableUsers.ButtHoverColor;
@@ -169,7 +220,7 @@ namespace ChestVault
             label3.Visible = true;
             foreach(Control a in this.Controls)
             {
-                if(a.GetType() == typeof(Button))
+                if(a.GetType() == typeof(System.Windows.Forms.Button))
                 {
                     if(a == sender)
                     {
@@ -182,7 +233,7 @@ namespace ChestVault
         public void MiniButtonsMouseOver(object sender, EventArgs e)
         {
             label3.Visible = true;
-            label3.Text = (sender as Button).Text;
+            label3.Text = (sender as System.Windows.Forms.Button).Text;
         }
         public void LeaveMouseOver(object sender, EventArgs e)
         {
@@ -307,7 +358,6 @@ namespace ChestVault
                 Application.Exit();
             }
         }
-
         private void button8_Click(object sender, EventArgs e)
         {
             DialogResult resoult = ChestVault.Me.MessageBox("هل أنتا متأكد من تبديل المستخدم", "تبديل المستخدم", Controls_Dialogue.ButtonsType.SureCancel);
@@ -319,9 +369,73 @@ namespace ChestVault
             }
         }
 
-        private void button13_Click(object sender, EventArgs e)
+        private async void button13_Click(object sender, EventArgs e)
         {
+            List<UsersSchema> list = new List<UsersSchema>();
+            DialogResult resoult = ChestVault.Me.InputField("يرجي تأكيد الصلاحيات", InputField.InputFieldType.PasswordChecker);
+
+            if(resoult == DialogResult.OK) 
+            {
+                list = await db.GetUsers("admin");
+
+                if (list[0].Password == ChestVault.Me.InputFieldWindow)
+                {
+                    SystemSettings form = new SystemSettings();
+                    ChestVault.Me.MainForm.FillNewWindow(form);
+                }
+            }
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            SearchingMenu.Show();
+            if (textBox1.Text == "بحث")
+            {
+                textBox1.Text = "";
+            }
 
         }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "بحث";
+            }
+            SearchingMenu.Hide();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            List<string> list = new List<string>();
+            foreach (MainMenuSearch a in QuickSearch)
+            {
+                if (a.SearchValue.Contains(textBox1.Text))
+                {
+                    list.Add(a.SearchValue);
+                    if (list.Count == 10)
+                    {
+                        SearchingMenu.DisplayText(list);
+                        break;
+                    }
+                }
+            }
+            SearchingMenu.DisplayText(list);
+        }
+
+        private void SidePanel_TextChanged(object sender, EventArgs e)
+        {
+            if(this.Text == "Search")
+            {
+                SearchCLicked();
+            }
+            this.Text = "Chest Vault";
+        }
+    }
+
+    public class MainMenuSearch
+    {
+        public Form formType;
+        public string SearchValue;
     }
 }

@@ -21,10 +21,13 @@ namespace ChestVault
         }
 
         CRUD db = new CRUD();
-
+        public List<ItemsSchema> AllItems = new List<ItemsSchema>();
         public List<ItemsSchema> SearchedItems = new List<ItemsSchema>();
 
         public DataGrid dataGrid = new DataGrid();
+
+        public bool SearchMode;
+        public SearchMenu SearchingMenu = new SearchMenu();
 
         private string Type;
         private bool ItemName;
@@ -70,18 +73,17 @@ namespace ChestVault
 
             dataGrid.ReloadDataGrid();
         }
-
         private async void SellingPoint_Search_Load(object sender, EventArgs e)
         {
             panel1.Controls.Add(dataGrid.DisplayForm(this));
 
             SearchedItems = await db.GetItemby(null, null, null);
+            AllItems = await db.GetAllItems();
 
             LoadDataGrid();
-
-
+            Point location = this.PointToScreen(textBox2.Location);
+            SearchingMenu.Setup(location, textBox2.Size,this);
         }
-
         public async void ChangeCatagory(object sender, EventArgs e)
         {
             Type = (sender as Button).AccessibleDescription;
@@ -149,7 +151,7 @@ namespace ChestVault
             ChestVault.Me.MainForm.sellingpoint.sellingPoint.LoadDataGrid(ChestVault.Me.MainForm.sellingpoint.inSellReceit[ChestVault.Me.MainForm.sellingpoint.CurrentReceit].inSellReceit);
         }
 
-        private void SellingPoint_Search_TextChanged(object sender, EventArgs e)
+        private async void SellingPoint_Search_TextChanged(object sender, EventArgs e)
         {
             if(this.Text == "DoubleClick")
             {
@@ -172,7 +174,40 @@ namespace ChestVault
                     label2.Visible = true;
                 }
             }
+            else if (this.Text == "Search")
+            {
+                textBox2.Text = SearchingMenu.SelectedValue;
+                SearchedItems = await db.GetItem(SearchingMenu.SelectedValue);
+                LoadDataGrid();
+
+            }
             this.Text = "Chest Vault";
+        }
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            List<string> list = new List<string>();
+            foreach(ItemsSchema a in AllItems)
+            {
+                if(a.Name.Contains(textBox2.Text))
+                {
+                    list.Add(a.Name);
+                    if (list.Count == 10)
+                    {
+                        SearchingMenu.DisplayText(list);
+                        break;
+                    }
+                }
+            }
+            SearchingMenu.DisplayText(list);
+        }
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            SearchingMenu.Hide();
+        }
+
+        private void textBox2_Enter(object sender, EventArgs e)
+        {
+            SearchingMenu.Show();
         }
     }
 }

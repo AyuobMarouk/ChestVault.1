@@ -114,10 +114,6 @@ namespace ChestVault
                 inSellReceit[i].ReciteNumber = Next + i + 1;
             }
         }
-        public void DisplayReciteNumber()
-        {
-            label3.Text = "رقم الفاتورة : " + inSellReceit[CurrentReceit].ReciteNumber.ToString();
-        }
         public void RemoveReceit()
         {
             inSellReceit.RemoveAt(CurrentReceit);
@@ -135,7 +131,7 @@ namespace ChestVault
                 CurrentReceit -= 1;
                 SwitchRecites(CurrentReceit);
 
-                DisplayReciteNumber();
+                label3.Text = inSellReceit[CurrentReceit].ReciteNumber.ToString();
             }
         }
         public void SwitchRecites(int SwitchTo)
@@ -145,7 +141,7 @@ namespace ChestVault
             ReloadReciteButtons();
             SelectTextBox();
             Calculate();
-            DisplayReciteNumber();
+            label3.Text = inSellReceit[CurrentReceit].ReciteNumber.ToString();
         }
         public async void LoadCustomersComboBox()
         {
@@ -305,7 +301,7 @@ namespace ChestVault
             List<WorkSchedule> work = new List<WorkSchedule>();
             work = await db.GetAllOpenSchedules();
             work[0].RecitesSold.Add(newRecite.Number);
-            ChestVault.Me.AddActivity("تمت بيع فاتورة جديدة رقم " + newRecite.Number, "Sold Receit");
+            ChestVault.Me.AddActivity("تمت بيع فاتورة مسترجعات جديدة رقم " + newRecite.Number, "Sold Receit");
 
             foreach (SoldItemsSchema item in inSellReceit[CurrentReceit].inSellReceit)
             {
@@ -379,7 +375,6 @@ namespace ChestVault
             }
             if (comboBox3.Text == "مسترجعات")
             {
-                SelectTextBox();
                 ReturnItems();
                 return;
             }
@@ -624,10 +619,19 @@ namespace ChestVault
         {
             SelectTextBox();
         }
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            SelectTextBox();
+        }
+        private void Controls_SellingPoint_Click(object sender, EventArgs e)
+        {
+            SelectTextBox();
+        }
         private void label1_Click(object sender, EventArgs e)
         {
             SelectTextBox();
         }
+
 
         public void SelectTextBox()
         {
@@ -635,16 +639,6 @@ namespace ChestVault
             else textBox1.SelectAll();
         }
         #endregion
-
-        private void panel1_Click(object sender, EventArgs e)
-        {
-            SelectTextBox();
-        }
-
-        private void Controls_SellingPoint_Click(object sender, EventArgs e)
-        {
-            SelectTextBox();
-        }
     }
 
     public class ReceitsInSell

@@ -22,6 +22,8 @@ namespace ChestVault
             ChestVault.Me.ChangeDesign(this);
         }
 
+        public List<ItemsSchema> AllItems = new List<ItemsSchema>();
+        public SearchMenu SearchingMenu = new SearchMenu();
 
         private bool Saved;
 
@@ -178,6 +180,9 @@ namespace ChestVault
             }
             LoadDataGrid();
             ControlLabels();
+
+            Point location = this.PointToScreen(textBox1.Location);
+            SearchingMenu.Setup(location, textBox1.Size, this);
         }
         public async void LoadComboBox()
         {
@@ -580,6 +585,7 @@ namespace ChestVault
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
+            SearchingMenu.Hide();
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
@@ -600,6 +606,16 @@ namespace ChestVault
             {
                 e.Handled = true;
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            SearchingMenu.Show();
         }
     }
 }
