@@ -380,68 +380,106 @@ namespace ChestVault
         }
         public void Sort(int Row, int acu)
         {
-            for (int i = 0; i < Column[Row].Text.Count; i++)
+            List<string> copy = Column[Row].Text.ToList();
+            if (Column[Row].Higher)
             {
-                for (int x = 0; x < Column[Row].Text.Count; x++)
+                for (int l = 0; l < Column.Count; l++)
                 {
-                    if (Column[Row].Higher)
-                    {
-                        double s1;
-                        double s2;
-                        if (Column[Row].dataType == 0)
-                        {
-                            s1 = double.Parse(Column[Row].Text[i]);
-                            s2 = double.Parse(Column[Row].Text[x]);
-                        }
-                        else
-                        {
-                            var l = Column[Row].Text[i].Length > Column[Row].Text[x].Length ? Column[Row].Text[i].Length : Column[Row].Text[x].Length;
-                            if (Column[Row].dataType == DataGridColumn.DataType.Text)
-                                l = acu;
-                            s1 = GetAsci(Column[Row].Text[i], l);
-                            s2 = GetAsci(Column[Row].Text[x], l);
-                        }
-                        if (s1 >= s2)
-                        {
-                            for (int l = 0; l < Column.Count; l++)
-                            {
-                                string tmp = Column[l].Text[i];
-                                Column[l].Text[i] = Column[l].Text[x];
-                                Column[l].Text[x] = tmp;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        double s1;
-                        double s2;
-                        if (Column[Row].dataType == 0)
-                        {
-                            s1 = double.Parse(Column[Row].Text[i]);
-                            s2 = double.Parse(Column[Row].Text[x]);
-                        }
-                        else
-                        {
-                            var l = Column[Row].Text[i].Length > Column[Row].Text[x].Length ? Column[Row].Text[i].Length : Column[Row].Text[x].Length;
-                            if (Column[Row].dataType == DataGridColumn.DataType.Text)
-                                l = acu;
-                            s1 = GetAsci(Column[Row].Text[i], l);
-                            s2 = GetAsci(Column[Row].Text[x], l);
-                        }
-                        if (s1 <= s2)
-                        {
-                            for (int l = 0; l < Column.Count; l++)
-                            {
-                                string tmp = Column[l].Text[i];
-                                Column[l].Text[i] = Column[l].Text[x];
-                                Column[l].Text[x] = tmp;
-                            }
-                        }
-                    }
+                    Column[l].Text.Reverse();
                 }
             }
-            Column[Row].Higher = !Column[Row].Higher;
+            else 
+            {
+                copy.Sort();
+                int i = 0, j = 0;
+                while (true)
+                {
+                    while (copy[i] != Column[Row].Text[j])
+                    {
+                        j++;
+                        if (j == copy.Count())
+                            j = 0;
+                    }
+                    for (int l = 0; l < Column.Count; l++)
+                    {
+                        string tmp = Column[l].Text[i];
+                        Column[l].Text[i] = Column[l].Text[j];
+                        Column[l].Text[j] = tmp;
+                    }
+                    i++;
+                    if (i == copy.Count())
+                        break;
+                }
+            }
+            for (int l = 0; l < Column.Count; l++)
+            {
+                Column[Row].Higher = false;
+            }
+            Column[Row].Higher = true;
             ReloadDataGrid();
+            return;
+            //for (int i = 0; i < Column[Row].Text.Count; i++)
+            //{
+            //    for (int x = 0; x < Column[Row].Text.Count; x++)
+            //    {
+            //        if (Column[Row].Higher)
+            //        {
+            //            double s1;
+            //            double s2;
+            //            if (Column[Row].dataType == 0)
+            //            {
+            //                s1 = double.Parse(Column[Row].Text[i]);
+            //                s2 = double.Parse(Column[Row].Text[x]);
+            //            }
+            //            else
+            //            {
+            //                var l = Column[Row].Text[i].Length > Column[Row].Text[x].Length ? Column[Row].Text[i].Length : Column[Row].Text[x].Length;
+            //                if (Column[Row].dataType == DataGridColumn.DataType.Text)
+            //                    l = acu;
+            //                s1 = GetAsci(Column[Row].Text[i], l);
+            //                s2 = GetAsci(Column[Row].Text[x], l);
+            //            }
+            //            if (s1 >= s2)
+            //            {
+            //                for (int l = 0; l < Column.Count; l++)
+            //                {
+            //                    string tmp = Column[l].Text[i];
+            //                    Column[l].Text[i] = Column[l].Text[x];
+            //                    Column[l].Text[x] = tmp;
+            //                }
+            //            }
+            //        }
+            //        else
+            //        {
+            //            double s1;
+            //            double s2;
+            //            if (Column[Row].dataType == 0)
+            //            {
+            //                s1 = double.Parse(Column[Row].Text[i]);
+            //                s2 = double.Parse(Column[Row].Text[x]);
+            //            }
+            //            else
+            //            {
+            //                var l = Column[Row].Text[i].Length > Column[Row].Text[x].Length ? Column[Row].Text[i].Length : Column[Row].Text[x].Length;
+            //                if (Column[Row].dataType == DataGridColumn.DataType.Text)
+            //                    l = acu;
+            //                s1 = GetAsci(Column[Row].Text[i], l);
+            //                s2 = GetAsci(Column[Row].Text[x], l);
+            //            }
+            //            if (s1 <= s2)
+            //            {
+            //                for (int l = 0; l < Column.Count; l++)
+            //                {
+            //                    string tmp = Column[l].Text[i];
+            //                    Column[l].Text[i] = Column[l].Text[x];
+            //                    Column[l].Text[x] = tmp;
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
+            //Column[Row].Higher = !Column[Row].Higher;
+            //ReloadDataGrid();
         }
 
         #endregion
