@@ -393,7 +393,7 @@ namespace ChestVault
             {
                 textBox1.Text = "";
             }
-
+            textBox1.Focus();
         }
 
         private void textBox1_Leave(object sender, EventArgs e)

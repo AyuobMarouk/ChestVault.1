@@ -208,6 +208,7 @@ namespace ChestVault
         private void textBox2_Enter(object sender, EventArgs e)
         {
             SearchingMenu.Show();
+            textBox2.Focus();
         }
     }
 }

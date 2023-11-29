@@ -46,6 +46,8 @@ namespace ChestVault
             LocalScale = Scale;
             SelectedForm = form;
 
+            this.TopMost = true;
+            this.Owner = form;
             this.BackColor = ChestVault.Me.customizeableUsers.FormBackGround;
         }
         public void DisplayText(List<string> Values)
@@ -76,8 +78,6 @@ namespace ChestVault
         {
             this.Left = LocalPosition.X - (LocalScale.Width / 2);
             this.Top = LocalPosition.Y + LocalScale.Height;
-
-            this.Owner = ChestVault.Me.MainForm;
         }
         private void LabelClick(object sender, EventArgs e)
         {
