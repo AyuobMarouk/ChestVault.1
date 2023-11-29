@@ -310,6 +310,7 @@
     <Compile Include="Schemas\DeptSchema.cs" />
     <Compile Include="Schemas\FastSellSchema.cs" />
     <Compile Include="Schemas\GraphAcount.cs" />
+    <Compile Include="Schemas\ItemHistory.cs" />
     <Compile Include="Schemas\ItemInfo.cs" />
     <Compile Include="Schemas\ItemsSchema.cs" />
     <Compile Include="Schemas\NotificationsSchema.cs" />

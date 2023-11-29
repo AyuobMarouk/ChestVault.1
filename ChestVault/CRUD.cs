@@ -281,11 +281,31 @@ namespace ChestVault
             var results = await Purches.FindAsync(r => r.Date == date);
             return results.ToList();
         }
-        public async Task<List<PurchaseSchema>> GetPurchesByName(string item)
+        public async Task<List<ItemHistory>> GetPurchesByName(string item)
         {
             var Purches = ConnectToMongo<PurchaseSchema>(PurchesCollection);
             var results = await Purches.FindAsync(i => i.Items.Any(q => q.Name == item));
-            return results.ToList();
+            var res =  results.ToList();
+            var list = new List<ItemHistory>();
+
+            foreach (var recit in res)
+            {
+                var tmp = new ItemHistory();
+                tmp.Supplier = recit.supplier;
+                tmp.Date = recit.Date;
+                tmp.Number = recit.Number;
+                tmp.Name = item;
+                foreach (var item1 in recit.Items)
+                {
+                    if (item1.Name == item)
+                    {
+                        tmp.Buy = item1.BuyPrice;
+                        tmp.Sell = item1.SellPrice;
+                        break;
+                    }
+                }
+            }
+            return list;
         }
         public async Task<bool> DeletePurches(PurchaseSchema purches)
         {
