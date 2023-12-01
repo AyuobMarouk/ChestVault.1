@@ -612,10 +612,14 @@ namespace ChestVault
         {
             
         }
-
-        private void textBox1_MouseDown(object sender, MouseEventArgs e)
+        private void textBox1_Enter(object sender, EventArgs e)
         {
-            SearchingMenu.Show();
+           if(checkBox1.Checked) SearchingMenu.Show();
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            SearchingMenu.Hide();
         }
     }
 }
