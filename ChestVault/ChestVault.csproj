@@ -192,12 +192,6 @@
     <Compile Include="ActivateSystem.Designer.cs">
       <DependentUpon>ActivateSystem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Addon_PriceHistory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Addon_PriceHistory.Designer.cs">
-      <DependentUpon>Addon_PriceHistory.cs</DependentUpon>
-    </Compile>
     <Compile Include="ChestVault.cs" />
     <Compile Include="Controls_Accountant.cs">
       <SubType>Form</SubType>
@@ -284,6 +278,12 @@
     </Compile>
     <Compile Include="Controls_LoginForm.Designer.cs">
       <DependentUpon>Controls_LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls_ItemHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls_ItemHistory.Designer.cs">
+      <DependentUpon>Controls_ItemHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="Private_QRCode.cs">
       <SubType>Form</SubType>
@@ -384,9 +384,6 @@
     <EmbeddedResource Include="ActivateSystem.resx">
       <DependentUpon>ActivateSystem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Addon_PriceHistory.resx">
-      <DependentUpon>Addon_PriceHistory.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Controls_Accountant.resx">
       <DependentUpon>Controls_Accountant.cs</DependentUpon>
     </EmbeddedResource>
@@ -428,6 +425,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls_LoginForm.resx">
       <DependentUpon>Controls_LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls_ItemHistory.resx">
+      <DependentUpon>Controls_ItemHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Private_QRCode.resx">
       <DependentUpon>Private_QRCode.cs</DependentUpon>

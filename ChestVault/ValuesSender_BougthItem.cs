@@ -143,5 +143,19 @@ namespace ChestVault
         {
            
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Controls_ItemHistory history = new Controls_ItemHistory();
+            history.Show();
+            history.SearchForName(textBox2.Text);
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Controls_ItemHistory history = new Controls_ItemHistory();
+            history.Show();
+            history.SearchForName(textBox2.Text);
+        }
     }
 }

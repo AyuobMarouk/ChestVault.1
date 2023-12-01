@@ -341,6 +341,7 @@ namespace ChestVault
             this.button10.TabIndex = 66;
             this.button10.Text = "<";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button3
             // 
@@ -355,6 +356,7 @@ namespace ChestVault
             this.button3.TabIndex = 67;
             this.button3.Text = "<";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label6
             // 
