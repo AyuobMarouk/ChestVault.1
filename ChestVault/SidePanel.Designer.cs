@@ -64,6 +64,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.button27 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -72,10 +73,10 @@
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
+            this.textBox1.Location = new System.Drawing.Point(59, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox1.Size = new System.Drawing.Size(292, 20);
+            this.textBox1.Size = new System.Drawing.Size(274, 20);
             this.textBox1.TabIndex = 15;
             this.textBox1.Text = "بحث";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -124,10 +125,10 @@
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(117)))), ((int)(((byte)(73)))));
-            this.label4.Location = new System.Drawing.Point(320, 1);
+            this.label4.Location = new System.Drawing.Point(339, 1);
             this.label4.MinimumSize = new System.Drawing.Size(1, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(362, 42);
+            this.label4.Size = new System.Drawing.Size(343, 42);
             this.label4.TabIndex = 33;
             this.label4.Text = "سوق المنصوري";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -715,12 +716,27 @@
             this.button1.MouseEnter += new System.EventHandler(this.ButtonsMouseOver);
             this.button1.MouseLeave += new System.EventHandler(this.LeaveMouseOver);
             // 
+            // button27
+            // 
+            this.button27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.button27.BackgroundImage = global::ChestVault.Properties.Resources.BackIcon;
+            this.button27.FlatAppearance.BorderSize = 0;
+            this.button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(209)))), ((int)(((byte)(151)))));
+            this.button27.Location = new System.Drawing.Point(7, 4);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(50, 50);
+            this.button27.TabIndex = 55;
+            this.button27.UseVisualStyleBackColor = false;
+            // 
             // SidePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(1024, 731);
+            this.Controls.Add(this.button27);
             this.Controls.Add(this.button26);
             this.Controls.Add(this.button25);
             this.Controls.Add(this.button15);
@@ -795,5 +811,6 @@
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Button button27;
     }
 }
