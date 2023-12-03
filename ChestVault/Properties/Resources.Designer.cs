@@ -303,6 +303,16 @@ namespace ChestVault.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ClientIcon {
+            get {
+                object obj = ResourceManager.GetObject("ClientIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CloseApp {
             get {
                 object obj = ResourceManager.GetObject("CloseApp", resourceCulture);
@@ -383,6 +393,16 @@ namespace ChestVault.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DeveloperSettings {
+            get {
+                object obj = ResourceManager.GetObject("DeveloperSettings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dialogue_CloseAppBg {
             get {
                 object obj = ResourceManager.GetObject("Dialogue_CloseAppBg", resourceCulture);
@@ -406,6 +426,16 @@ namespace ChestVault.Properties {
         internal static System.Drawing.Bitmap Edit {
             get {
                 object obj = ResourceManager.GetObject("Edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FollowingSells {
+            get {
+                object obj = ResourceManager.GetObject("FollowingSells", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -446,6 +476,16 @@ namespace ChestVault.Properties {
         internal static System.Drawing.Bitmap ItemInfoIcon {
             get {
                 object obj = ResourceManager.GetObject("ItemInfoIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ItemMovment {
+            get {
+                object obj = ResourceManager.GetObject("ItemMovment", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -556,6 +596,16 @@ namespace ChestVault.Properties {
         internal static System.Drawing.Bitmap ProfitIcon {
             get {
                 object obj = ResourceManager.GetObject("ProfitIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ProgramSettings {
+            get {
+                object obj = ResourceManager.GetObject("ProgramSettings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

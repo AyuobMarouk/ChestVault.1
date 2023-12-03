@@ -22,6 +22,8 @@ namespace ChestVault
         DataGrid dataGrid = new DataGrid();
         SearchMenu SearchingMenu = new SearchMenu();
         List<ItemHistory> history = new List<ItemHistory>();
+
+        List<ItemsSchema> AllItems = new List<ItemsSchema>();
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -41,8 +43,8 @@ namespace ChestVault
 
             history = await db.GetPurchesByName(ItemName);
 
-            MessageBox.Show(history.Count.ToString()  + "   " + ItemName);
             LoadDataGrid();
+            label2.Text = ItemName;
 
         }
 
@@ -55,7 +57,7 @@ namespace ChestVault
             supplier.dataType = DataGridColumn.DataType.Text;
 
             DataGridColumn number = new DataGridColumn();
-            number.LabelSize = new Size(100, 40);
+            number.LabelSize = new Size(126, 40);
             number.HeaderTitle = "رقم الفاتورة";
             number.dataType = DataGridColumn.DataType.Double;
 
@@ -70,7 +72,7 @@ namespace ChestVault
             sellprice.dataType = DataGridColumn.DataType.Double;
 
             DataGridColumn date = new DataGridColumn();
-            date.LabelSize = new Size(100, 40);
+            date.LabelSize = new Size(150, 40);
             date.HeaderTitle = "تاريخ الشراء";
             date.dataType = DataGridColumn.DataType.Text;
 
@@ -106,22 +108,59 @@ namespace ChestVault
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
-
+            SearchingMenu.Show();
+            textBox1.Focus();
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-
+            SearchingMenu.Hide();
         }
 
-        private void Controls_ItemHistory_Load(object sender, EventArgs e)
+        private async void Controls_ItemHistory_Load(object sender, EventArgs e)
         {
             Point location = this.PointToScreen(textBox1.Location);
-            SearchingMenu.Setup(location, textBox1.Size, this);
 
+            SearchingMenu.Setup(location,textBox1.Size, this);
+
+            AllItems = await db.GetAllItems();
 
             panel1.Controls.Add(dataGrid.DisplayForm(this));
             LoadDataGrid();
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            List<string> list = new List<string>();
+            foreach (ItemsSchema a in AllItems)
+            {
+                if (a.Name.Contains(textBox1.Text))
+                {
+                    list.Add(a.Name);
+                    if (list.Count == 10)
+                    {
+                        SearchingMenu.DisplayText(list);
+                        break;
+                    }
+                }
+            }
+            SearchingMenu.DisplayText(list);
+        }
+
+        private void Controls_ItemHistory_TextChanged(object sender, EventArgs e)
+        {
+            if(this.Text == "Search")
+            {
+                textBox1.Text = SearchingMenu.SelectedValue;
+            }
+            this.Text = "Chest Vault";
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SearchForName(textBox1.Text);
+            }
         }
     }
 }

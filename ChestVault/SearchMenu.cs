@@ -76,7 +76,7 @@ namespace ChestVault
         }
         private void SearchMenu_Shown(object sender, EventArgs e)
         {
-            this.Left = LocalPosition.X - (LocalScale.Width / 2);
+            this.Left = LocalPosition.X - LocalScale.Width;
             this.Top = LocalPosition.Y + LocalScale.Height;
         }
         private void LabelClick(object sender, EventArgs e)

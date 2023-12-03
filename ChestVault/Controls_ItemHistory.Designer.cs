@@ -119,7 +119,9 @@
             this.textBox1.Size = new System.Drawing.Size(186, 20);
             this.textBox1.TabIndex = 61;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // button11
@@ -156,6 +158,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ItemHistory";
             this.Load += new System.EventHandler(this.Controls_ItemHistory_Load);
+            this.TextChanged += new System.EventHandler(this.Controls_ItemHistory_TextChanged);
             this.TitlePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

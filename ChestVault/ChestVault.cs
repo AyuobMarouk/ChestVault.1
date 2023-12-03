@@ -26,7 +26,7 @@ namespace ChestVault
         public Controls_MainMenu MainForm;
 
         public UsersSchema CurrentUser = new UsersSchema();
-
+        public SettingsSchema CurrentSettings = new SettingsSchema();
         public int DisplayedMiniWindow;
 
         public bool Checking = false;

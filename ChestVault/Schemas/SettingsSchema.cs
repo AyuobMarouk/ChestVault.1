@@ -13,5 +13,6 @@ namespace ChestVault.Schemas
         public DateTime SignUpDate { get; set; }
 
         public string ShopName { get;set; }
+        public string LogoURL;
     }
 }

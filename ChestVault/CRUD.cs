@@ -301,6 +301,7 @@ namespace ChestVault
                     {
                         tmp.Buy = item1.BuyPrice;
                         tmp.Sell = item1.SellPrice;
+                        list.Add(tmp);
                         break;
                     }
                 }

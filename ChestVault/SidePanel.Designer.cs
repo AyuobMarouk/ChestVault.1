@@ -36,8 +36,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
@@ -50,11 +48,16 @@
             this.button22 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
+            this.button26 = new System.Windows.Forms.Button();
+            this.button25 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -140,48 +143,7 @@
             this.label3.TabIndex = 34;
             this.label3.Text = "سوق المنصوري";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button12
-            // 
-            this.button12.AccessibleDescription = "جرد كامل";
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(209)))), ((int)(((byte)(151)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(-1, 295);
-            this.button12.MinimumSize = new System.Drawing.Size(3, 3);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(100, 100);
-            this.button12.TabIndex = 45;
-            this.button12.Text = "جرد كامل";
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Visible = false;
-            this.button12.MouseEnter += new System.EventHandler(this.ButtonsMouseOver);
-            this.button12.MouseLeave += new System.EventHandler(this.LeaveMouseOver);
-            // 
-            // button13
-            // 
-            this.button13.AccessibleDescription = "إعدادات النظام";
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(209)))), ((int)(((byte)(151)))));
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Location = new System.Drawing.Point(102, 295);
-            this.button13.MinimumSize = new System.Drawing.Size(3, 2);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(100, 100);
-            this.button13.TabIndex = 44;
-            this.button13.Text = "إعدادات النظام";
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            this.button13.MouseEnter += new System.EventHandler(this.ButtonsMouseOver);
-            this.button13.MouseLeave += new System.EventHandler(this.LeaveMouseOver);
+            this.label3.Visible = false;
             // 
             // panel4
             // 
@@ -425,6 +387,70 @@
             this.button24.MouseEnter += new System.EventHandler(this.MiniButtonsMouseOver);
             this.button24.MouseLeave += new System.EventHandler(this.LeaveMouseOver);
             // 
+            // button26
+            // 
+            this.button26.AccessibleDescription = "إدارة الزبائن";
+            this.button26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.button26.BackgroundImage = global::ChestVault.Properties.Resources.ClientIcon;
+            this.button26.FlatAppearance.BorderSize = 0;
+            this.button26.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button26.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(209)))), ((int)(((byte)(151)))));
+            this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button26.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button26.ForeColor = System.Drawing.Color.White;
+            this.button26.Location = new System.Drawing.Point(206, 424);
+            this.button26.MinimumSize = new System.Drawing.Size(3, 1);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(100, 100);
+            this.button26.TabIndex = 54;
+            this.button26.UseVisualStyleBackColor = false;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
+            this.button26.MouseEnter += new System.EventHandler(this.ButtonsMouseOver);
+            this.button26.MouseLeave += new System.EventHandler(this.LeaveMouseOver);
+            // 
+            // button25
+            // 
+            this.button25.AccessibleDescription = "حركة شراء صنف";
+            this.button25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.button25.BackgroundImage = global::ChestVault.Properties.Resources.ItemMovment;
+            this.button25.FlatAppearance.BorderSize = 0;
+            this.button25.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button25.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(209)))), ((int)(((byte)(151)))));
+            this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button25.ForeColor = System.Drawing.Color.White;
+            this.button25.Location = new System.Drawing.Point(311, 424);
+            this.button25.MinimumSize = new System.Drawing.Size(3, 0);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(100, 100);
+            this.button25.TabIndex = 53;
+            this.button25.UseVisualStyleBackColor = false;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
+            this.button25.MouseEnter += new System.EventHandler(this.ButtonsMouseOver);
+            this.button25.MouseLeave += new System.EventHandler(this.LeaveMouseOver);
+            // 
+            // button15
+            // 
+            this.button15.AccessibleDescription = "تتبع المبيعات";
+            this.button15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(117)))), ((int)(((byte)(73)))));
+            this.button15.BackgroundImage = global::ChestVault.Properties.Resources.FollowingSells;
+            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button15.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button15.FlatAppearance.BorderSize = 0;
+            this.button15.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(117)))), ((int)(((byte)(73)))));
+            this.button15.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.ForeColor = System.Drawing.Color.White;
+            this.button15.Location = new System.Drawing.Point(806, 274);
+            this.button15.MinimumSize = new System.Drawing.Size(1, 3);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(100, 100);
+            this.button15.TabIndex = 52;
+            this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.ArrangeMap);
+            this.button15.MouseEnter += new System.EventHandler(this.ButtonsMouseOver);
+            this.button15.MouseLeave += new System.EventHandler(this.LeaveMouseOver);
+            // 
             // button10
             // 
             this.button10.AccessibleDescription = "إدارة الحسابات";
@@ -459,15 +485,15 @@
             this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(806, 274);
-            this.button7.MinimumSize = new System.Drawing.Size(1, 3);
+            this.button7.Location = new System.Drawing.Point(700, 274);
+            this.button7.MinimumSize = new System.Drawing.Size(1, 4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(100, 100);
             this.button7.TabIndex = 49;
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.ArrangeMap);
+            this.button7.MouseEnter += new System.EventHandler(this.ButtonsMouseOver);
             this.button7.MouseLeave += new System.EventHandler(this.LeaveMouseOver);
-            this.button7.MouseHover += new System.EventHandler(this.ButtonsMouseOver);
             // 
             // button3
             // 
@@ -488,8 +514,29 @@
             this.button3.TabIndex = 48;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.ArrangeMap);
+            this.button3.MouseEnter += new System.EventHandler(this.ButtonsMouseOver);
             this.button3.MouseLeave += new System.EventHandler(this.LeaveMouseOver);
-            this.button3.MouseHover += new System.EventHandler(this.ButtonsMouseOver);
+            // 
+            // button12
+            // 
+            this.button12.AccessibleDescription = "إعدادات المطور";
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.button12.BackgroundImage = global::ChestVault.Properties.Resources.DeveloperSettings;
+            this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(209)))), ((int)(((byte)(151)))));
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button12.ForeColor = System.Drawing.Color.White;
+            this.button12.Location = new System.Drawing.Point(-1, 295);
+            this.button12.MinimumSize = new System.Drawing.Size(4, 3);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(100, 100);
+            this.button12.TabIndex = 45;
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Visible = false;
+            this.button12.MouseEnter += new System.EventHandler(this.ButtonsMouseOver);
+            this.button12.MouseLeave += new System.EventHandler(this.LeaveMouseOver);
             // 
             // button5
             // 
@@ -524,7 +571,7 @@
             this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.button16.ForeColor = System.Drawing.Color.White;
             this.button16.Location = new System.Drawing.Point(311, 295);
-            this.button16.MinimumSize = new System.Drawing.Size(3, 0);
+            this.button16.MinimumSize = new System.Drawing.Size(4, 0);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(100, 100);
             this.button16.TabIndex = 41;
@@ -532,6 +579,27 @@
             this.button16.Click += new System.EventHandler(this.button16_Click);
             this.button16.MouseEnter += new System.EventHandler(this.ButtonsMouseOver);
             this.button16.MouseLeave += new System.EventHandler(this.LeaveMouseOver);
+            // 
+            // button13
+            // 
+            this.button13.AccessibleDescription = "إعدادات النظام";
+            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.button13.BackgroundImage = global::ChestVault.Properties.Resources.ProgramSettings;
+            this.button13.FlatAppearance.BorderSize = 0;
+            this.button13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(209)))), ((int)(((byte)(151)))));
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button13.ForeColor = System.Drawing.Color.White;
+            this.button13.Location = new System.Drawing.Point(102, 295);
+            this.button13.MinimumSize = new System.Drawing.Size(4, 2);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(100, 100);
+            this.button13.TabIndex = 44;
+            this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.button13.MouseEnter += new System.EventHandler(this.ButtonsMouseOver);
+            this.button13.MouseLeave += new System.EventHandler(this.LeaveMouseOver);
             // 
             // button2
             // 
@@ -566,7 +634,7 @@
             this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.button14.ForeColor = System.Drawing.Color.White;
             this.button14.Location = new System.Drawing.Point(205, 295);
-            this.button14.MinimumSize = new System.Drawing.Size(3, 1);
+            this.button14.MinimumSize = new System.Drawing.Size(4, 1);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(100, 100);
             this.button14.TabIndex = 43;
@@ -598,7 +666,7 @@
             // 
             // button6
             // 
-            this.button6.AccessibleDescription = "دارة الفواتير المباعة";
+            this.button6.AccessibleDescription = "إدارة الفواتير المباعة";
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
             this.button6.BackgroundImage = global::ChestVault.Properties.Resources.SoldRecitesIcon;
             this.button6.FlatAppearance.BorderSize = 0;
@@ -653,6 +721,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(28)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(1024, 731);
+            this.Controls.Add(this.button26);
+            this.Controls.Add(this.button25);
+            this.Controls.Add(this.button15);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.button7);
@@ -721,5 +792,8 @@
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button25;
+        private System.Windows.Forms.Button button26;
     }
 }

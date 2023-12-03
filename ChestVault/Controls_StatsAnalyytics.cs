@@ -24,7 +24,6 @@ namespace ChestVault
         DataGrid dataGrid = new DataGrid();
 
         public List<RecitesSchema> schemas;
-
         public void LoadData(List<RecitesSchema> Recites , string Customername)
         {
             label11.Text = Customername;
@@ -159,7 +158,11 @@ namespace ChestVault
 
             double PayedAmount = double.Parse(ChestVault.Me.InputFieldWindow);
             if (PayedAmount == 0) return;
-
+            if(PayedAmount > double.Parse(label6.Text))
+            {
+                ChestVault.Me.MessageBox("المدفوع أكبر من المطلوب", "طلب غير مقبول", Controls_Dialogue.ButtonsType.Ok);
+                return;
+            }
             for (int i = 0; i < schemas.Count; i++)
             {
                 if (PayedAmount == 0) break;

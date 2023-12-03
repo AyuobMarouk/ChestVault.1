@@ -573,3 +573,4 @@ C:\Users\ajwad\source\Repos\ChestVault.1\ChestVault\obj\Debug\ChestVault.InputFi
 C:\Users\ajwad\source\Repos\ChestVault.1\ChestVault\obj\Debug\ChestVault.SearchMenu.resources
 C:\Users\ajwad\source\Repos\ChestVault.1\ChestVault\obj\Debug\ChestVault.SystemSettings.resources
 C:\Users\game arena\source\repos\ChestVault.1\ChestVault\obj\Debug\ChestVault.Controls_ItemHistory.resources
+C:\Users\game arena\source\repos\ChestVault.1\ChestVault\obj\Debug\ChestVault.Controls_Clients.resources

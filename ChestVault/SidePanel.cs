@@ -76,19 +76,25 @@ namespace ChestVault
             label1.Text = ChestVault.Me.CurrentUser.Name;
             label2.Text = ChestVault.Me.CurrentUser.Accessibility;
 
+            label4.Text = (ChestVault.Me.CurrentSettings.ShopName != null && ChestVault.Me.CurrentSettings.ShopName != "") ? ChestVault.Me.CurrentSettings.ShopName : "";
+
         }
         public void TimerState(bool state)
         {
             if(state) timer1.Start();
             else timer1.Stop();
         }
-        private void SidePanel_Load(object sender, EventArgs e)
+        private async void SidePanel_Load(object sender, EventArgs e)
         {
             QuickSearch = ReturnDefaultValues();
             Point location = this.PointToScreen(textBox1.Location);
             SearchingMenu.Setup(location, textBox1.Size, this);
 
+            List<SettingsSchema> settings = new List<SettingsSchema>();
+            settings = await db.getSetting();
 
+            ChestVault.Me.CurrentSettings = settings[0];
+            
             TimerState(true);
             for(int i = 0; i < this.Controls.Count; i++)
             {
@@ -187,17 +193,17 @@ namespace ChestVault
         {
             int Clicked = 0;
             int AddCounter = 0;
-            for(int i = 0; i < MainButtons.Count;i++)
+            for (int i = 0; i < MainButtons.Count; i++)
             {
-                if(sender == MainButtons[i])
+                if (sender == MainButtons[i])
                 {
                     MainButtons[i].Left = 912;
                     MainButtons[i].Top = 274;
-                    Clicked = i; 
+                    Clicked = i;
                 }
                 else
                 {
-                    MainButtons[i].Left = 912  - ( 100 * AddCounter);
+                    MainButtons[i].Left = 912 - (105 * AddCounter);
                     MainButtons[i].Top = 380;
                     AddCounter++;
                 }
@@ -306,7 +312,6 @@ namespace ChestVault
             form.Show();
 
         }
-
         private void button6_Click(object sender, EventArgs e)
         {
             Controls_ReciteSold form = new Controls_ReciteSold();
@@ -430,6 +435,18 @@ namespace ChestVault
                 SearchCLicked();
             }
             this.Text = "Chest Vault";
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            Controls_ItemHistory history = new Controls_ItemHistory();
+            history.Show();
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            Controls_Clients history = new Controls_Clients();
+            history.Show();
         }
     }
 
